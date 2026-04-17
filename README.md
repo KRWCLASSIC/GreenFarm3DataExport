@@ -23,6 +23,13 @@ To understand the underlying logic or update the scripts for new versions, you m
 - **InitialFeed_decrypted.json**: Decrypted configuration for the game's store and items.
 
 ## Scripts
-- **extract_quest_library.py**: Parses binary assets (`13` and `EN`) utilizing hybrid mapping and quantity tracking.
-- **decrypt_feed.py**: Decrypts Game Feed binaries (XXTEA).
-- **dbg_***: Debugging/research scripts. Not public!
+- **extract_quest_library.py**: Parses the game's binary assets (`13` and `EN`) to generate the quest library. Uses a hybrid mapping system to handle various quest layouts (e.g., Tutorials vs Story).
+- **decrypt_feed.py**: Decrypts Game Feed binaries (XXTEA) into formatted JSON.
+- **dbg_***: Various debugging and research scripts used during the reverse-engineering process. Not public!
+
+## Technical Details
+- **Encryption**: Configuration files are decrypted from XXTEA using the hardcoded key `1001`.
+- **Quest Resolution**:
+  - Quest names are resolved by indexing the localized string pack at `[DialogueID - 1]`.
+  - Type-aware logic (Column 12) is used to differentiate between dialogue-heavy and action-heavy quest structures.
+  - "Next-Name" filtering is used to prevent subsequent quest titles from leaking into current quest objectives.

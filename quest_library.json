@@ -2,7 +2,7 @@
   {
     "order": 0,
     "internal_id": 9000,
-    "quest_name": "Quest_9000",
+    "quest_name": "Big Shoes to Fill",
     "text_box": "Hello! I'm Walt, the caretaker of the Manor. Together, we'll restore it to the way it was before. Let's start with the Kitchen!",
     "description": "Most of the Manor's rooms have collapsed. I'll help you restore them one by one! To begin, tap the Manor.",
     "prerequisite_order": -1,
@@ -750,7 +750,7 @@
   {
     "order": 36,
     "internal_id": 9036,
-    "quest_name": "Quest_9036",
+    "quest_name": "White Gold",
     "text_box": "I think it's time to sweeten our lives with some Sugar! We should grow some Sugar Cane!",
     "description": "Gather some Sugar from Sugar Canes.",
     "prerequisite_order": -1,
@@ -1699,7 +1699,7 @@
   {
     "order": 81,
     "internal_id": 9081,
-    "quest_name": "Quest_9081",
+    "quest_name": "A Very Picky Ghost",
     "text_box": "I have this list of things I have to get for the farm, but I have to help Walt clean the Fertilizer Plane first. Can you give me a hand?",
     "description": "Get some decorations from the Market for Cindy.",
     "prerequisite_order": 23,
@@ -2666,7 +2666,7 @@
   {
     "order": 124,
     "internal_id": 9124,
-    "quest_name": "Quest_9124",
+    "quest_name": "Manly Tears",
     "text_box": "Well, I've tried all the bedsheets in the linen closet, and nothing fits me. Could you help me find my old working clothes?",
     "description": "Uncle Hal is tired of bedsheets and wants to wear real clothes! Tap the crates to collect them.",
     "prerequisite_order": 49,
@@ -3723,7 +3723,7 @@
   {
     "order": 173,
     "internal_id": 9173,
-    "quest_name": "Quest_9173",
+    "quest_name": "Healthy Snacks",
     "text_box": "Hey there! Uncle Hal asked me to help him find something he's lost. To do so, I need Corn! And Tomatoes! Oh, and some Wheat for good measure.",
     "description": "Deliver the ingredients Isabella needs.",
     "prerequisite_order": -1,
@@ -4935,7 +4935,7 @@
   {
     "order": 229,
     "internal_id": 9229,
-    "quest_name": "Quest_9229",
+    "quest_name": "Tourist Avalanche",
     "text_box": "Hey, what is that? An old photo album... Ah, the wind is blowing all the photos away! Wait, stop!",
     "description": "Cindy has found an old photo album, but the wind has blown all the photos away!",
     "prerequisite_order": 222,
@@ -5824,7 +5824,7 @@
   {
     "order": 270,
     "internal_id": 9270,
-    "quest_name": "Quest_9270",
+    "quest_name": "To the Enchanted Acre!",
     "text_box": "Ah! There was a draft in the room and all my hats went flying through the window! I'm sure they've flown all the way to the Fabled Acre.",
     "description": "There was a gust in Cindy's room and all the hats in her collection have escaped through the window! Help her find them.",
     "prerequisite_order": -1,

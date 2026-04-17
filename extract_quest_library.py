@@ -84,9 +84,17 @@ for i, row in enumerate(quest_table):
     
     q_type = row[12]
     
-    # Header Mapping
-    name_sid = row[3] - 1
-    quest_name = all_strings.get(name_sid, f"Quest_{row[1]}")
+    # Header Mapping: The "true" name is usually the string immediately preceding the narrative
+    narrative_sid = row[3]
+    name_sid_candidate = narrative_sid - 1
+    
+    # Check if name_sid_candidate is in the same string pack as narrative_sid
+    if (name_sid_candidate >> 10) == (narrative_sid >> 10) and narrative_sid % 1024 > 0:
+        quest_name = all_strings.get(name_sid_candidate, f"Quest_{row[1]}")
+    else:
+        # Fallback to row[11] for the first quest of a pack or if indices don't align
+        quest_name = all_strings.get(row[11], f"Quest_{row[1]}")
+    
     if not quest_name or quest_name.startswith("What's this?"):
         quest_name = all_strings.get(row[11], f"Quest_{row[1]}")
 
