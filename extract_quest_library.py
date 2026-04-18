@@ -123,18 +123,36 @@ for i, row in enumerate(quest_table):
                     "count": final_count
                 })
 
-    # Prerequisite logic
-    prereq_idx = row[13]
-    prereq_id = quest_table[prereq_idx][1] if 0 <= prereq_idx < len(quest_table) else None
+    # COMPREHENSIVE PREREQUISITE ALGORITHM (Extracted from binary patterns)
+    # Col 13, 14, 15 are prerequisite row indices.
+    # If Col 13 <= 0 and it's not the first quest, it implicitly follows the previous row.
+    
+    prereq_indices = []
+    p1, p2, p3 = row[13], row[14], row[15]
+    
+    # Value 0 is a valid row index (Row 0), -1 means null/empty
+    if p1 >= 0: prereq_indices.append(p1)
+    if p2 >= 0: prereq_indices.append(p2)
+    if p3 >= 0: prereq_indices.append(p3)
+    
+    # Implicit sequential rule: ONLY if no primary prereq is specified (-1)
+    if p1 < 0 and i > 0:
+        prereq_indices.append(i - 1)
+        
+    prereq_ids = []
+    for p_idx in set(prereq_indices):
+        if 0 <= p_idx < len(quest_table):
+            prereq_ids.append(quest_table[p_idx][1])
 
     library.append({
         "order": i,
         "internal_id": row[1],
         "quest_name": quest_name,
+        "min_level": row[12],         # NEW: Required Level
+        "plot_id": row[17],           # NEW: Plot/Building condition
         "text_box": text_box,
         "description": description,
-        "prerequisite_order": prereq_idx,
-        "prerequisite_id": prereq_id,
+        "prerequisites_ids": prereq_ids,
         "objectives": objectives,
         "reward_coins": row[8],
         "reward_xp": row[9]

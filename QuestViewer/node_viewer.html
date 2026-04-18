@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GF3 Quest Flow | Node Map</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/dagre@0.8.5/dist/dagre.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #030712;
+            --sidebar: rgba(17, 24, 39, 0.9);
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.3);
+            --text: #f9fafb;
+            --secondary: #9ca3af;
+            --border: rgba(55, 65, 81, 0.5);
+            --card: #1f2937;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            overflow: hidden;
+        }
+
+        #cy {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 340px;
+            bottom: 20px;
+            background: var(--sidebar);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            pointer-events: auto;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p { margin: 4px 0 24px; font-size: 14px; color: var(--secondary); }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 24px;
+            width: 100%;
+            overflow: visible; /* Prevent clipping of results */
+        }
+
+        #searchQuest {
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: white;
+            font-family: inherit;
+            box-sizing: border-box; /* FIXED: Prevents "out of the box" issue */
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        #searchQuest:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-glow);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .stat-item {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-val { font-size: 18px; font-weight: 700; color: var(--accent); }
+        .stat-lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary); }
+
+        /* MOBILE TOOLBAR & DRAWERS */
+        .mobile-toolbar {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            height: 70px;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            z-index: 2000;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .m-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: var(--secondary);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: none;
+            background: none;
+            cursor: pointer;
+            width: 60px;
+            transition: color 0.3s;
+        }
+
+        .m-btn.active { color: var(--accent); }
+        .m-btn .icon { font-size: 24px; margin-bottom: 2px; }
+
+        @media (max-width: 768px) {
+            .mobile-toolbar { display: flex; }
+            #mobile-toggle { display: none !important; }
+            
+            .sidebar, .predictor-window, .goal-window {
+                position: fixed !important;
+                top: 0 !important; left: 0 !important; right: 0 !important; bottom: 70px !important;
+                width: 100% !important;
+                height: calc(100vh - 70px) !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                z-index: 1500 !important;
+                padding: 24px !important;
+                box-sizing: border-box !important;
+                background: var(--bg) !important;
+                border: none !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                overflow-y: auto !important;
+            }
+
+            .sidebar.active, .predictor-window.active, .goal-window.active {
+                transform: translateX(0);
+            }
+
+            .window-header { cursor: default !important; background: none !important; padding: 0 0 20px 0 !important; }
+            .window-body { padding: 0 0 100px 0 !important; opacity: 1 !important; max-height: none !important; overflow-y: auto !important; -webkit-overflow-scrolling: touch; }
+            
+            #cy { 
+                position: fixed; 
+                height: calc(100% - 70px); 
+                top: 0; 
+            }
+            
+            .header h1 { font-size: 20px; }
+            .d-name { font-size: 18px; }
+            .sidebar .details-panel { padding-bottom: 120px; }
+        }
+
+        .predictor-window, .goal-window {
+            position: absolute;
+            width: 340px;
+            background: var(--sidebar);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            pointer-events: auto;
+            padding: 0;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.7), 0 0 30px var(--accent-glow);
+            z-index: 200;
+            transition: transform 0.2s, top 0.4s, left 0.4s;
+        }
+        .predictor-window { top: 24px; right: 24px; }
+        .goal-window { top: 380px; right: 24px; border-color: #3b82f6; }
+        
+        .window-header {
+            padding: 20px 24px;
+            cursor: grab;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.02);
+            user-select: none;
+        }
+        .window-header:active { cursor: grabbing; }
+        .window-body {
+            padding: 0 24px 24px;
+            max-height: 70vh;
+            overflow-y: auto;
+            transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+        }
+
+        .collapsed .window-body { 
+            max-height: 0;
+            padding-bottom: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        .predictor-title { font-size: 16px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
+        .predictor-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; min-height: 100px; }
+        .p-slot-wrapper { display: flex; flex-direction: column; gap: 4px; }
+        .p-slot { width: 100%; background: #000; border: 1px solid var(--border); border-radius: 8px; padding: 10px; color: #fff; font-size: 13px; box-sizing: border-box; }
+        .p-slot:focus { border-color: var(--accent); outline: none; }
+        .p-slot-name { font-size: 9px; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; min-height: 11px; font-weight: 600; text-transform: uppercase; }
+
+        .results-box {
+            overflow: visible; /* Take as much space as it needs */
+            border-top: 1px solid var(--border);
+            margin-top: 16px;
+            padding-top: 16px;
+        }
+
+        .empty-state { height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--secondary); font-size: 14px; }
+
+        /* Detail Decor */
+        .d-id { font-family: monospace; color: var(--secondary); font-size: 12px; margin-bottom: 4px; }
+        .d-name { font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 12px; line-height: 1.2; }
+        .d-dialogue { background: rgba(99, 102, 241, 0.1); padding: 12px; border-radius: 8px; font-size: 13px; font-style: italic; margin-bottom: 12px; border-left: 2px solid var(--accent); }
+
+        /* HIGHLIGHTS WITH ACTUAL GLOW */
+        .h-active { 
+            background-color: #22c55e !important; 
+            border-color: #fff !important;
+            shadow-blur: 35;
+            shadow-color: #22c55e;
+            shadow-opacity: 1;
+            width: 200;
+            height: 70;
+            font-size: 13px;
+        }
+        .h-predicted { 
+            background-color: #eab308 !important; 
+            border-color: #fff !important;
+            shadow-blur: 35;
+            shadow-color: #eab308;
+            shadow-opacity: 1;
+            width: 200;
+            height: 70;
+            font-size: 13px;
+        }
+        .h-path {
+            background-color: #3b82f6 !important;
+            border-color: #fff !important;
+            shadow-blur: 35;
+            shadow-color: #3b82f6;
+            shadow-opacity: 1;
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .btn {
+            background: var(--sidebar);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+
+        #searchResults {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #1e293b;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-top: 8px;
+            max-height: 250px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .search-item { padding: 12px 16px; cursor: pointer; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+        .search-item:hover { background: var(--accent); }
+    </style>
+</head>
+<body>
+    <div id="cy"></div>
+    <datalist id="quests-datalist"></datalist>
+
+    <div class="mobile-toolbar">
+        <button class="m-btn" onclick="switchDrawer('none')"><div class="icon">🗺️</div>Map</button>
+        <button class="m-btn" onclick="switchDrawer('sidebar')"><div class="icon">📜</div>Flow</button>
+        <button class="m-btn" onclick="switchDrawer('win-predictor')"><div class="icon">🔮</div>Predict</button>
+        <button class="m-btn" onclick="switchDrawer('win-goal')"><div class="icon">🎯</div>Target</button>
+    </div>
+
+    <div class="sidebar">
+        <div class="header">
+            <h1>Quest Flow</h1>
+            <p>GF3 Interactive Map</p>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchQuest" placeholder="Search by name or ID...">
+            <div id="searchResults"></div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-val" id="countQuests">0</div>
+                <div class="stat-lbl">Quests</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-val" id="countLines">0</div>
+                <div class="stat-lbl">Lines</div>
+            </div>
+        </div>
+
+        <div class="details-panel" id="details">
+            <div class="empty-state">Select a node to view details</div>
+        </div>
+    </div>
+
+    <div class="predictor-window" id="win-predictor">
+        <div class="window-header">
+            <div class="predictor-title"><span>🔮 Quest Predictor</span></div>
+            <div style="font-size:12px; color:var(--secondary);" id="icon-win-predictor">▼</div>
+        </div>
+        <div class="window-body">
+            <div class="predictor-slots">
+                <div class="p-slot-wrapper">
+                    <input type="text" class="p-slot" placeholder="ID 1" id="p1" list="quests-datalist" oninput="updateSlotName(1)">
+                    <div class="p-slot-name" id="name-p1"></div>
+                </div>
+                <div class="p-slot-wrapper">
+                    <input type="text" class="p-slot" placeholder="ID 2" id="p2" list="quests-datalist" oninput="updateSlotName(2)">
+                    <div class="p-slot-name" id="name-p2"></div>
+                </div>
+                <div class="p-slot-wrapper">
+                    <input type="text" class="p-slot" placeholder="ID 3" id="p3" list="quests-datalist" oninput="updateSlotName(3)">
+                    <div class="p-slot-name" id="name-p3"></div>
+                </div>
+                <div class="p-slot-wrapper">
+                    <input type="text" class="p-slot" placeholder="ID 4" id="p4" list="quests-datalist" oninput="updateSlotName(4)">
+                    <div class="p-slot-name" id="name-p4"></div>
+                </div>
+            </div>
+            <button class="btn" style="width:100%; font-size:13px; padding:12px;" onclick="predictQuests()">Predict Next Quests</button>
+            <div class="results-box" id="predictionResults">
+                <div style="font-size:12px; color:var(--secondary); text-align:center;">Results will appear here</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="goal-window" id="win-goal">
+        <div class="window-header">
+            <div class="predictor-title" style="color:#3b82f6;"><span>🎯 Goal Tracer</span></div>
+            <div style="font-size:12px; color:#3b82f6;" id="icon-win-goal">▼</div>
+        </div>
+        <div class="window-body">
+            <div style="margin-bottom:16px;">
+                <input type="text" class="p-slot" style="border-color:#3b82f630;" placeholder="Target Quest ID" id="targetId" list="quests-datalist">
+            </div>
+            <button class="btn" style="width:100%; border-color:#3b82f6; font-size:13px; padding:12px;" onclick="traceGoal()">Calculate Path</button>
+            <div class="results-box" id="goalResults" style="border-color:#3b82f630;">
+                <div style="font-size:12px; color:var(--secondary); text-align:center;">Path will appear here</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="cy.fit(50)">Fit Canvas</button>
+        <button class="btn" onclick="reLayout()">Auto Layout</button>
+    </div>
+
+    <script>
+        let cy;
+        let questData = [];
+
+        async function loadJson(filename) {
+            const paths = [filename, '../' + filename, '/' + filename];
+            for (let p of paths) {
+                try {
+                    let res = await fetch(p);
+                    if (res.ok) return await res.json();
+                } catch(e) {}
+            }
+            throw new Error("Could not load " + filename + " from any path.");
+        }
+
+        async function init() {
+            try {
+                questData = await loadJson('quest_library.json');
+            } catch (error) {
+                alert(error.message);
+                return;
+            }
+
+            const elements = [
+                { data: { id: 'root', name: 'Tutorial Quests' } }
+            ];
+
+            questData.forEach(q => {
+                elements.push({
+                    data: { 
+                        id: q.internal_id.toString(), 
+                        name: q.quest_name || q.internal_id.toString(),
+                        full: q 
+                    }
+                });
+            });
+
+            questData.forEach(q => {
+                if (q.prerequisites_ids && q.prerequisites_ids.length > 0) {
+                    q.prerequisites_ids.forEach(pid => {
+                        elements.push({
+                            data: {
+                                source: pid.toString(),
+                                target: q.internal_id.toString()
+                            }
+                        });
+                    });
+                } else if (q.internal_id !== 9000) {
+                    elements.push({ data: { source: 'root', target: q.internal_id.toString() } });
+                }
+            });
+
+            cy = cytoscape({
+                container: document.getElementById('cy'),
+                elements: elements,
+                style: [
+                    {
+                        selector: 'node',
+                        style: {
+                            'label': 'data(name)',
+                            'color': '#fff',
+                            'text-valign': 'center',
+                            'text-halign': 'center',
+                            'background-color': '#1f2937',
+                            'border-width': 2,
+                            'border-color': '#6366f1',
+                            'width': 180,
+                            'height': 60,
+                            'shape': 'round-rectangle',
+                            'font-family': 'Outfit',
+                            'font-size': '11px',
+                            'text-wrap': 'wrap',
+                            'text-max-width': '160px'
+                        }
+                    },
+                    {
+                        selector: 'node[id="root"]',
+                        style: {
+                            'background-color': '#7c3aed',
+                            'width': 220,
+                            'height': 80,
+                            'font-weight': 'bold',
+                            'font-size': '16px'
+                        }
+                    },
+                    {
+                        selector: 'edge',
+                        style: {
+                            'width': 2,
+                            'line-color': 'rgba(99, 102, 241, 0.4)',
+                            'target-arrow-color': 'rgba(99, 102, 241, 0.4)',
+                            'target-arrow-shape': 'triangle',
+                            'curve-style': 'bezier'
+                        }
+                    },
+                    {
+                        selector: ':selected',
+                        style: {
+                            'background-color': '#6366f1',
+                            'border-color': '#fff',
+                            'border-width': 3
+                        }
+                    },
+                    {
+                        selector: '.h-active',
+                        style: {
+                            'background-color': '#22c55e',
+                            'border-color': '#fff',
+                            'border-width': 4,
+                            'width': 220,
+                            'height': 80,
+                            'font-size': '14px'
+                        }
+                    },
+                    {
+                        selector: '.h-predicted',
+                        style: {
+                            'background-color': '#eab308',
+                            'border-color': '#fff',
+                            'border-width': 4,
+                            'width': 220,
+                            'height': 80,
+                            'font-size': '14px'
+                        }
+                    },
+                    {
+                        selector: '.h-path',
+                        style: {
+                            'background-color': '#3b82f6',
+                            'border-color': '#fff',
+                            'border-width': 4,
+                            'width': 200,
+                            'height': 70
+                        }
+                    },
+                    {
+                        selector: '.h-node-path',
+                        style: {
+                            'background-color': '#3b82f6',
+                            'border-color': '#fff',
+                            'border-width': 3
+                        }
+                    },
+                    {
+                        selector: '.h-edge-path',
+                        style: {
+                            'width': 6,
+                            'line-color': '#3b82f6',
+                            'target-arrow-color': '#3b82f6',
+                            'target-arrow-shape': 'triangle',
+                            'arrow-scale': 2,
+                            'curve-style': 'bezier',
+                            'opacity': 1,
+                            'z-index': 1000
+                        }
+                    }
+                ],
+                layout: {
+                    name: 'dagre',
+                    rankDir: 'LR',
+                    nodeSep: 80,
+                    rankSep: 200
+                }
+            });
+
+            cy.on('tap', 'node', function(evt){
+                const d = evt.target.data('full');
+                if (d) showDetails(d);
+                if (window.innerWidth <= 768) {
+                    switchDrawer('sidebar');
+                }
+            });
+
+            let lastEdgeId = null;
+            cy.on('tap', 'edge', function(evt){
+                const edge = evt.target;
+                const sourceId = edge.source().id();
+                const targetId = edge.target().id();
+                
+                if (lastEdgeId === edge.id()) {
+                    window.focusNode(sourceId, true);
+                    lastEdgeId = null; 
+                } else {
+                    window.focusNode(targetId, true);
+                    lastEdgeId = edge.id();
+                }
+            });
+
+            // Populate autocomplete datalist for ID inputs
+            const sortedQuests = [...questData].sort((a,b) => a.internal_id - b.internal_id);
+            document.getElementById('quests-datalist').innerHTML = sortedQuests.map(q => `<option value="${q.internal_id}">${q.quest_name || 'Unnamed'} (ID: ${q.internal_id})</option>`).join('');
+
+            document.getElementById('countQuests').textContent = questData.length;
+            document.getElementById('countLines').textContent = questData.filter(q => !q.prerequisite_id).length;
+
+            // Load saved state
+            const saved = JSON.parse(localStorage.getItem('gf3_predictor_ids') || '[]');
+            saved.forEach((id, i) => {
+                const el = document.getElementById(`p${i+1}`);
+                if (el) {
+                    el.value = id;
+                    updateSlotName(i+1);
+                }
+            });
+            
+            const savedTarget = localStorage.getItem('gf3_target_id');
+            if (savedTarget) document.getElementById('targetId').value = savedTarget;
+
+            ['win-predictor', 'win-goal'].forEach(winId => {
+                const collapsed = localStorage.getItem('gf3_collapse_' + winId) === 'true';
+                if (collapsed) {
+                    const win = document.getElementById(winId);
+                    const icon = document.getElementById('icon-' + winId);
+                    win.classList.add('collapsed');
+                    icon.textContent = '▲';
+                }
+
+                // Restore Position
+                const pos = JSON.parse(localStorage.getItem('gf3_pos_' + winId) || 'null');
+                if (pos) {
+                    const win = document.getElementById(winId);
+                    win.style.left = pos.left;
+                    win.style.top = pos.top;
+                    win.style.right = 'auto';
+                }
+
+                makeDraggable(winId);
+            });
+
+            if (saved.length > 0) predictQuests();
+            if (savedTarget) traceGoal();
+
+            // Close drawers on mobile when clicking the graph background
+            cy.on('tap', function(event) {
+                if (event.target === cy && window.innerWidth <= 768) {
+                    switchDrawer('none');
+                }
+            });
+        }
+
+        function showDetails(q) {
+            const panel = document.getElementById('details');
+            const plotText = (q.plot_id && q.plot_id !== 99990) ? `<div style="font-size:11px; color:#fb7185; margin-bottom:10px; font-weight:700;">🚩 PLOT/BUILDING LOCK: ${q.plot_id}</div>` : '';
+            
+            panel.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                    <div class="d-id">ID: ${q.internal_id}</div>
+                    <div style="background:rgba(234, 179, 8, 0.2); color:#eab308; padding:2px 8px; border-radius:6px; font-weight:900; font-size:11px; border:1px solid rgba(234, 179, 8, 0.3);">
+                        LVL ${q.min_level || 1}
+                    </div>
+                </div>
+                <div class="d-name">${q.quest_name || 'Unnamed Quest'}</div>
+                ${plotText}
+                ${q.text_box ? `<div class="d-dialogue">${q.text_box}</div>` : ''}
+                <div style="font-size:13px; color:var(--secondary); margin-bottom:15px;">${q.description || ''}</div>
+                
+                <div style="font-size:12px; font-weight:700; color:var(--secondary); text-transform:uppercase; margin-bottom:8px;">Objectives</div>
+                ${q.objectives.map(obj => `
+                    <div style="font-size:13px; margin-bottom:6px; display:flex; gap:8px;">
+                        <span style="background:var(--accent); color:white; padding:2px 6px; border-radius:4px; font-weight:700; font-size:10px;">${obj.count}</span>
+                        <span>${obj.text}</span>
+                    </div>
+                `).join('')}
+
+                <div style="display:flex; gap:15px; margin-top:20px; padding-top:15px; border-top:1px solid var(--border);">
+                    <div style="color:#fbbf24; font-weight:700;">🪙 ${q.reward_coins}</div>
+                    <div style="color:#a855f7; font-weight:700;">✨ ${q.reward_xp}</div>
+                </div>
+            `;
+        }
+
+        function setupSearch() {
+            const input = document.getElementById('searchQuest');
+            const results = document.getElementById('searchResults');
+            
+            if (!input || !results) {
+                console.error("Search elements not found!");
+                return;
+            }
+
+            input.addEventListener('input', (e) => {
+                const val = e.target.value.trim().toLowerCase();
+                
+                if (val.length < 1) {
+                    results.style.display = 'none';
+                    return;
+                }
+
+                if (!questData || !Array.isArray(questData)) {
+                    results.innerHTML = '<div style="padding:10px; color:red;">Data loading...</div>';
+                    results.style.display = 'block';
+                    return;
+                }
+
+                const matches = [];
+                const searchTokens = val.split(/\s+/);
+
+                for (const q of questData) {
+                    let matchType = "";
+                    const idStr = (q.internal_id || "").toString();
+                    const nameStr = (q.quest_name || "").toLowerCase();
+                    const textStr = (q.text_box || "").toLowerCase();
+                    const descStr = (q.description || "").toLowerCase();
+                    
+                    if (idStr.includes(val)) matchType = "ID";
+                    else if (nameStr.includes(val)) matchType = "Name";
+                    else if (textStr.includes(val)) matchType = "Dialogue";
+                    else if (descStr.includes(val)) matchType = "Description";
+                    else if (q.objectives && q.objectives.some(o => (o.text || "").toLowerCase().includes(val))) matchType = "Objective";
+
+                    if (matchType) {
+                        matches.push({ ...q, matchType });
+                    }
+                    if (matches.length >= 25) break;
+                }
+
+                if (matches.length > 0) {
+                    results.innerHTML = matches.map(m => `
+                        <div class="search-item" 
+                             style="padding:12px; border-bottom:1px solid #334155; cursor:pointer;"
+                             onclick="window.focusNode('${m.internal_id}')">
+                            <div style="font-weight:700; color:#fff; font-size:14px; margin-bottom:4px;">${m.quest_name || 'Unnamed'}</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:11px; color:#94a3b8;">ID: ${m.internal_id}</span>
+                                <span style="font-size:10px; background:rgba(99, 102, 241, 0.2); color:#818cf8; padding:2px 6px; border-radius:4px; font-weight:800; border:1px solid rgba(99, 102, 241, 0.3);">${m.matchType} Match</span>
+                            </div>
+                        </div>
+                    `).join('');
+                    results.style.display = 'block';
+                } else {
+                    results.innerHTML = '<div style="padding:20px; color:#64748b; font-size:13px; text-align:center;">No quests found for "' + val + '"</div>';
+                    results.style.display = 'block';
+                }
+            });
+
+            // Prevent clicks inside results from closing it
+            results.addEventListener('click', (e) => e.stopPropagation());
+            
+            // Close on click anywhere else
+            document.addEventListener('click', (e) => {
+                if (e.target !== input) results.style.display = 'none';
+            });
+        }
+
+        window.focusNode = function(id, skipDrawer = false) {
+            const node = cy.getElementById(id.toString());
+            if (node) {
+                cy.animate({ center: { eles: node }, zoom: 1.5 }, { duration: 500 });
+                node.select();
+                showDetails(node.data('full'));
+            }
+            document.getElementById('searchResults').style.display = 'none';
+            document.getElementById('searchQuest').value = '';
+            
+            if (window.innerWidth <= 768 && !skipDrawer) {
+                switchDrawer('sidebar');
+            }
+        }
+
+        window.updateSlotName = function(num) {
+            const id = document.getElementById(`p${num}`).value.trim();
+            const lbl = document.getElementById(`name-p${num}`);
+            if (!id) { lbl.textContent = ""; return; }
+            const q = questData.find(x => x.internal_id.toString() === id);
+            lbl.textContent = q ? q.quest_name : "Unknown ID";
+        }
+
+        window.predictQuests = function() {
+            cy.nodes().removeClass('h-active h-predicted'); // Reset highlights
+            
+            const ids = ['p1', 'p2', 'p3', 'p4'].map(sid => parseInt(document.getElementById(sid).value.trim())).filter(v => !isNaN(v));
+            localStorage.setItem('gf3_predictor_ids', JSON.stringify(ids));
+            
+            let sourceGroups = []; 
+            let foundNodes = cy.collection();
+
+            ids.forEach((id, i) => {
+                updateSlotName(i+1);
+                const node = cy.getElementById(id.toString());
+                if (node.length > 0) {
+                    node.addClass('h-active');
+                    foundNodes = foundNodes.union(node);
+                    
+                    const qData = node.data('full');
+                    const sourceName = qData ? qData.quest_name : id;
+
+                    // Use outgoers again: they are now perfectly accurate
+                    const nextNodes = node.outgoers('edge').targets();
+                    nextNodes.addClass('h-predicted');
+                    
+                    let nextQuests = nextNodes.length > 0 ? nextNodes.map(n => n.data('full')) : [];
+                    
+                    // FALLBACK: If no explicit graph connection, suggest the next in table order
+                    if (nextQuests.length === 0) {
+                        const currentIdx = questData.findIndex(x => x.internal_id === id);
+                        if (currentIdx !== -1 && currentIdx < questData.length - 1) {
+                            const q = questData[currentIdx + 1];
+                            nextQuests.push({ ...q, isTimelineFallback: true });
+                        }
+                    }
+                    
+                    sourceGroups.push({ sourceName, sourceId: id, nextQuests });
+                }
+            });
+
+            const resultsBox = document.getElementById('predictionResults');
+            if (sourceGroups.length > 0) {
+                let html = '';
+                sourceGroups.forEach(group => {
+                    html += `
+                        <div style="margin-bottom:24px;">
+                            <div style="font-size:10px; color:var(--accent); font-weight:800; text-transform:uppercase; margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+                                <span>FROM:</span>
+                                <span style="color:#fff; background:var(--accent); padding:2px 8px; border-radius:4px; cursor:pointer;" onclick="window.focusNode('${group.sourceId}')">${group.sourceName}</span>
+                            </div>
+                            <div style="border-left:2px solid var(--accent-glow); padding-left:14px; margin-left:10px;">
+                    `;
+                    
+                    if (group.nextQuests.length > 0) {
+                        group.nextQuests.forEach(q => {
+                            html += `
+                                <div class="search-item" onclick="window.focusNode('${q.internal_id}')" 
+                                     style="background:rgba(234, 179, 8, 0.05); border:1px solid #eab30830; margin-bottom:10px; border-radius:10px; padding:12px; position:relative;">
+                                    ${q.isTimelineFallback ? '<div style="font-size:8px; background:#eab308; color:#000; padding:1px 4px; border-radius:3px; position:absolute; top:8px; right:8px; font-weight:900;">TIMELINE</div>' : ''}
+                                    <div style="position:absolute; left:-18px; top:50%; transform:translateY(-50%); color:var(--accent); font-weight:800;">➜</div>
+                                    <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">${q.quest_name || 'Unnamed'}</div>
+                                    <div style="font-size:11px; color:#eab308;">${q.isTimelineFallback ? 'Sequence ID' : 'Next ID'}: ${q.internal_id}</div>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        html += `
+                            <div style="background:rgba(255, 255, 255, 0.02); border:1px dashed var(--border); margin-bottom:10px; border-radius:10px; padding:12px; text-align:center;">
+                                <div style="font-size:10px; color:var(--secondary); font-weight:800; text-transform:uppercase; letter-spacing:1px;">🏁 End of Database</div>
+                                <div style="font-size:11px; color:var(--secondary); opacity:0.6; margin-top:4px;">Max ID reached for this line</div>
+                            </div>
+                        `;
+                    }
+                    
+                    html += `</div></div>`;
+                });
+                resultsBox.innerHTML = html;
+            } else {
+                resultsBox.innerHTML = `<div style="font-size:12px; color:var(--secondary); text-align:center;">No upcoming quests found for these active slots</div>`;
+            }
+        }
+
+        window.traceGoal = function() {
+            cy.nodes().removeClass('h-path h-node-path h-path-edge');
+            cy.edges().removeClass('h-edge-path');
+            
+            const targetId = parseInt(document.getElementById('targetId').value.trim());
+            const activeIds = ['p1', 'p2', 'p3', 'p4'].map(sid => parseInt(document.getElementById(sid).value.trim())).filter(v => !isNaN(v));
+            localStorage.setItem('gf3_target_id', targetId);
+            
+            if (isNaN(targetId)) return;
+
+            const targetQuest = questData.find(q => q.internal_id === targetId);
+            if (!targetQuest) return;
+
+            const targetOrder = targetQuest.order;
+            const activeQuests = questData.filter(q => activeIds.includes(q.internal_id));
+            const activeOrders = activeQuests.map(q => q.order);
+            
+            // Find the most relevant current quest row index
+            const currentBaseOrder = activeOrders.filter(o => o <= targetOrder).sort((a,b) => b-a)[0] || 0;
+            
+            // Timeline Range logic based on Order (Row Index)
+            const rangeQuests = questData.filter(q => q.order >= currentBaseOrder && q.order <= targetOrder);
+            let rangeNodes = cy.collection();
+            
+            rangeQuests.forEach(q => {
+                const node = cy.getElementById(q.internal_id.toString());
+                if (node.length > 0) rangeNodes = rangeNodes.union(node);
+            });
+            
+            rangeNodes.addClass('h-path');
+            
+            // Generate list sorted STRICTLY by order (Row Index)
+            const sortedPath = rangeQuests.sort((a,b) => a.order - b.order);
+            
+            let html = '';
+            if (sortedPath.length > 0) {
+                sortedPath.forEach(q => {
+                    const isActive = activeIds.includes(q.internal_id);
+                    const isTarget = q.internal_id === targetId;
+                    const style = isActive ? "background:rgba(34, 197, 94, 0.1); border-color:#22c55e;" : 
+                                 (isTarget ? "background:rgba(59, 130, 246, 0.2); border-color:#3b82f6; border-width:2px;" : 
+                                  "background:rgba(59, 130, 246, 0.1); border-color:#3b82f640;");
+                    
+                    const gateInfo = [];
+                    if (q.min_level > 1) gateInfo.push(`LVL ${q.min_level}`);
+                    if (q.plot_id && q.plot_id !== 99990) gateInfo.push(`PLOT ${q.plot_id}`);
+                    const gateHtml = gateInfo.length > 0 ? `<div style="display:flex; gap:6px; margin-top:8px;">${gateInfo.map(g => `<span style="font-size:9px; background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-weight:800; color:var(--accent); border:1px solid rgba(234, 179, 8, 0.2);">${g}</span>`).join('')}</div>` : '';
+
+                    html += `
+                        <div class="search-item" onclick="window.focusNode('${q.internal_id}')" 
+                             style="${style} margin-bottom:8px; border-radius:8px; padding:12px; border:1px solid; transition: transform 0.2s;">
+                            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">${q.quest_name || 'Unnamed'}</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:10px; color:#fff; opacity:0.6;">ID: ${q.internal_id}</span>
+                                ${isActive ? '<span style="font-size:9px; color:#22c55e; font-weight:800; text-transform:uppercase;">Started From</span>' : ''}
+                                ${isTarget ? '<span style="font-size:9px; color:#3b82f6; font-weight:800; text-transform:uppercase;">Target</span>' : ''}
+                            </div>
+                            ${gateHtml}
+                        </div>
+                    `;
+                });
+            } else {
+                html = `<div style="padding:10px; color:var(--secondary); font-size:12px; text-align:center;">No path found for this ID range.</div>`;
+            }
+            
+            document.getElementById('goalResults').innerHTML = html;
+            
+            if (rangeNodes.length > 0) {
+                cy.animate({ fit: { eles: rangeNodes, padding: 80 }, zoom: 0.6 }, { duration: 800 });
+            }
+        }
+
+        window.toggleWindow = function(winId) {
+            const win = document.getElementById(winId);
+            const icon = document.getElementById('icon-' + winId);
+            const isCollapsed = win.classList.toggle('collapsed');
+            icon.textContent = isCollapsed ? '▲' : '▼';
+            localStorage.setItem('gf3_collapse_' + winId, isCollapsed);
+        }
+
+        // DRAGGING SYSTEM
+        function makeDraggable(winId) {
+            const win = document.getElementById(winId);
+            const header = win.querySelector('.window-header');
+            
+            let isDragging = false;
+            let offset = { x: 0, y: 0 };
+            let startPos = { x: 0, y: 0 };
+            let startTime = 0;
+
+            header.addEventListener('mousedown', (e) => {
+                if (e.target.closest('.btn') || e.target.closest('input')) return;
+                isDragging = true;
+                startTime = Date.now();
+                startPos.x = e.clientX;
+                startPos.y = e.clientY;
+                offset.x = e.clientX - win.offsetLeft;
+                offset.y = e.clientY - win.offsetTop;
+                
+                win.style.transition = 'none';
+                win.style.zIndex = '300';
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                let x = e.clientX - offset.x;
+                let y = e.clientY - offset.y;
+                win.style.left = x + 'px';
+                win.style.top = y + 'px';
+                win.style.right = 'auto';
+            });
+
+            document.addEventListener('mouseup', (e) => {
+                if (!isDragging) return;
+                
+                const dist = Math.sqrt(Math.pow(e.clientX - startPos.x, 2) + Math.pow(e.clientY - startPos.y, 2));
+                const time = Date.now() - startTime;
+                
+                isDragging = false;
+                win.style.transition = 'transform 0.2s, top 0.4s, left 0.4s';
+                win.style.zIndex = '200';
+                
+                // If it was a quick click or very little movement, treat as toggle
+                if (dist < 8 && time < 250) {
+                    toggleWindow(winId);
+                } else {
+                    localStorage.setItem('gf3_pos_' + winId, JSON.stringify({
+                        left: win.style.left,
+                        top: win.style.top
+                    }));
+                }
+            });
+        }
+
+        window.reLayout = function() {
+            cy.layout({ name: 'dagre', rankDir: 'LR' }).run();
+        }
+
+        window.switchDrawer = function(drawerId) {
+            // Remove active from all drawers and buttons
+            document.querySelectorAll('.sidebar, .predictor-window, .goal-window').forEach(d => d.classList.remove('active'));
+            document.querySelectorAll('.m-btn').forEach(b => b.classList.remove('active'));
+
+            if (drawerId === 'none') return;
+
+            // Activate target
+            const target = drawerId === 'sidebar' ? document.querySelector('.sidebar') : document.getElementById(drawerId);
+            if (target) target.classList.add('active');
+
+            // Highlight button
+            const btnIdx = { 'none': 0, 'sidebar': 1, 'win-predictor': 2, 'win-goal': 3 }[drawerId];
+            const btn = document.querySelectorAll('.m-btn')[btnIdx];
+            if (btn) btn.classList.add('active');
+        }
+
+        setupSearch();
+        init();
+    </script>
+</body>
+</html>

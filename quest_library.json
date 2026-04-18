@@ -3,10 +3,11 @@
     "order": 0,
     "internal_id": 9000,
     "quest_name": "Big Shoes to Fill",
+    "min_level": 3,
+    "plot_id": 10002,
     "text_box": "Hello! I'm Walt, the caretaker of the Manor. Together, we'll restore it to the way it was before. Let's start with the Kitchen!",
     "description": "Most of the Manor's rooms have collapsed. I'll help you restore them one by one! To begin, tap the Manor.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [],
     "objectives": [
       {
         "text": "Renovate the Manor's Kitchen",
@@ -20,10 +21,13 @@
     "order": 1,
     "internal_id": 9001,
     "quest_name": "Big Shoes to Fill",
+    "min_level": 1,
+    "plot_id": 2016,
     "text_box": "It's not a real farm without animals. Your uncle Hal had the greatest flock in the state! Can you rank with him?",
     "description": "Buy a Gelbvieh Calf from the Market.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Buy a Gelbvieh Calf",
@@ -45,10 +49,14 @@
     "order": 2,
     "internal_id": 9002,
     "quest_name": "Good Old Harold",
+    "min_level": 6,
+    "plot_id": 99990,
     "text_box": "It was pretty nice of Harold to give you a Feed Mill. Maybe you should pay him a visit!",
     "description": "Pay a visit to Harold by tapping the Mailbox.",
-    "prerequisite_order": 1,
-    "prerequisite_id": 9001,
+    "prerequisites_ids": [
+      9000,
+      9001
+    ],
     "objectives": [
       {
         "text": "Visit Harold's farm",
@@ -66,10 +74,14 @@
     "order": 3,
     "internal_id": 9003,
     "quest_name": "Soup's On",
+    "min_level": 3,
+    "plot_id": 3001,
     "text_box": "What should we make first in the Manor's Kitchen? I've got an idea!",
     "description": "Let's try this old family recipe for a classic soup! To prepare it, go to the Manor's Kitchen!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9001
+    ],
     "objectives": [
       {
         "text": "Harvest Tomato",
@@ -91,10 +103,14 @@
     "order": 4,
     "internal_id": 9004,
     "quest_name": "The Collection Room",
+    "min_level": 5,
+    "plot_id": 10000,
     "text_box": "Your uncle Hal used to be quite the collector. Let's restore the room he used, so you can start a collection of your own. Or two!",
     "description": "Restore the Manor's Collection Room to display your Collections. Collection items are found when harvesting.",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9001
+    ],
     "objectives": [
       {
         "text": "Renovate the Manor's Collection Room",
@@ -108,10 +124,14 @@
     "order": 5,
     "internal_id": 9005,
     "quest_name": "The Trophy Room",
+    "min_level": 5,
+    "plot_id": 10003,
     "text_box": "Your uncle Hal won many awards for his livestock. Now's the time to restore the old Trophy Room and fill it with your own trophies!",
     "description": "Time for a change of décor! Restore the Manor's Trophy Room!",
-    "prerequisite_order": 4,
-    "prerequisite_id": 9004,
+    "prerequisites_ids": [
+      9030,
+      9004
+    ],
     "objectives": [
       {
         "text": "Renovate the Manor's Trophy Room",
@@ -125,10 +145,14 @@
     "order": 6,
     "internal_id": 9006,
     "quest_name": "The Gallery",
+    "min_level": 5,
+    "plot_id": 10001,
     "text_box": "Before it collapsed, the Manor's Gallery was adorned with beautiful paintings. It is up to us to restore it. Maybe we can even charge admission!",
     "description": "It's time to restore the Manor's Gallery! Afterwards, tap it to collect Coins.",
-    "prerequisite_order": 5,
-    "prerequisite_id": 9005,
+    "prerequisites_ids": [
+      9064,
+      9005
+    ],
     "objectives": [
       {
         "text": "Renovate the Manor's Gallery",
@@ -142,10 +166,14 @@
     "order": 7,
     "internal_id": 9007,
     "quest_name": "The Library",
+    "min_level": 5,
+    "plot_id": 10004,
     "text_box": "Well, kiddo, time for our next great work: the restoration of the Library! It's not going to be easy, so be ready!",
     "description": "It's time to restore the Manor's Library!",
-    "prerequisite_order": 6,
-    "prerequisite_id": 9006,
+    "prerequisites_ids": [
+      9097,
+      9006
+    ],
     "objectives": [
       {
         "text": "Renovate the Manor's Library",
@@ -159,10 +187,14 @@
     "order": 8,
     "internal_id": 9008,
     "quest_name": "The Greenhouse",
+    "min_level": 5,
+    "plot_id": 10005,
     "text_box": "It's time to renovate the Greenhouse! Though it collapsed long ago, today, it will rise again!",
     "description": "It's time to restore the Manor's Greenhouse! Afterward, tap it to collect Crops.",
-    "prerequisite_order": 7,
-    "prerequisite_id": 9007,
+    "prerequisites_ids": [
+      9153,
+      9007
+    ],
     "objectives": [
       {
         "text": "Renovate the Manor's Greenhouse",
@@ -176,10 +208,14 @@
     "order": 9,
     "internal_id": 9009,
     "quest_name": "The Pantry",
+    "min_level": 5,
+    "plot_id": 10006,
     "text_box": "Time for another renovation, kiddo! I wonder what amazing surprise we're going to have this time?",
     "description": "It's time to restore the Manor's Pantry!",
-    "prerequisite_order": 8,
-    "prerequisite_id": 9008,
+    "prerequisites_ids": [
+      9008,
+      9210
+    ],
     "objectives": [
       {
         "text": "Renovate the Manor's Pantry",
@@ -193,10 +229,14 @@
     "order": 10,
     "internal_id": 9010,
     "quest_name": "The Storage Room",
+    "min_level": 5,
+    "plot_id": 10007,
     "text_box": "This time, we are going to restore the Storage Room to its former glory! Hang on tight, kiddo, we're almost there!",
     "description": "It's now time to restore the Manor's Storage Room! Then, you can tap it to get Feed for your Animals!",
-    "prerequisite_order": 9,
-    "prerequisite_id": 9009,
+    "prerequisites_ids": [
+      9009,
+      9251
+    ],
     "objectives": [
       {
         "text": "Renovate the Manor's Storage Room",
@@ -210,10 +250,15 @@
     "order": 11,
     "internal_id": 9011,
     "quest_name": "The Manor's Attic",
+    "min_level": 5,
+    "plot_id": 10008,
     "text_box": "Finally, the Manor's final room! After all this time! Can you feel the excitement in the air? Let's do this!",
     "description": "This is it: the Manor's final room! Can you restore it? What will you find inside?",
-    "prerequisite_order": 10,
-    "prerequisite_id": 9010,
+    "prerequisites_ids": [
+      9010,
+      9290,
+      9285
+    ],
     "objectives": [
       {
         "text": "Renovate the Manor's final room: the Attic!",
@@ -227,10 +272,13 @@
     "order": 12,
     "internal_id": 9012,
     "quest_name": "Making Room",
+    "min_level": 3,
+    "plot_id": 25000,
     "text_box": "What a beautiful plot of land! That is, if you don't mind big ol' rocks in the middle of your fields. We'd better take care of that!",
     "description": "It's time to make some room! Tap an obstacle to remove it!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9011
+    ],
     "objectives": [
       {
         "text": "Clear Mid-sized Rock from your land",
@@ -248,10 +296,15 @@
     "order": 13,
     "internal_id": 9013,
     "quest_name": "Home on the Rearrange",
+    "min_level": 3,
+    "plot_id": 1006,
     "text_box": "Feel the need to redecorate? Sometimes you'll want to rearrange the objects on your farm. Let me show you how!",
     "description": "Tap and hold objects to move them, or to open the Tools Menu to sell and store them!",
-    "prerequisite_order": 12,
-    "prerequisite_id": 9012,
+    "prerequisites_ids": [
+      9000,
+      9001,
+      9012
+    ],
     "objectives": [
       {
         "text": "Move the Feed Mill somewhere else",
@@ -273,10 +326,13 @@
     "order": 14,
     "internal_id": 9014,
     "quest_name": "Room for More",
+    "min_level": 3,
+    "plot_id": 7001,
     "text_box": "The Manor's looking great, but we're running out of space. See that big Barn over there? I'll show you how to store things inside!",
     "description": "Tap and hold an object, then tap the Storage icon. It will go straight to your Barn -- provided there's enough space inside, of course!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9013
+    ],
     "objectives": [
       {
         "text": "Get a Low Wall A from the Market and place it",
@@ -298,10 +354,14 @@
     "order": 15,
     "internal_id": 9015,
     "quest_name": "Cow and Chicken",
+    "min_level": 3,
+    "plot_id": 2004,
     "text_box": "Our Cow is a little lonely. We should get her a Chicken friend. Chickens are excellent companions! Well, for a cow, anyway.",
     "description": "Buy a Delaware Chick from the Market.",
-    "prerequisite_order": 1,
-    "prerequisite_id": 9001,
+    "prerequisites_ids": [
+      9001,
+      9014
+    ],
     "objectives": [
       {
         "text": "Buy a Delaware Chick",
@@ -319,10 +379,15 @@
     "order": 16,
     "internal_id": 9016,
     "quest_name": "Morning Start",
+    "min_level": 3,
+    "plot_id": 6000,
     "text_box": "Do you know what really helps in the mornings? Porridge! It will really give you the energy to get through the day.",
     "description": "Porridge is good for your energy, and you're going to need a lot of energy if you're going to take care of the Manor!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9014,
+      9015
+    ],
     "objectives": [
       {
         "text": "Make Porridge in the Manor's Kitchen",
@@ -340,10 +405,15 @@
     "order": 17,
     "internal_id": 9017,
     "quest_name": "Soup for the Sod",
+    "min_level": 4,
+    "plot_id": 3001,
     "text_box": "I think Walt is going to be really tired after fixing the Fertilizer Plane. We should gather the ingredients to make some Tomato Soup!",
     "description": "Walt could use some Tomato Soup after all the hard work he's been doing. Let's see what we can cook up!",
-    "prerequisite_order": 20,
-    "prerequisite_id": 9020,
+    "prerequisites_ids": [
+      9018,
+      9003,
+      9020
+    ],
     "objectives": [
       {
         "text": "Harvest Tomato",
@@ -361,10 +431,13 @@
     "order": 18,
     "internal_id": 9018,
     "quest_name": "Grounded",
+    "min_level": 4,
+    "plot_id": 25004,
     "text_box": "Someone took apart the Fertilizer Plane and lost the wings! No wings, no plane. No plane, no fertilizer. No fertilizer... no fertilizer!",
     "description": "Someone lost the parts of the plane! Tap the crates to collect them, but be careful: Not all of them are useful!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9017
+    ],
     "objectives": [
       {
         "text": "Retrieve the Plane's Wings",
@@ -386,10 +459,14 @@
     "order": 19,
     "internal_id": 9019,
     "quest_name": "The Manor's Chef",
+    "min_level": 4,
+    "plot_id": 6005,
     "text_box": "Hello there! I am Humphrey, the Manor's chef! I am honored to meet you. I shall introduce you to the ways of delightful country cooking!",
     "description": "Humphrey, the distinguished Manor's Chef, is back. With his help, make Tomato Soup in the Manor's Kitchen.",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9017
+    ],
     "objectives": [
       {
         "text": "Make Tomato Soup in the Manor's Kitchen",
@@ -407,10 +484,13 @@
     "order": 20,
     "internal_id": 9020,
     "quest_name": "Leading the Pack",
+    "min_level": 4,
+    "plot_id": 2999,
     "text_box": "Did you know that you can keep all your animals in one place? It's not difficult! Let me show you how!",
     "description": "Tap and hold an Animal to move it.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9019
+    ],
     "objectives": [
       {
         "text": "Move Animal",
@@ -428,10 +508,13 @@
     "order": 21,
     "internal_id": 9021,
     "quest_name": "The Big Apple",
+    "min_level": 5,
+    "plot_id": 3012,
     "text_box": "People around the farm are really craving some Apple Juice. We should make some to sell, but for that, we need Apple Trees!",
     "description": "To start selling Apple Juice, you need apples! You can buy Apple Trees from the Market.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9020
+    ],
     "objectives": [
       {
         "text": "Plant Apple Tree",
@@ -449,10 +532,13 @@
     "order": 22,
     "internal_id": 9022,
     "quest_name": "What's the Plot?",
+    "min_level": 5,
+    "plot_id": 3000,
     "text_box": "We could use more Plots to plant more crops, like Wheat! Do you remember how to get them?",
     "description": "Buy and place more Plots from the Market.",
-    "prerequisite_order": 21,
-    "prerequisite_id": 9021,
+    "prerequisites_ids": [
+      9021
+    ],
     "objectives": [
       {
         "text": "Place Plot",
@@ -470,10 +556,15 @@
     "order": 23,
     "internal_id": 9023,
     "quest_name": "Time to Fly!",
+    "min_level": 5,
+    "plot_id": 0,
     "text_box": "All right, kid, I've fixed the Fertilizer Plane. But for me to take flight, we'll need to charge it!",
     "description": "The Fertilizer gauge will fill up only when collecting Fertilizers from Animals. When the gauge is full, tap the Fertilizer Plane icon to unleash its incredible fertilizing power!",
-    "prerequisite_order": 21,
-    "prerequisite_id": 9021,
+    "prerequisites_ids": [
+      9018,
+      9021,
+      9022
+    ],
     "objectives": [
       {
         "text": "Charge up Walt's Fertilizer Plane",
@@ -491,10 +582,13 @@
     "order": 24,
     "internal_id": 9030,
     "quest_name": "The Pretty Acre",
+    "min_level": 5,
+    "plot_id": 1,
     "text_box": "A long time ago, all the land around the Manor was farmed by your family, acre after acre. We will reclaim it and make this place whole again!",
     "description": "All the wild land around your Manor was once your family's. We'll get it all back, one acre at a time!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Expand your domain to the Pretty Acre",
@@ -508,10 +602,15 @@
     "order": 25,
     "internal_id": 9024,
     "quest_name": "Getting Juiced",
+    "min_level": 5,
+    "plot_id": 6020,
     "text_box": "The demand for Apple Juice is going up. We should make more to meet the needs of the people!",
     "description": "More Apple Juice means more customers! Making more will surely increase sales.",
-    "prerequisite_order": 21,
-    "prerequisite_id": 9021,
+    "prerequisites_ids": [
+      9000,
+      9021,
+      9023
+    ],
     "objectives": [
       {
         "text": "Make Apple Juice in the Manor's Kitchen",
@@ -529,10 +628,13 @@
     "order": 26,
     "internal_id": 9025,
     "quest_name": "Prepared for Anything",
+    "min_level": 5,
+    "plot_id": 6002,
     "text_box": "We've got a busy day ahead. We should be prepared for anything! Do you hear me? Anything!",
     "description": "Humphrey feels the future is going to involve a lot of cooking. Prepare ingredients in the Manor's Kitchen!",
-    "prerequisite_order": 25,
-    "prerequisite_id": 9024,
+    "prerequisites_ids": [
+      9024
+    ],
     "objectives": [
       {
         "text": "Make Butter",
@@ -554,10 +656,13 @@
     "order": 27,
     "internal_id": 9026,
     "quest_name": "Lettuce Everywhere!",
+    "min_level": 6,
+    "plot_id": 3002,
     "text_box": "Now that we can plant Lettuce, we should stock up. You never know when Humphrey's going to go on a salad frenzy!",
     "description": "Harvest some Lettuce to prepare! Because you never know when you'll need Lettuce!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9025
+    ],
     "objectives": [
       {
         "text": "Harvest Lettuce",
@@ -575,10 +680,14 @@
     "order": 28,
     "internal_id": 9027,
     "quest_name": "Morning Fragrance",
+    "min_level": 6,
+    "plot_id": 3013,
     "text_box": "The smell of Lemon Trees can be so refreshing! Don't you think we need some fresh lemony scent around here?",
     "description": "Get Lemon Trees from the Market.",
-    "prerequisite_order": 27,
-    "prerequisite_id": 9026,
+    "prerequisites_ids": [
+      9030,
+      9026
+    ],
     "objectives": [
       {
         "text": "Plant Lemon Tree",
@@ -596,10 +705,14 @@
     "order": 29,
     "internal_id": 9028,
     "quest_name": "Breaking Bread",
+    "min_level": 6,
+    "plot_id": 6035,
     "text_box": "I heard that the people in the town next to us have run out of Bread because their baker's sick. We gotta help them!",
     "description": "We should bake some Bread and help out our neighbors! No one should go without Bread!",
-    "prerequisite_order": 28,
-    "prerequisite_id": 9027,
+    "prerequisites_ids": [
+      9000,
+      9027
+    ],
     "objectives": [
       {
         "text": "Make Bread",
@@ -617,10 +730,13 @@
     "order": 30,
     "internal_id": 9029,
     "quest_name": "Swine Time",
+    "min_level": 6,
+    "plot_id": 2028,
     "text_box": "A farm isn't a farm without a Pig! We need a big, cute, pink one, too!",
     "description": "You can find Yorkshire Piglets in the Market. Raise one to adulthood and get a Yorkshire Pig!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9028
+    ],
     "objectives": [
       {
         "text": "Buy Yorkshire Piglet",
@@ -638,10 +754,13 @@
     "order": 31,
     "internal_id": 9031,
     "quest_name": "Harvest Time",
+    "min_level": 7,
+    "plot_id": 3004,
     "text_box": "According to today's grocery list, we are going to need more Lettuce and more Wheat!",
     "description": "You don't have to go far for Wheat and Lettuce. Harvest some from your farm!",
-    "prerequisite_order": 27,
-    "prerequisite_id": 9026,
+    "prerequisites_ids": [
+      9026
+    ],
     "objectives": [
       {
         "text": "Harvest Wheat",
@@ -659,10 +778,13 @@
     "order": 32,
     "internal_id": 9032,
     "quest_name": "Benchmarking",
+    "min_level": 7,
+    "plot_id": 7006,
     "text_box": "Do you know what's missing around here? Some decorations! They'd really help the scenery around the Manor, you know?",
     "description": "Get some decorations from the Market.",
-    "prerequisite_order": 31,
-    "prerequisite_id": 9031,
+    "prerequisites_ids": [
+      9031
+    ],
     "objectives": [
       {
         "text": "Place a Bench",
@@ -684,10 +806,13 @@
     "order": 33,
     "internal_id": 9033,
     "quest_name": "Where's My Cheese?",
+    "min_level": 7,
+    "plot_id": 2040,
     "text_box": "Do city people have Goat Cheese? Well, I'm sure it's not as good as the Goat Cheese we can make here! But first, we need a Goat!",
     "description": "You can find Guernsey Kids in the Market.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9032
+    ],
     "objectives": [
       {
         "text": "Buy Guernsey Kid",
@@ -705,10 +830,13 @@
     "order": 34,
     "internal_id": 9034,
     "quest_name": "Paying a Visit",
+    "min_level": 7,
+    "plot_id": 99990,
     "text_box": "What's this in the mail? ... Harold invited us to his farm! How sweet of him!",
     "description": "Harold has invited you to his farm! Visit him by tapping your Mailbox.",
-    "prerequisite_order": 33,
-    "prerequisite_id": 9033,
+    "prerequisites_ids": [
+      9033
+    ],
     "objectives": [
       {
         "text": "Visit Harold at his farm",
@@ -730,10 +858,14 @@
     "order": 35,
     "internal_id": 9035,
     "quest_name": "Humphrey and the Cereal",
+    "min_level": 8,
+    "plot_id": 6019,
     "text_box": "Have you ever tried Corn Cereal? Oh, how odd it must sound to a city person! But you'd be very wrong to say no. Allow me.",
     "description": "Humphrey insists that you try his Corn Cereal recipe!",
-    "prerequisite_order": 19,
-    "prerequisite_id": 9019,
+    "prerequisites_ids": [
+      9000,
+      9019
+    ],
     "objectives": [
       {
         "text": "Make Corn Cereal",
@@ -751,10 +883,13 @@
     "order": 36,
     "internal_id": 9036,
     "quest_name": "White Gold",
+    "min_level": 8,
+    "plot_id": 3006,
     "text_box": "I think it's time to sweeten our lives with some Sugar! We should grow some Sugar Cane!",
     "description": "Gather some Sugar from Sugar Canes.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9035
+    ],
     "objectives": [
       {
         "text": "Plant Sugar Cane",
@@ -772,10 +907,14 @@
     "order": 37,
     "internal_id": 9037,
     "quest_name": "White Gold",
+    "min_level": 8,
+    "plot_id": 6007,
     "text_box": "Alas, we cannot use the Sugar as it is; we have to make it into White Sugar first!",
     "description": "What you collect from Sugar Canes needs to be made into White Sugar.",
-    "prerequisite_order": 36,
-    "prerequisite_id": 9036,
+    "prerequisites_ids": [
+      9000,
+      9036
+    ],
     "objectives": [
       {
         "text": "Make White Sugar",
@@ -793,10 +932,13 @@
     "order": 38,
     "internal_id": 9038,
     "quest_name": "Sugar for a Neighbor",
+    "min_level": 8,
+    "plot_id": 4034,
     "text_box": "One kind gesture can go a long way! Let's offer our neighbors a little White Sugar, shall we?",
     "description": "Offer some Sugar to a neighbor! Tap your Mailbox.",
-    "prerequisite_order": 36,
-    "prerequisite_id": 9036,
+    "prerequisites_ids": [
+      9036
+    ],
     "objectives": [
       {
         "text": "Send White Sugar to a neighbor",
@@ -814,10 +956,13 @@
     "order": 39,
     "internal_id": 9039,
     "quest_name": "Checking In",
+    "min_level": 8,
+    "plot_id": 99990,
     "text_box": "It's been a while since we saw our good friend Harold. You should pay him a visit, just to see if he needs help with something!",
     "description": "How's Harold these days? Visit his farm and help him with his work!",
-    "prerequisite_order": 38,
-    "prerequisite_id": 9038,
+    "prerequisites_ids": [
+      9038
+    ],
     "objectives": [
       {
         "text": "Visit Harold's farm",
@@ -835,10 +980,13 @@
     "order": 40,
     "internal_id": 9040,
     "quest_name": "A Hearty Breakfast",
+    "min_level": 9,
+    "plot_id": 6008,
     "text_box": "You know what would hit the spot right now? Pancakes! Pancakes are one of my favorite breakfast foods, you know!",
     "description": "Humphrey is craving some Pancakes! Try making some for him.",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Pancakes",
@@ -856,10 +1004,13 @@
     "order": 41,
     "internal_id": 9041,
     "quest_name": "Happy Little Flowers",
+    "min_level": 9,
+    "plot_id": 7048,
     "text_box": "As much as I like having a healthy farm, sometimes pretty flowers are all I need!",
     "description": "Plant flowers! You'll find them in the Market.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9040
+    ],
     "objectives": [
       {
         "text": "Plant Daisies",
@@ -877,10 +1028,13 @@
     "order": 42,
     "internal_id": 9042,
     "quest_name": "Shipping Sheep",
+    "min_level": 9,
+    "plot_id": 2052,
     "text_box": "We could use some Sheep around here! Sheep are just wonderful to have on a farm, don't you think?",
     "description": "You can find Navajo Lambs in the Market.",
-    "prerequisite_order": 41,
-    "prerequisite_id": 9041,
+    "prerequisites_ids": [
+      9041
+    ],
     "objectives": [
       {
         "text": "Buy Navajo Lamb",
@@ -898,10 +1052,13 @@
     "order": 43,
     "internal_id": 9048,
     "quest_name": "The Shady Acre",
+    "min_level": 5,
+    "plot_id": 2,
     "text_box": "Today, we are going to reclaim more of your family's lost land and expand the farm!",
     "description": "Claim the land that once belonged to your family! Tap the Shady Acre to add it to your domain.",
-    "prerequisite_order": 24,
-    "prerequisite_id": 9030,
+    "prerequisites_ids": [
+      9030
+    ],
     "objectives": [
       {
         "text": "Expand your domain to the Shady Acre",
@@ -915,10 +1072,13 @@
     "order": 44,
     "internal_id": 9043,
     "quest_name": "Trophy Triage",
+    "min_level": 9,
+    "plot_id": 25007,
     "text_box": "You know, kid, many of your uncle's trophies are out of place and scattered about. I need your help to retrieve them!",
     "description": "Retrieve Uncle Hal's trophies. Tap the crates to collect them! Not all of them may be useful, though...",
-    "prerequisite_order": 5,
-    "prerequisite_id": 9005,
+    "prerequisites_ids": [
+      9005
+    ],
     "objectives": [
       {
         "text": "Retrieve Uncle Hal's \"Best Animal Feed\" Trophy",
@@ -940,10 +1100,13 @@
     "order": 45,
     "internal_id": 9044,
     "quest_name": "A (Country) Road to Glory",
+    "min_level": 9,
+    "plot_id": 10003,
     "text_box": "Uncle Hal was very proud whenever he got a new trophy. Trophies are good to remind you that excellence is always rewarded!",
     "description": "You can get many Trophies in the Manor Farm. For more info about a Trophy, check the Trophy Room!",
-    "prerequisite_order": 44,
-    "prerequisite_id": 9043,
+    "prerequisites_ids": [
+      9043
+    ],
     "objectives": [
       {
         "text": "Use the Trophy Room to check your Trophies",
@@ -961,10 +1124,14 @@
     "order": 46,
     "internal_id": 9045,
     "quest_name": "A Prized Flock",
+    "min_level": 10,
+    "plot_id": 2999,
     "text_box": "You know what? I'll give you a tip on the livestock. When you've taken good care of an animal, it'll become Prized, earning you extra Coins!",
     "description": "You'll reap more coins by taking good care of your animals!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049,
+      9048
+    ],
     "objectives": [
       {
         "text": "Have Prized Animal",
@@ -982,10 +1149,13 @@
     "order": 47,
     "internal_id": 9046,
     "quest_name": "Just Desserts",
+    "min_level": 10,
+    "plot_id": 6030,
     "text_box": "The nearby village is organizing a dessert contest! Prepare the saucepan and ready the spatula: Today, we take no prisoners!",
     "description": "There's a dessert contest in the nearby village! Show the world what you're made of! Er, rather, what you can make.",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Apple Tart",
@@ -1007,10 +1177,13 @@
     "order": 48,
     "internal_id": 9047,
     "quest_name": "A Friendly Neighborhood",
+    "min_level": 10,
+    "plot_id": 99990,
     "text_box": "Request an item from Harold, but be reasonable! The more valuable an item in terms of Coins, the closer your friendship needs to be.",
     "description": "Request an item from Harold. Check its value in Coins: If it is too high and if Harold doesn't like you, it won't work.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9046
+    ],
     "objectives": [
       {
         "text": "Request and receive something from Harold",
@@ -1032,10 +1205,13 @@
     "order": 49,
     "internal_id": 9049,
     "quest_name": "A Deathly Fright",
+    "min_level": 10,
+    "plot_id": 25010,
     "text_box": "Hey, you! Whoa, don't be afraid; it's just me, your uncle Hal! As you can see, I never really left the farm. But first things first; help me find my stuff!",
     "description": "Your Uncle Hal is back from the afterlife! First, you need to help him get his equipment back. Tap the crates!",
-    "prerequisite_order": 43,
-    "prerequisite_id": 9048,
+    "prerequisites_ids": [
+      9048
+    ],
     "objectives": [
       {
         "text": "Retrieve Uncle Hal's Lucky Horseshoe",
@@ -1057,10 +1233,13 @@
     "order": 50,
     "internal_id": 9050,
     "quest_name": "A Lively Ghost Farm",
+    "min_level": 10,
+    "plot_id": 7029,
     "text_box": "Wait. Uncle Hal is back... as a ghost? Sure. Okay. Hey, can you take care of things for a moment? I think I need to lie down.",
     "description": "Run the farm for a little while. Unlike you, not everyone is ready to talk to ghosts!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Buy Scarecrow",
@@ -1082,10 +1261,14 @@
     "order": 51,
     "internal_id": 9051,
     "quest_name": "A Genius Idea",
+    "min_level": 11,
+    "plot_id": 6008,
     "text_box": "My inner genius has, again, given me a most interesting idea. In order to perfect our pancake recipe, we shall add... Strawberries!",
     "description": "Humphrey's idea is to add Strawberries to Pancakes! For this, you need Pancakes... and Strawberries!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9053
+    ],
     "objectives": [
       {
         "text": "Make Pancakes",
@@ -1107,10 +1290,14 @@
     "order": 52,
     "internal_id": 9052,
     "quest_name": "A Deluxifier?",
+    "min_level": 11,
+    "plot_id": 4110,
     "text_box": "If we want to raise enough money to fix the Manor, we must be more than chefs; we must be magicians. It is time we spoke of... Deluxifiers!",
     "description": "Deluxifiers are found on Super Animals and increase a recipe's value. To cook a Deluxe dish, use a Deluxifier on the base recipe!",
-    "prerequisite_order": 51,
-    "prerequisite_id": 9051,
+    "prerequisites_ids": [
+      9097,
+      9051
+    ],
     "objectives": [
       {
         "text": "Find Deluxifier",
@@ -1132,10 +1319,13 @@
     "order": 53,
     "internal_id": 9053,
     "quest_name": "Merry Berries",
+    "min_level": 11,
+    "plot_id": 3007,
     "text_box": "Strawberry season is here! What makes people happier than a big, red, shiny strawberry? Nothing, that's what!",
     "description": "Strawberries are now available for planting.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9052
+    ],
     "objectives": [
       {
         "text": "Harvest Strawberry",
@@ -1157,10 +1347,13 @@
     "order": 54,
     "internal_id": 9054,
     "quest_name": "Fancy Fences",
+    "min_level": 11,
+    "plot_id": 7007,
     "text_box": "The farm could use a little organization. A few Fences should help keep things together!",
     "description": "Get organized! Buy and place Fences from the Market.",
-    "prerequisite_order": 53,
-    "prerequisite_id": 9053,
+    "prerequisites_ids": [
+      9053
+    ],
     "objectives": [
       {
         "text": "Place White Fence A",
@@ -1178,10 +1371,13 @@
     "order": 55,
     "internal_id": 9055,
     "quest_name": "Crop Seller",
+    "min_level": 11,
+    "plot_id": 0,
     "text_box": "There's more to being a farmer than growing crops. You gotta be able to sell 'em, too. C'mon, give it a whirl.",
     "description": "Are you a good salesperson? Try and sell 500 Coins' worth of goods at the Sales Desk!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Earn Coins\nwith the Sales Desk",
@@ -1195,10 +1391,15 @@
     "order": 56,
     "internal_id": 9056,
     "quest_name": "Not Just a Hobby!",
+    "min_level": 11,
+    "plot_id": 5000,
     "text_box": "Collections aren't just a hobby! I collect things because I never know what I'm going to need. I keep them together because... I don't know -- I'm organized!",
     "description": "Collection items can be found while harvesting!",
-    "prerequisite_order": 55,
-    "prerequisite_id": 9055,
+    "prerequisites_ids": [
+      9049,
+      9004,
+      9055
+    ],
     "objectives": [
       {
         "text": "Complete the Bottles Collection",
@@ -1216,10 +1417,13 @@
     "order": 57,
     "internal_id": 9057,
     "quest_name": "Feeling Fruitful",
+    "min_level": 12,
+    "plot_id": 3006,
     "text_box": "Well, it seems that Humphrey has resumed his culinary experiments. That can only mean one thing: We need more fruit!",
     "description": "You're going to need more fruit if you want to help Humphrey. Much more.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9056
+    ],
     "objectives": [
       {
         "text": "Harvest Sugar Cane",
@@ -1241,10 +1445,15 @@
     "order": 58,
     "internal_id": 9058,
     "quest_name": "Our Little Secret",
+    "min_level": 12,
+    "plot_id": 6034,
     "text_box": "People are wondering why our cooking is so good. Sure, natural talent and hard work help a lot, but we also have... Deluxifiers!",
     "description": "Time for some more deluxe cuisine! Super Animals sometimes give Deluxifiers. To cook a Deluxe dish, use a Deluxifier on the base recipe!",
-    "prerequisite_order": 57,
-    "prerequisite_id": 9057,
+    "prerequisites_ids": [
+      9000,
+      9057,
+      9052
+    ],
     "objectives": [
       {
         "text": "Make Apple Jam",
@@ -1262,10 +1471,13 @@
     "order": 59,
     "internal_id": 9064,
     "quest_name": "The Quiet Acre",
+    "min_level": 5,
+    "plot_id": 3,
     "text_box": "It's time to expand our domain even farther, and the Quiet Acre is our next stop! What will we find there? Peace and quiet, I bet!",
     "description": "Claim the land that once belonged to your family! Tap the Quiet Acre to add it to your domain!",
-    "prerequisite_order": 43,
-    "prerequisite_id": 9048,
+    "prerequisites_ids": [
+      9048
+    ],
     "objectives": [
       {
         "text": "Expand your domain to the Quiet Acre",
@@ -1279,10 +1491,13 @@
     "order": 60,
     "internal_id": 9059,
     "quest_name": "Aviary Variety",
+    "min_level": 12,
+    "plot_id": 2009,
     "text_box": "You know, Chickens come in a bunch of different varieties. Let's try to mix things up. After all, variety is very important!",
     "description": "You can find Chicks in the Market. Get some!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9064
+    ],
     "objectives": [
       {
         "text": "Get Golden Chicken",
@@ -1300,10 +1515,13 @@
     "order": 61,
     "internal_id": 9060,
     "quest_name": "Chicken Run",
+    "min_level": 12,
+    "plot_id": 99991,
     "text_box": "I heard that Edwina's chickens have all run away! That's very sad. Let's help her out.",
     "description": "Edwina's chickens ran away! Help her rebuild with some Eggs.",
-    "prerequisite_order": 60,
-    "prerequisite_id": 9059,
+    "prerequisites_ids": [
+      9059
+    ],
     "objectives": [
       {
         "text": "Have a Relationship Level of 1 Heart with Edwina",
@@ -1321,10 +1539,13 @@
     "order": 62,
     "internal_id": 9061,
     "quest_name": "Uncle Hal's Toiletries",
+    "min_level": 12,
+    "plot_id": 25013,
     "text_box": "I can't find my toiletries anywhere! Nobody would've gotten rid of them while I was gone, would they?",
     "description": "Someone has taken Uncle Hal's toiletries! To find them, tap the crates.",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Retrieve Uncle Hal's Bar of Soap!",
@@ -1346,10 +1567,13 @@
     "order": 63,
     "internal_id": 9062,
     "quest_name": "Priceless Advice",
+    "min_level": 12,
+    "plot_id": 4036,
     "text_box": "Hello, nice to meet you! I'm Leon. I run the village hotel. I hear your country cooking is excellent! Can I try some? I could always use new suppliers!",
     "description": "Deliver Leon's order for his hotel. To do so, simply sell your resources at the Sales Desk.",
-    "prerequisite_order": 62,
-    "prerequisite_id": 9061,
+    "prerequisites_ids": [
+      9061
+    ],
     "objectives": [
       {
         "text": "Sell Strawberry Pancakes",
@@ -1371,10 +1595,13 @@
     "order": 64,
     "internal_id": 9063,
     "quest_name": "Saving the Farm",
+    "min_level": 13,
+    "plot_id": 0,
     "text_box": "One key to my success, child, was to be really careful with Coins. Most people say that Coins come and go. I say Coins come and stay!",
     "description": "Sell items or complete Tasks to save up 2,000 Coins.",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Accumulate Coins!",
@@ -1388,10 +1615,14 @@
     "order": 65,
     "internal_id": 9065,
     "quest_name": "The Pond",
+    "min_level": 13,
+    "plot_id": 1,
     "text_box": "Ah, the pond! I remember fishing here when I was around. Sometimes I'd catch unexpected treasures!",
     "description": "The Pond allows you to fish using Fishing Poles. Use Intermediate and Advanced Fishing Poles to find better treasure in the pond!",
-    "prerequisite_order": 59,
-    "prerequisite_id": 9064,
+    "prerequisites_ids": [
+      9049,
+      9064
+    ],
     "objectives": [
       {
         "text": "Fish in the Pond",
@@ -1405,10 +1636,13 @@
     "order": 66,
     "internal_id": 9066,
     "quest_name": "Sugar Rush",
+    "min_level": 13,
+    "plot_id": 3006,
     "text_box": "We need more Sugar, and when I say more, I mean a lot more! Better free some space in the Barn, if you ask me!",
     "description": "Harvest more Sugar Cane for Cindy! More!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9065
+    ],
     "objectives": [
       {
         "text": "Harvest Sugar Cane",
@@ -1426,10 +1660,13 @@
     "order": 67,
     "internal_id": 9067,
     "quest_name": "Caramel Goodness",
+    "min_level": 13,
+    "plot_id": 6006,
     "text_box": "Boy oh boy, do I love Caramel! Who other than a truly kind person could have created a thing so delicious?",
     "description": "Make White Sugar, Brown Sugar, and Caramel.",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Brown Sugar",
@@ -1451,10 +1688,13 @@
     "order": 68,
     "internal_id": 9068,
     "quest_name": "The Pearl Necklace",
+    "min_level": 13,
+    "plot_id": 25016,
     "text_box": "It looks like a lot of my things have been lost while I was away. I'm looking for something special: my mother's pearl necklace. Can you help me?",
     "description": "Tap the crates to collect them!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Retrieve all 10 pearls from Uncle Hal's mother's necklace.",
@@ -1468,10 +1708,13 @@
     "order": 69,
     "internal_id": 9069,
     "quest_name": "Leon's Return",
+    "min_level": 14,
+    "plot_id": 4058,
     "text_box": "Hello, remember me? Leon, from the hotel! My customers really liked your delivery last time! Can I place another order?",
     "description": "Deliver Leon's order for his hotel! To do so, simply sell the resources at the Sales Desk.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9068
+    ],
     "objectives": [
       {
         "text": "Sell Caramel",
@@ -1493,10 +1736,13 @@
     "order": 70,
     "internal_id": 9070,
     "quest_name": "Pretty Pots",
+    "min_level": 14,
+    "plot_id": 5001,
     "text_box": "I keep finding tiny pieces of pottery in the fields. I wish I had more. They would make a very pretty collection!",
     "description": "Collection items can be found while harvesting.",
-    "prerequisite_order": 69,
-    "prerequisite_id": 9069,
+    "prerequisites_ids": [
+      9069
+    ],
     "objectives": [
       {
         "text": "Complete the Pottery Collection",
@@ -1514,10 +1760,13 @@
     "order": 71,
     "internal_id": 9071,
     "quest_name": "A Good Brushing",
+    "min_level": 14,
+    "plot_id": 2999,
     "text_box": "Here's a little trick: Animals like attention. If you brush them while they're producing resources, you will get twice the resources! Neat, huh?",
     "description": "Sometimes, while producing resources, Animals will want to be cleaned. Oblige them and you will get twice the resources!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Collect from Animal",
@@ -1531,10 +1780,13 @@
     "order": 72,
     "internal_id": 9072,
     "quest_name": "Melts in Your Mouth",
+    "min_level": 14,
+    "plot_id": 6022,
     "text_box": "I am on a culinary quest. I seek a snack! One you can have while working in the fields. Something that is tasty, chewy and sweet... Hmm...",
     "description": "Humphrey is looking for a new snack. Help him satisfy his sweet tooth!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Caramel Chews",
@@ -1552,10 +1804,13 @@
     "order": 73,
     "internal_id": 9073,
     "quest_name": "The Farming Network",
+    "min_level": 14,
+    "plot_id": 99990,
     "text_box": "Man, more and more neighbors keep introducing themselves. This is great! Have you met Rosco yet?",
     "description": "Send presents to your neighbors! Tap your Mailbox!",
-    "prerequisite_order": 72,
-    "prerequisite_id": 9072,
+    "prerequisites_ids": [
+      9072
+    ],
     "objectives": [
       {
         "text": "Send present to Harold",
@@ -1577,10 +1832,13 @@
     "order": 74,
     "internal_id": 9074,
     "quest_name": "Every Little Bit Helps",
+    "min_level": 14,
+    "plot_id": 99991,
     "text_box": "Have you visited Edwina and Rosco already? I wonder how their farms are... One thing is for sure: They don't have an awesome Manor like us!",
     "description": "Visit Edwina and Rosco. Tap your Mailbox!",
-    "prerequisite_order": 73,
-    "prerequisite_id": 9073,
+    "prerequisites_ids": [
+      9073
+    ],
     "objectives": [
       {
         "text": "Visit Edwina on her farm",
@@ -1598,10 +1856,13 @@
     "order": 75,
     "internal_id": 9075,
     "quest_name": "Merry Meringue",
+    "min_level": 15,
+    "plot_id": 6029,
     "text_box": "Make Meringue",
     "description": "If you wish to earn your place in the Farmer High Society, it is essential that you know how to cook Meringue!",
-    "prerequisite_order": 72,
-    "prerequisite_id": 9072,
+    "prerequisites_ids": [
+      9072
+    ],
     "objectives": [
       {
         "text": "Make Lemon Meringue",
@@ -1615,10 +1876,13 @@
     "order": 76,
     "internal_id": 9076,
     "quest_name": "A Little Originality",
+    "min_level": 15,
+    "plot_id": 2031,
     "text_box": "Get Wattle Pig",
     "description": "I know a thing or two about livestock... Not all Pigs are pink! There can be white ones, black ones, spotted ones... Let me show you!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Collect from your Wattle Pig",
@@ -1632,10 +1896,14 @@
     "order": 77,
     "internal_id": 9077,
     "quest_name": "Cindy's Busy Days",
+    "min_level": 15,
+    "plot_id": 2999,
     "text_box": "Feed Animal",
     "description": "Would you mind watching the animals for a minute? I have to go check on Uncle Hal... I think he got stuck in the linen closet again.",
-    "prerequisite_order": 76,
-    "prerequisite_id": 9076,
+    "prerequisites_ids": [
+      9049,
+      9076
+    ],
     "objectives": [
       {
         "text": "Collect from your Animal",
@@ -1649,10 +1917,13 @@
     "order": 78,
     "internal_id": 9078,
     "quest_name": "Italian Cuisine",
+    "min_level": 15,
+    "plot_id": 6051,
     "text_box": "Make Noodles",
     "description": "How about we bring a taste of Italy to the farm? Let's see what we can do!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Lemon Tart",
@@ -1666,10 +1937,13 @@
     "order": 79,
     "internal_id": 9079,
     "quest_name": "Spreading Joy",
+    "min_level": 15,
+    "plot_id": 4101,
     "text_box": "Send Noodles to a neighbor",
     "description": "Not all of our neighbors are lucky enough to have Humphrey and the Manor's Kitchen! Let's share the culinary wealth!",
-    "prerequisite_order": 78,
-    "prerequisite_id": 9078,
+    "prerequisites_ids": [
+      9078
+    ],
     "objectives": [
       {
         "text": "Send Lemon Tart to a neighbor",
@@ -1683,10 +1957,13 @@
     "order": 80,
     "internal_id": 9080,
     "quest_name": "The Center of Attention",
+    "min_level": 15,
+    "plot_id": 99992,
     "text_box": "Have a Relationship Level of 2 Hearts with Rosco",
     "description": "Rosco's a nice guy, don't you think? I think he likes you very much! Too bad we don't hang out more, though.",
-    "prerequisite_order": 79,
-    "prerequisite_id": 9079,
+    "prerequisites_ids": [
+      9079
+    ],
     "objectives": [
       {
         "text": "The Fox and the Hound",
@@ -1700,10 +1977,13 @@
     "order": 81,
     "internal_id": 9081,
     "quest_name": "A Very Picky Ghost",
+    "min_level": 16,
+    "plot_id": 7009,
     "text_box": "I have this list of things I have to get for the farm, but I have to help Walt clean the Fertilizer Plane first. Can you give me a hand?",
     "description": "Get some decorations from the Market for Cindy.",
-    "prerequisite_order": 23,
-    "prerequisite_id": 9023,
+    "prerequisites_ids": [
+      9023
+    ],
     "objectives": [
       {
         "text": "Place Wooden Fence A",
@@ -1725,10 +2005,13 @@
     "order": 82,
     "internal_id": 9082,
     "quest_name": "A Very Picky Ghost",
+    "min_level": 16,
+    "plot_id": 4002,
     "text_box": "Here's today's list of groceries for you! I'm going to help Uncle Hal get his sheets ready. He's picky about 'em. Needs holes in them for some reason.",
     "description": "Harvest or collect the resources on the list while Cindy is cutting holes in a sheet for Uncle Hal!",
-    "prerequisite_order": 81,
-    "prerequisite_id": 9081,
+    "prerequisites_ids": [
+      9081
+    ],
     "objectives": [
       {
         "text": "Collect Milk",
@@ -1750,10 +2033,13 @@
     "order": 83,
     "internal_id": 9083,
     "quest_name": "Noodles for Supper",
+    "min_level": 16,
+    "plot_id": 6051,
     "text_box": "Hello! What would you like to have for dinner tonight? I think we're having Rosco. What? No, as a guest! Does he like noodles?",
     "description": "Rosco is having dinner with your household tonight! Help Humphrey prepare supper.",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Noodles",
@@ -1775,10 +2061,13 @@
     "order": 84,
     "internal_id": 9084,
     "quest_name": "Got You Covered",
+    "min_level": 16,
+    "plot_id": 9999,
     "text_box": "I wonder how our neighbors have been doing since last week's storm? It rained pretty bad. We should go see if they need anything.",
     "description": "Perform helping actions on your neighbors' farms! Tap your Mailbox!",
-    "prerequisite_order": 83,
-    "prerequisite_id": 9083,
+    "prerequisites_ids": [
+      9083
+    ],
     "objectives": [
       {
         "text": "Perform helping actions on a neighbor's farm",
@@ -1796,10 +2085,14 @@
     "order": 85,
     "internal_id": 9085,
     "quest_name": "The State's Best Breeder",
+    "min_level": 17,
+    "plot_id": 25017,
     "text_box": "You've restored the Manor's Gallery, but where have all the paintings gone?",
     "description": "The portraits that used to hang in the Gallery are scattered around. Find them and put them back in the Gallery!",
-    "prerequisite_order": 6,
-    "prerequisite_id": 9006,
+    "prerequisites_ids": [
+      9049,
+      9006
+    ],
     "objectives": [
       {
         "text": "Retrieve the Portrait of Ma",
@@ -1821,10 +2114,13 @@
     "order": 86,
     "internal_id": 9086,
     "quest_name": "The Root of It",
+    "min_level": 17,
+    "plot_id": 4086,
     "text_box": "Hello! My customers really like your cuisine. It's like a return to roots! Although I hope you don't literally use roots in it. Who would ever eat roots?",
     "description": "Leon's customers love your cuisine! Deliver Leon's next order for his hotel using the Sales Desk!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9085
+    ],
     "objectives": [
       {
         "text": "Sell Frosting",
@@ -1846,10 +2142,13 @@
     "order": 87,
     "internal_id": 9087,
     "quest_name": "Keep 'em Coming!",
+    "min_level": 17,
+    "plot_id": 4002,
     "text_box": "With this Leon guy ordering from us, we're going to need more resources. It's nice that we're getting a little gratitude though, right?",
     "description": "Leon's orders are getting more substantial. It would be a good idea to stock up.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9086
+    ],
     "objectives": [
       {
         "text": "Collect Milk",
@@ -1871,10 +2170,13 @@
     "order": 88,
     "internal_id": 9088,
     "quest_name": "Get Your Goat",
+    "min_level": 17,
+    "plot_id": 2042,
     "text_box": "I think we have enough space on our farm to welcome a new friend! And this new friend is going to be... a Saanen Goat!",
     "description": "You can find Saanen Kids in the Market.",
-    "prerequisite_order": 87,
-    "prerequisite_id": 9087,
+    "prerequisites_ids": [
+      9087
+    ],
     "objectives": [
       {
         "text": "Buy Saanen Kid",
@@ -1892,10 +2194,13 @@
     "order": 89,
     "internal_id": 9097,
     "quest_name": "The Calm Acre",
+    "min_level": 5,
+    "plot_id": 4,
     "text_box": "After the Pretty Acre, the Shady Acre and the Quiet Acre, it is time to recapture the Calm Acre! Let's go!",
     "description": "Expand your domain to the Calm Acre!",
-    "prerequisite_order": 59,
-    "prerequisite_id": 9064,
+    "prerequisites_ids": [
+      9064
+    ],
     "objectives": [
       {
         "text": "Expand to the Calm Acre",
@@ -1909,10 +2214,13 @@
     "order": 90,
     "internal_id": 9089,
     "quest_name": "Say Cheese",
+    "min_level": 17,
+    "plot_id": 6013,
     "text_box": "Who doesn't like cheese? No one, I say! Can you craft some fine cheese?",
     "description": "Make Cheese in the Manor's Kitchen!",
-    "prerequisite_order": 87,
-    "prerequisite_id": 9087,
+    "prerequisites_ids": [
+      9087
+    ],
     "objectives": [
       {
         "text": "Make Cheese",
@@ -1934,10 +2242,13 @@
     "order": 91,
     "internal_id": 9090,
     "quest_name": "5-5-5-E-D-W-I-N-A",
+    "min_level": 17,
+    "plot_id": 99991,
     "text_box": "Edwina is grateful that you helped her when her chickens ran away. She said that if you needed anything, you could give her a call!",
     "description": "Try to request something from Edwina. Requesting things from your neighbors works better if they like you!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9089
+    ],
     "objectives": [
       {
         "text": "Request and receive something from Edwina",
@@ -1959,10 +2270,13 @@
     "order": 92,
     "internal_id": 9091,
     "quest_name": "Fleeting Memories",
+    "min_level": 18,
+    "plot_id": 7057,
     "text_box": "I have the feeling that I had something important to tell you, but I forgot. Am I losing my memory? I need something to relax!",
     "description": "Uncle Hal might be losing his memory as a side effect of becoming a ghost. He needs to relax.",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Place Rocking Chair",
@@ -1984,10 +2298,13 @@
     "order": 93,
     "internal_id": 9092,
     "quest_name": "Pleasant Shadows",
+    "min_level": 18,
+    "plot_id": 3012,
     "text_box": "Oh, it's really hot these days. I can barely work. Do you know what I'd like to have? Trees! We could use a little shade!",
     "description": "Buy and plant some Trees from the Market.",
-    "prerequisite_order": 92,
-    "prerequisite_id": 9091,
+    "prerequisites_ids": [
+      9091
+    ],
     "objectives": [
       {
         "text": "Plant Apple Tree",
@@ -2009,10 +2326,13 @@
     "order": 94,
     "internal_id": 9093,
     "quest_name": "Madame Isabella",
+    "min_level": 18,
+    "plot_id": 4009,
     "text_box": "Hello, I am Madame Isabella, the fortune teller! I read the future in crops! I see... Wheat... Lettuce... DOOM! Er, Sugar. Sorry, misread that one.",
     "description": "You've met Isabella, the fortune teller! She reads the future in crops. Deliver her order using the Sales Desk.",
-    "prerequisite_order": 92,
-    "prerequisite_id": 9091,
+    "prerequisites_ids": [
+      9091
+    ],
     "objectives": [
       {
         "text": "Sell Wheat",
@@ -2034,10 +2354,13 @@
     "order": 95,
     "internal_id": 9094,
     "quest_name": "Farm Superstars",
+    "min_level": 18,
+    "plot_id": 2999,
     "text_box": "Nice job with the animals so far, but you've got to show them off a little more. It's not about Coins, it's about them feeling... important!",
     "description": "Animals can become Prized, earning you Coins! Here's a tip: Chickens become Prized most quickly.",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Have Prized Animal",
@@ -2055,10 +2378,13 @@
     "order": 96,
     "internal_id": 9095,
     "quest_name": "Must-See Cuisine",
+    "min_level": 18,
+    "plot_id": 6013,
     "text_box": "I hear you've got someone from the TV coming over to take a look at your Prized Animals. We must prepare a special dinner for them!",
     "description": "A newscaster is coming over to film your Prized Animals. Dinner must not disappoint!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Cheese",
@@ -2080,10 +2406,14 @@
     "order": 97,
     "internal_id": 9096,
     "quest_name": "The Heat Wave",
+    "min_level": 18,
+    "plot_id": 99993,
     "text_box": "It looks like we're not the only ones suffering from the heat wave. Some of our friends' farms have not been spared. Please check on them!",
     "description": "Increase your Relationship level with a neighbor. Also, to cook a Deluxe dish, add a Deluxifier to the base recipe!",
-    "prerequisite_order": 96,
-    "prerequisite_id": 9095,
+    "prerequisites_ids": [
+      9095,
+      9052
+    ],
     "objectives": [
       {
         "text": "Have a Relationship Level of 2 Hearts with Charlotte",
@@ -2101,10 +2431,13 @@
     "order": 98,
     "internal_id": 9098,
     "quest_name": "The Tomato Festival",
+    "min_level": 19,
+    "plot_id": 3001,
     "text_box": "The school's going to need Tomatoes for their Tomato Festival! Lots of them. And no, I don't know what they do with them.",
     "description": "The school is having a Tomato Festival and has asked you to provide the necessary resources.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9096
+    ],
     "objectives": [
       {
         "text": "Harvest Tomato",
@@ -2122,10 +2455,14 @@
     "order": 99,
     "internal_id": 9099,
     "quest_name": "The \"Bushy\" Acre",
+    "min_level": 19,
+    "plot_id": 25000,
     "text_box": "Hmm, lots of bushes around here... They should've called this place \"The Bushy Acre\" instead of the Calm Acre!",
     "description": "The Calm Acre is full of bushes and rocks. Tap an obstacle to clear it!",
-    "prerequisite_order": 89,
-    "prerequisite_id": 9097,
+    "prerequisites_ids": [
+      9097,
+      9098
+    ],
     "objectives": [
       {
         "text": "Clear Mid-sized Rock from your land",
@@ -2143,10 +2480,13 @@
     "order": 100,
     "internal_id": 9100,
     "quest_name": "Time To Tune In!",
+    "min_level": 19,
+    "plot_id": 2998,
     "text_box": "Remember when I said that chickens had their own language? Well, I want to tune in! But for that, I need some practice...",
     "description": "Cindy wants to learn chickenspeak! You can help her by getting Chickens from the Market.",
-    "prerequisite_order": 52,
-    "prerequisite_id": 9052,
+    "prerequisites_ids": [
+      9052
+    ],
     "objectives": [
       {
         "text": "Get Chicken",
@@ -2164,10 +2504,14 @@
     "order": 101,
     "internal_id": 9101,
     "quest_name": "Peculiar Cravings",
+    "min_level": 19,
+    "plot_id": 6014,
     "text_box": "There's a strong demand for cheese these days. It's peculiar, as during a heat wave you would rather expect people to crave lemonade...",
     "description": "Make Goat Cheese in the Manor's Kitchen!",
-    "prerequisite_order": 100,
-    "prerequisite_id": 9100,
+    "prerequisites_ids": [
+      9000,
+      9100
+    ],
     "objectives": [
       {
         "text": "Make Goat Cheese",
@@ -2189,10 +2533,13 @@
     "order": 102,
     "internal_id": 9102,
     "quest_name": "Delicious Duo",
+    "min_level": 20,
+    "plot_id": 6002,
     "text_box": "I am pleased to see that the new master of the Manor is such a dedicated chef. You and I are an astonishing team!",
     "description": "Humphrey thinks you're a very dedicated chef. But there's still a lot of work for both of you!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Butter",
@@ -2214,10 +2561,14 @@
     "order": 103,
     "internal_id": 9103,
     "quest_name": "Simple Yet Delicious",
+    "min_level": 20,
+    "plot_id": 6017,
     "text_box": "Some dishes are simple, yet delicious! Take Potato Wedges, for instance. They're easy to make, but very nourishing!",
     "description": "Cook food in the Manor's Kitchen! Potato Wedges!",
-    "prerequisite_order": 102,
-    "prerequisite_id": 9102,
+    "prerequisites_ids": [
+      9105,
+      9102
+    ],
     "objectives": [
       {
         "text": "Make Potato Wedges",
@@ -2231,10 +2582,14 @@
     "order": 104,
     "internal_id": 9104,
     "quest_name": "Animal Heroes",
+    "min_level": 20,
+    "plot_id": 4110,
     "text_box": "By now you must be well acquainted with your Super Animals. But just because they're \"Super\" doesn't mean they don't need attention, too!",
     "description": "Take care of your Super Animals.",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049,
+      9052
+    ],
     "objectives": [
       {
         "text": "Collect Deluxifier from Super Animal",
@@ -2252,10 +2607,13 @@
     "order": 105,
     "internal_id": 9105,
     "quest_name": "Potatoes for Cindy",
+    "min_level": 20,
+    "plot_id": 3008,
     "text_box": "The heat wave is finally gone! Time for us to try some new things. And those new things... are -- wait for it -- are... POTATOES! That's right!",
     "description": "Gather some Potatoes!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9104
+    ],
     "objectives": [
       {
         "text": "Harvest Potatoes",
@@ -2273,10 +2631,13 @@
     "order": 106,
     "internal_id": 9106,
     "quest_name": "Leon Strikes Again",
+    "min_level": 20,
+    "plot_id": 4044,
     "text_box": "Hello, hello! Thank you very much for last time; it was wonderful! Can I place another order?",
     "description": "Deliver Leon's order for his hotel! To do so, use the Sales Desk.",
-    "prerequisite_order": 52,
-    "prerequisite_id": 9052,
+    "prerequisites_ids": [
+      9052
+    ],
     "objectives": [
       {
         "text": "Sell Goat Cheese",
@@ -2294,10 +2655,14 @@
     "order": 107,
     "internal_id": 9107,
     "quest_name": "An Ancient Land",
+    "min_level": 20,
+    "plot_id": 5003,
     "text_box": "You know, the fact that we dig up so many objects while harvesting our crops says a lot about this land. It's ancient, I tell you!",
     "description": "Collection items can be found while harvesting!",
-    "prerequisite_order": 106,
-    "prerequisite_id": 9106,
+    "prerequisites_ids": [
+      9049,
+      9106
+    ],
     "objectives": [
       {
         "text": "Complete the Bones Collection",
@@ -2315,10 +2680,13 @@
     "order": 108,
     "internal_id": 9108,
     "quest_name": "Humphrey & Friends",
+    "min_level": 21,
+    "plot_id": 6017,
     "text_box": "Well, the school called; the chef is sick today. That can only mean one thing: Humphrey & Friends to the rescue! To your cooking stations!",
     "description": "The school's chef is sick today. That can only mean one thing: Humphrey & Friends to the rescue!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Potato Wedges",
@@ -2340,10 +2708,13 @@
     "order": 109,
     "internal_id": 9109,
     "quest_name": "A Potato to Say Hello",
+    "min_level": 21,
+    "plot_id": 4050,
     "text_box": "A new neighbor has just moved in! We should send him a little something to say hello, don't you think?",
     "description": "Send presents to your neighbors! Tap your Mailbox!",
-    "prerequisite_order": 108,
-    "prerequisite_id": 9108,
+    "prerequisites_ids": [
+      9108
+    ],
     "objectives": [
       {
         "text": "Send Potato Wedges to a neighbor",
@@ -2361,10 +2732,13 @@
     "order": 110,
     "internal_id": 9110,
     "quest_name": "A Big Family",
+    "min_level": 21,
+    "plot_id": 9999,
     "text_box": "You shouldn't hesitate to request things from your neighbors from time to time. We're like a big family! Really big, if you count all the animals!",
     "description": "Don't hesitate to request things from your neighbors. Being neighbors is like being part of one big family!",
-    "prerequisite_order": 109,
-    "prerequisite_id": 9109,
+    "prerequisites_ids": [
+      9109
+    ],
     "objectives": [
       {
         "text": "Request and receive something from a neighbor",
@@ -2382,10 +2756,13 @@
     "order": 111,
     "internal_id": 9111,
     "quest_name": "Snack Attack!",
+    "min_level": 21,
+    "plot_id": 7044,
     "text_box": "So I was thinking... Why not have a Snack Stand for when we're working? In case we're feeling hungry!",
     "description": "Buy a Snack Stand from the Market.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9110
+    ],
     "objectives": [
       {
         "text": "Place a Snack Stand",
@@ -2407,10 +2784,13 @@
     "order": 112,
     "internal_id": 9112,
     "quest_name": "Lost Visions",
+    "min_level": 21,
+    "plot_id": 25020,
     "text_box": "I see... Oh, I don't see anything! Where are my crystal ball and my tarot cards? I've lost them! They've got to be somewhere. Please help me!",
     "description": "Find Isabella's divination equipment!",
-    "prerequisite_order": 111,
-    "prerequisite_id": 9111,
+    "prerequisites_ids": [
+      9111
+    ],
     "objectives": [
       {
         "text": "Retrieve Isabella's Crystal Ball",
@@ -2428,10 +2808,13 @@
     "order": 113,
     "internal_id": 9113,
     "quest_name": "Friendship for Food",
+    "min_level": 21,
+    "plot_id": 2994,
     "text_box": "Giving food to your Animals isn't just about nutrition. It's also about showing them that you care. Trust me; I've got a lifetime of experience! More!",
     "description": "Showing your Animals that you care about them is just as important as harvesting crops or restoring the Manor.",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Feed Sheep",
@@ -2449,10 +2832,13 @@
     "order": 114,
     "internal_id": 9114,
     "quest_name": "The Bolognese Festival",
+    "min_level": 22,
+    "plot_id": 4001,
     "text_box": "We're going to need some supplies for our booth at the village's annual Bolognese Festival! All of our friends will be there! Judging us!",
     "description": "It's the Bolognese Festival! That means a lot of Tomatoes, a lot of Wheat, and probably a lot of stains on your clothes.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9113
+    ],
     "objectives": [
       {
         "text": "Collect Egg",
@@ -2474,10 +2860,14 @@
     "order": 115,
     "internal_id": 9115,
     "quest_name": "Coins for the Manor",
+    "min_level": 22,
+    "plot_id": 0,
     "text_box": "If you want to restore this manor of yours, you're going to need Coins. Buckets of them!",
     "description": "Restoring new rooms is expensive. Use the Sales Desk to sell goods!",
-    "prerequisite_order": 114,
-    "prerequisite_id": 9114,
+    "prerequisites_ids": [
+      9049,
+      9114
+    ],
     "objectives": [
       {
         "text": "Earn Coins\nwith the Sales Desk",
@@ -2491,10 +2881,15 @@
     "order": 116,
     "internal_id": 9116,
     "quest_name": "Humphrey's Epiphany",
+    "min_level": 22,
+    "plot_id": 6081,
     "text_box": "Do you remember when I mentioned \"Humphrey & Friends\"? That gave me an idea that could help us restore the Manor much faster. Help me and I'll tell you!",
     "description": "Humphrey has got an idea that could help restore the Manor! Meanwhile, help him prepare tonight's supper.",
-    "prerequisite_order": 108,
-    "prerequisite_id": 9108,
+    "prerequisites_ids": [
+      9000,
+      9108,
+      9052
+    ],
     "objectives": [
       {
         "text": "Make Deluxe Cream Spaghetti",
@@ -2512,10 +2907,13 @@
     "order": 117,
     "internal_id": 9117,
     "quest_name": "Crazy Ideas",
+    "min_level": 22,
+    "plot_id": 99992,
     "text_box": "Ah, a letter from Rosco! He's telling us that he's heard rumors that our Manor is haunted! Now where would he get such crazy ideas?",
     "description": "Increase your Relationship level with Rosco!",
-    "prerequisite_order": 52,
-    "prerequisite_id": 9052,
+    "prerequisites_ids": [
+      9052
+    ],
     "objectives": [
       {
         "text": "Have a Relationship Level of 3 Hearts with Rosco",
@@ -2533,10 +2931,13 @@
     "order": 118,
     "internal_id": 9118,
     "quest_name": "Spread the Joy!",
+    "min_level": 23,
+    "plot_id": 4044,
     "text_box": "Yesterday I was talking with Wilbur. You know, the scientist. He said he was a big Cheese fan and I figured, why not send him some?",
     "description": "Send presents to your neighbors! Tap your Mailbox! Also, to cook a Deluxe dish, use a Deluxifier on the base recipe.",
-    "prerequisite_order": 52,
-    "prerequisite_id": 9052,
+    "prerequisites_ids": [
+      9052
+    ],
     "objectives": [
       {
         "text": "Send Goat Cheese to a neighbor",
@@ -2554,10 +2955,13 @@
     "order": 119,
     "internal_id": 9119,
     "quest_name": "There's Science to Do",
+    "min_level": 23,
+    "plot_id": 3004,
     "text_box": "The science teacher asked us to provide some ingredients for her science class. She said the kids loved the experiments!",
     "description": "The science teacher wants to use some freshly harvested ingredients for the class's experiments.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9118
+    ],
     "objectives": [
       {
         "text": "Harvest Wheat",
@@ -2579,10 +2983,13 @@
     "order": 120,
     "internal_id": 9120,
     "quest_name": "Soothing Moo",
+    "min_level": 23,
+    "plot_id": 2024,
     "text_box": "Did you know that Jersey Cows have a soothing moo? They hum softly at sunset for the other cows! Every herd should have at least one. I bet the milk would taste better, too!",
     "description": "You can find Jersey Calves in the Market.",
-    "prerequisite_order": 119,
-    "prerequisite_id": 9119,
+    "prerequisites_ids": [
+      9119
+    ],
     "objectives": [
       {
         "text": "Buy Jersey Calf",
@@ -2600,10 +3007,15 @@
     "order": 121,
     "internal_id": 9121,
     "quest_name": "Humphrey's Restaurant",
+    "min_level": 23,
+    "plot_id": 6014,
     "text_box": "It's time I tell you about my idea: What if we opened a restaurant? I shall be thinking of a name while we're making tonight's dinner!",
     "description": "Humphrey wants to open a restaurant in the Manor's Kitchen. Time for some Deluxe dishes! Use Deluxifiers on the base recipes!",
-    "prerequisite_order": 119,
-    "prerequisite_id": 9119,
+    "prerequisites_ids": [
+      9116,
+      9052,
+      9119
+    ],
     "objectives": [
       {
         "text": "Make Goat Cheese",
@@ -2625,10 +3037,13 @@
     "order": 122,
     "internal_id": 9122,
     "quest_name": "A Man of Heart",
+    "min_level": 23,
+    "plot_id": 10004,
     "text_box": "You know, when he was living here, Uncle Hal used the Library as an attic. You'll find stuff in there until the end of time!",
     "description": "Once in a while, you can tap the Library to collect from it! Each room of the Manor yields different rewards, so try them all!",
-    "prerequisite_order": 7,
-    "prerequisite_id": 9007,
+    "prerequisites_ids": [
+      9007
+    ],
     "objectives": [
       {
         "text": "Collect from the Manor's Library",
@@ -2642,10 +3057,14 @@
     "order": 123,
     "internal_id": 9123,
     "quest_name": "High-Altitude Dinner",
+    "min_level": 23,
+    "plot_id": 4050,
     "text_box": "Hello! I need a hearty dinner for tonight. My guests'll be coming back from around the mountain, and when they come they'll be hungry!",
     "description": "Deliver Leon's order for his hotel. You can do it using the Sales Desk. To cook a Deluxe dish, use a Deluxifier on the base recipe!",
-    "prerequisite_order": 122,
-    "prerequisite_id": 9122,
+    "prerequisites_ids": [
+      9122,
+      9052
+    ],
     "objectives": [
       {
         "text": "Sell Potato Wedges",
@@ -2667,10 +3086,13 @@
     "order": 124,
     "internal_id": 9124,
     "quest_name": "Manly Tears",
+    "min_level": 24,
+    "plot_id": 25022,
     "text_box": "Well, I've tried all the bedsheets in the linen closet, and nothing fits me. Could you help me find my old working clothes?",
     "description": "Uncle Hal is tired of bedsheets and wants to wear real clothes! Tap the crates to collect them.",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Retrieve Uncle Hal's Hat",
@@ -2692,10 +3114,13 @@
     "order": 125,
     "internal_id": 9125,
     "quest_name": "Manly Tears",
+    "min_level": 24,
+    "plot_id": 3011,
     "text_box": "We've just gotten a basketful of Onions. Let's try and plant them! If we can grow some, they'll bring even more flavor to your cooking!",
     "description": "Onions are now available for planting!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9124
+    ],
     "objectives": [
       {
         "text": "Plant Onion",
@@ -2713,10 +3138,13 @@
     "order": 126,
     "internal_id": 9126,
     "quest_name": "It's a Mess",
+    "min_level": 24,
+    "plot_id": 7027,
     "text_box": "I keep losing things. Some of our tools are in this acre, while others are in that acre. We've got to do something!",
     "description": "Walt keeps losing his tools! Help him by getting a Garden Tool Rack from the Market.",
-    "prerequisite_order": 125,
-    "prerequisite_id": 9125,
+    "prerequisites_ids": [
+      9125
+    ],
     "objectives": [
       {
         "text": "Place Garden Tool Rack",
@@ -2734,10 +3162,15 @@
     "order": 127,
     "internal_id": 9127,
     "quest_name": "Eternal Onions",
+    "min_level": 24,
+    "plot_id": 6015,
     "text_box": "Ah, Onions! A symbol of eternity in ancient Egypt. But eternity is a luxury we don't have; we're already late for dinner!",
     "description": "Cook food in the Manor's Kitchen. To cook a Deluxe dish, use a Deluxifier on the base recipe!",
-    "prerequisite_order": 125,
-    "prerequisite_id": 9125,
+    "prerequisites_ids": [
+      9000,
+      9052,
+      9125
+    ],
     "objectives": [
       {
         "text": "Make Onion Soup",
@@ -2755,10 +3188,13 @@
     "order": 128,
     "internal_id": 9128,
     "quest_name": "Balanced Dessert",
+    "min_level": 24,
+    "plot_id": 6043,
     "text_box": "I think we've strayed from desserts for too long. It's time to go back to what we do best! But this time, we'll use fresh fruit instead of sugar.",
     "description": "Cook food in the Manor's Kitchen!",
-    "prerequisite_order": 127,
-    "prerequisite_id": 9127,
+    "prerequisites_ids": [
+      9127
+    ],
     "objectives": [
       {
         "text": "Make Fruit Salad",
@@ -2776,10 +3212,13 @@
     "order": 129,
     "internal_id": 9129,
     "quest_name": "Babysitting",
+    "min_level": 24,
+    "plot_id": 9999,
     "text_box": "There was a big storm last night! Didn't you hear it? Trees fell across the road to the village! Better check on our friends!",
     "description": "Perform helping actions on your neighbors' farms! Tap your Mailbox! Also, to cook a Deluxe dish, use a Deluxifier on the base recipe.",
-    "prerequisite_order": 52,
-    "prerequisite_id": 9052,
+    "prerequisites_ids": [
+      9052
+    ],
     "objectives": [
       {
         "text": "Perform helping actions on a neighbor's farm",
@@ -2801,10 +3240,13 @@
     "order": 130,
     "internal_id": 9130,
     "quest_name": "The Pleasant Acre",
+    "min_level": 5,
+    "plot_id": 5,
     "text_box": "Have you ever heard of the Pleasant Acre? I wonder if it's as pleasant as people say it is!",
     "description": "Claim the land that once belonged to your family! Tap the Pleasant Acre to add it to your domain!",
-    "prerequisite_order": 89,
-    "prerequisite_id": 9097,
+    "prerequisites_ids": [
+      9097
+    ],
     "objectives": [
       {
         "text": "Expand your domain to the Pleasant Acre",
@@ -2818,10 +3260,13 @@
     "order": 131,
     "internal_id": 9131,
     "quest_name": "The Abandoned Silo",
+    "min_level": 25,
+    "plot_id": 25025,
     "text_box": "A big abandoned silo! How exciting! It looks like it's been ages since anybody used it to store anything...",
     "description": "You've found an old Silo! Good find! The maximum amount of Feed you can store has just increased.",
-    "prerequisite_order": 130,
-    "prerequisite_id": 9130,
+    "prerequisites_ids": [
+      9130
+    ],
     "objectives": [
       {
         "text": "Retrieve the Silo's Front-Door Key",
@@ -2843,10 +3288,13 @@
     "order": 132,
     "internal_id": 9132,
     "quest_name": "Back to the Wilderness",
+    "min_level": 25,
+    "plot_id": 25000,
     "text_box": "The Pleasant Acre isn't quite as pleasant as its name suggests. It looks like it's returned to the wilderness!",
     "description": "Tap an obstacle to get rid of it! Those Rocks don't stand a chance!",
-    "prerequisite_order": 131,
-    "prerequisite_id": 9131,
+    "prerequisites_ids": [
+      9131
+    ],
     "objectives": [
       {
         "text": "Clear Mid-sized Rock from your land",
@@ -2864,10 +3312,13 @@
     "order": 133,
     "internal_id": 9133,
     "quest_name": "Make Your Heart Lighter",
+    "min_level": 25,
+    "plot_id": 6015,
     "text_box": "Have you ever tried Onion Soup? It's simple, but hearty and delicious!",
     "description": "Humphrey is a big fan of Onion Soup. Try it in the Manor's Kitchen!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Onion Soup",
@@ -2885,10 +3336,14 @@
     "order": 134,
     "internal_id": 9134,
     "quest_name": "A Kind Gentleman",
+    "min_level": 25,
+    "plot_id": 6047,
     "text_box": "Walt said he liked anything with nuts in it. You and I will therefore cook for him his hometown's specialty: Nut Bread!",
     "description": "Cook food in the Manor's Kitchen. To cook a Deluxe dish, use a Deluxifier on the base recipe!",
-    "prerequisite_order": 133,
-    "prerequisite_id": 9133,
+    "prerequisites_ids": [
+      9052,
+      9133
+    ],
     "objectives": [
       {
         "text": "Make Nut Bread",
@@ -2906,10 +3361,13 @@
     "order": 135,
     "internal_id": 9135,
     "quest_name": "Not Just for Squirrels!",
+    "min_level": 25,
+    "plot_id": 3017,
     "text_box": "When I was a kid, I loved braised nuts. It's too bad we don't have any Nut Trees.",
     "description": "Plant Nut Trees bought from the Market!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9134
+    ],
     "objectives": [
       {
         "text": "Plant Nut Tree",
@@ -2927,10 +3385,13 @@
     "order": 136,
     "internal_id": 9136,
     "quest_name": "Fruitful Readings",
+    "min_level": 26,
+    "plot_id": 4012,
     "text_box": "Well, reading the future in vegetables doesn't work. So I had a thought: Let's read the future in fruits instead!",
     "description": "To deliver the ingredients Isabella needs, simply sell them at the Sales Desk.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9135
+    ],
     "objectives": [
       {
         "text": "Sell Strawberry",
@@ -2948,10 +3409,13 @@
     "order": 137,
     "internal_id": 9137,
     "quest_name": "Walt's Favorite Snack",
+    "min_level": 26,
+    "plot_id": 3004,
     "text_box": "Do you know what Walt's favorite snack is? Wheat and fried Onions! Don't tell him I said this, but I think he's a glutton!",
     "description": "Harvest Wheat and Onions so Walt can have his favorite snack: fried Onions and Wheat!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9136
+    ],
     "objectives": [
       {
         "text": "Harvest Wheat",
@@ -2973,10 +3437,14 @@
     "order": 138,
     "internal_id": 9138,
     "quest_name": "The Trendsetter",
+    "min_level": 26,
+    "plot_id": 6043,
     "text_box": "If we want our restaurant to be a success, we must deliver the finest desserts. We have to practice making our Fruit Salads!",
     "description": "Time to refine your desserts! Make Fruit Salads in the Manor's Kitchen.",
-    "prerequisite_order": 121,
-    "prerequisite_id": 9121,
+    "prerequisites_ids": [
+      9000,
+      9121
+    ],
     "objectives": [
       {
         "text": "Make Fruit Salad",
@@ -2994,10 +3462,13 @@
     "order": 139,
     "internal_id": 9139,
     "quest_name": "Jam Sculpting",
+    "min_level": 26,
+    "plot_id": 6033,
     "text_box": "Have you ever heard of jam sculpting? Well, I have, and today I am going to show you!",
     "description": "Cook food in the Manor's Kitchen!",
-    "prerequisite_order": 138,
-    "prerequisite_id": 9138,
+    "prerequisites_ids": [
+      9138
+    ],
     "objectives": [
       {
         "text": "Make Strawberry Jam",
@@ -3015,10 +3486,13 @@
     "order": 140,
     "internal_id": 9140,
     "quest_name": "Planting the Seeds",
+    "min_level": 26,
+    "plot_id": 4012,
     "text_box": "The village's primary school teacher told me she wanted the kids to grow their own fruits in the school's backyard. Let's help them!",
     "description": "The school's teacher would like the kids to grow their own fruits at the school! Use the Sales Desk to help!",
-    "prerequisite_order": 138,
-    "prerequisite_id": 9138,
+    "prerequisites_ids": [
+      9138
+    ],
     "objectives": [
       {
         "text": "Sell Strawberry",
@@ -3036,10 +3510,13 @@
     "order": 141,
     "internal_id": 9141,
     "quest_name": "A Happy Little Party",
+    "min_level": 26,
+    "plot_id": 2036,
     "text_box": "Remember last time, when I said that Pigs didn't have to be pink? Well, guess what? There are also spotted ones! We even have a name for them: Chester Pigs!",
     "description": "You can find Chester Piglets in the Market.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9140
+    ],
     "objectives": [
       {
         "text": "Buy Chester Piglet",
@@ -3057,10 +3534,14 @@
     "order": 142,
     "internal_id": 9142,
     "quest_name": "The Manor's Kitchen",
+    "min_level": 27,
+    "plot_id": 6047,
     "text_box": "I've found our restaurant's name: The Manor's Kitchen! I thought, \"Humphie, keep it simple.\" Countryside authenticity -- that's what sells these days!",
     "description": "Humphrey has found the name for your restaurant: The Manor's Kitchen! Original, eh? Meanwhile, there's food to cook!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9138
+    ],
     "objectives": [
       {
         "text": "Make Nut Bread",
@@ -3078,10 +3559,13 @@
     "order": 143,
     "internal_id": 9143,
     "quest_name": "Humphrey Is Not Convinced",
+    "min_level": 27,
+    "plot_id": 4093,
     "text_box": "To be honest, I'm not convinced by our Nut Bread. I'm going to ask our neighbors what they think. And I'm going to need honest opinions!",
     "description": "Send your preparations to your neighbors!",
-    "prerequisite_order": 142,
-    "prerequisite_id": 9142,
+    "prerequisites_ids": [
+      9142
+    ],
     "objectives": [
       {
         "text": "Send Nut Bread to a neighbor",
@@ -3099,10 +3583,13 @@
     "order": 144,
     "internal_id": 9144,
     "quest_name": "A Social Animal",
+    "min_level": 27,
+    "plot_id": 2046,
     "text_box": "You know, Goats are very social animals, and they enjoy the company of other Goats. In other words, the more Goats, the better!",
     "description": "The more friends Goats have, the happier they get! You can find Oberhasli Kids in the Market.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9143
+    ],
     "objectives": [
       {
         "text": "Buy Oberhasli Kid",
@@ -3120,10 +3607,14 @@
     "order": 145,
     "internal_id": 9145,
     "quest_name": "Everyone Loves Attention",
+    "min_level": 27,
+    "plot_id": 2999,
     "text_box": "You never know when an Animal is going to require you to brush it. Animals put a lot of stock in how they look. They're really trendy, you know!",
     "description": "Clean your Animals and collect from them! Remember: Cleaning an Animal will get you twice the resources!",
-    "prerequisite_order": 144,
-    "prerequisite_id": 9144,
+    "prerequisites_ids": [
+      9144,
+      9049
+    ],
     "objectives": [
       {
         "text": "Feed Animal",
@@ -3141,10 +3632,13 @@
     "order": 146,
     "internal_id": 9146,
     "quest_name": "Tractor Tuning",
+    "min_level": 27,
+    "plot_id": 3007,
     "text_box": "The tractor-tuning convention is coming soon, and we don't have anything to make appetizers with!",
     "description": "The moment you've been waiting for: the tractor-tuning convention! Get some fresh snacks for the farmers to enjoy!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9145
+    ],
     "objectives": [
       {
         "text": "Harvest Strawberry",
@@ -3166,10 +3660,13 @@
     "order": 147,
     "internal_id": 9147,
     "quest_name": "Gelatinous Order",
+    "min_level": 27,
+    "plot_id": 4075,
     "text_box": "Hello! I've heard that you had perfected recipes based on jam! Could I order some for my restaurant? Thank you!",
     "description": "Use the Sales Desk to deliver Leon's hotel order!",
-    "prerequisite_order": 146,
-    "prerequisite_id": 9146,
+    "prerequisites_ids": [
+      9146
+    ],
     "objectives": [
       {
         "text": "Sell Apple Jam",
@@ -3191,10 +3688,13 @@
     "order": 148,
     "internal_id": 9148,
     "quest_name": "A Silly Name",
+    "min_level": 28,
+    "plot_id": 3010,
     "text_box": "So you and Humphrey are opening a restaurant in the Manor's Kitchen? Amazing! Let's start stocking up right away!",
     "description": "Cindy is thrilled by Humphrey's idea of opening a restaurant! Harvest some crops for a smooth start!",
-    "prerequisite_order": 142,
-    "prerequisite_id": 9142,
+    "prerequisites_ids": [
+      9142
+    ],
     "objectives": [
       {
         "text": "Harvest Mushroom",
@@ -3212,10 +3712,13 @@
     "order": 149,
     "internal_id": 9149,
     "quest_name": "Post-Dictions",
+    "min_level": 28,
+    "plot_id": 4015,
     "text_box": "I've realized something: It's not the future that I see in crops, it's the past! We must keep on working together so I can tell you about yours!",
     "description": "Deliver the ingredients Isabella needs. Simply sell them at the Sales Desk and she will receive them!",
-    "prerequisite_order": 148,
-    "prerequisite_id": 9148,
+    "prerequisites_ids": [
+      9148
+    ],
     "objectives": [
       {
         "text": "Sell Mushroom",
@@ -3233,10 +3736,14 @@
     "order": 150,
     "internal_id": 9150,
     "quest_name": "Order for Table 6",
+    "min_level": 28,
+    "plot_id": 6018,
     "text_box": "We've got so many customers in our restaurant! Oh, here's the order for table 6! I'm completely overwhelmed! Can you help me? Thanks!",
     "description": "Now that the restaurant is open, Humphrey needs your help. Prepare the order for table 6, quick!",
-    "prerequisite_order": 148,
-    "prerequisite_id": 9148,
+    "prerequisites_ids": [
+      9000,
+      9148
+    ],
     "objectives": [
       {
         "text": "Make Mushroom Soup",
@@ -3258,10 +3765,13 @@
     "order": 151,
     "internal_id": 9151,
     "quest_name": "30 Minutes or It's Free",
+    "min_level": 28,
+    "plot_id": 4052,
     "text_box": "Some of our neighbors just called. They would like to order takeout food! I didn't even know we were doing that. Can you help me?",
     "description": "Your neighbors want to order takeout food from the Manor's Kitchen! Send them their orders.",
-    "prerequisite_order": 150,
-    "prerequisite_id": 9150,
+    "prerequisites_ids": [
+      9150
+    ],
     "objectives": [
       {
         "text": "Send Mushroom Soup to a neighbor",
@@ -3279,10 +3789,13 @@
     "order": 152,
     "internal_id": 9152,
     "quest_name": "Funny Columbia Sheep",
+    "min_level": 28,
+    "plot_id": 2058,
     "text_box": "You know, when I was around here, there was an Animal with whom I really got along! It was a Columbia Sheep. They're fun guys!",
     "description": "Uncle Hal is nostalgic about his friendship with a Columbia Sheep. You can find Columbia Lambs in the Market!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Buy Columbia Lamb",
@@ -3300,10 +3813,13 @@
     "order": 153,
     "internal_id": 9153,
     "quest_name": "The Silent Acre",
+    "min_level": 5,
+    "plot_id": 6,
     "text_box": "Do you ever wonder why the acres are named Quiet, Calm, Silent, etc.? It was your grandfather, Edward, who named them... He was deaf!",
     "description": "Claim the land that once belonged to your family! Tap the Silent Acre to add it to your domain!",
-    "prerequisite_order": 130,
-    "prerequisite_id": 9130,
+    "prerequisites_ids": [
+      9130
+    ],
     "objectives": [
       {
         "text": "Expand your domain to the Silent Acre!",
@@ -3317,10 +3833,14 @@
     "order": 154,
     "internal_id": 9154,
     "quest_name": "Order for Table 12",
+    "min_level": 29,
+    "plot_id": 6060,
     "text_box": "Ready for some restaurant action? Here's the order from table 12! Thank you so much for your help!",
     "description": "Cook food in the Manor's Kitchen to help Humphrey with the restaurant! To cook a Deluxe dish, use a Deluxifier on the base recipe!",
-    "prerequisite_order": 150,
-    "prerequisite_id": 9150,
+    "prerequisites_ids": [
+      9052,
+      9150
+    ],
     "objectives": [
       {
         "text": "Make Deluxe Goat Cheese",
@@ -3342,10 +3862,13 @@
     "order": 155,
     "internal_id": 9155,
     "quest_name": "Don't Give Up!",
+    "min_level": 29,
+    "plot_id": 6064,
     "text_box": "Well, people say that the restaurant is haunted. This gets me worried; with no customers, we will never fix the Manor! But we must not give up!",
     "description": "People are saying that the restaurant is haunted, but you can't give up! Cook Deluxe dishes using Deluxifiers on the base recipes!",
-    "prerequisite_order": 154,
-    "prerequisite_id": 9154,
+    "prerequisites_ids": [
+      9154
+    ],
     "objectives": [
       {
         "text": "Make Deluxe Mushroom Soup",
@@ -3363,10 +3886,13 @@
     "order": 156,
     "internal_id": 9156,
     "quest_name": "Ghastly Eats",
+    "min_level": 29,
+    "plot_id": 3010,
     "text_box": "You know, having a restaurant is going to make it that much more important to keep Uncle Hal a secret. Anyway, in the meantime, here's today's list.",
     "description": "Cindy is worried about the restaurant's clientele finding out about the ghost. Meanwhile, there's still work to do!",
-    "prerequisite_order": 154,
-    "prerequisite_id": 9154,
+    "prerequisites_ids": [
+      9154
+    ],
     "objectives": [
       {
         "text": "Harvest Mushroom",
@@ -3388,10 +3914,13 @@
     "order": 157,
     "internal_id": 9157,
     "quest_name": "Last Night's Storm",
+    "min_level": 29,
+    "plot_id": 9999,
     "text_box": "Hey, there was a pretty bad storm last night. We should probably check in on our neighbors and make sure they're okay.",
     "description": "There was a storm last night! Visit your neighbors by tapping your Mailbox.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9156
+    ],
     "objectives": [
       {
         "text": "Visit a neighbor's farm",
@@ -3409,10 +3938,13 @@
     "order": 158,
     "internal_id": 9158,
     "quest_name": "More Than a Cup of Sugar",
+    "min_level": 29,
+    "plot_id": 9999,
     "text_box": "You shouldn't hesitate to ask your neighbors for help once in a while. Being a neighbor goes both ways, you know!",
     "description": "Request items from your neighbors. Pay attention to your request's value in Coins.",
-    "prerequisite_order": 157,
-    "prerequisite_id": 9157,
+    "prerequisites_ids": [
+      9157
+    ],
     "objectives": [
       {
         "text": "Request and receive something from a neighbor",
@@ -3430,10 +3962,13 @@
     "order": 159,
     "internal_id": 9159,
     "quest_name": "Walt to the Rescue!",
+    "min_level": 29,
+    "plot_id": 0,
     "text_box": "Now that we've got a restaurant in the Manor, I think that my Fertilizer Plane is needed more than ever. What do you say?",
     "description": "Charge up the Fertilizer Plane by collecting Fertilizers from Animals!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9158
+    ],
     "objectives": [
       {
         "text": "Call Walt's plane to fertilize the fields twice",
@@ -3451,10 +3986,13 @@
     "order": 160,
     "internal_id": 9160,
     "quest_name": "A Well-Deserved Prize",
+    "min_level": 30,
+    "plot_id": 6042,
     "text_box": "There's a cooking contest in the area. It's our chance to earn fame and fortune! Let's get to work.",
     "description": "Your chance to earn fame has come: There's a cooking contest in the area! Play to win! Cook Deluxe dishes using Deluxifiers on the base recipes.",
-    "prerequisite_order": 154,
-    "prerequisite_id": 9154,
+    "prerequisites_ids": [
+      9154
+    ],
     "objectives": [
       {
         "text": "Make Stuffed Mushroom",
@@ -3472,10 +4010,13 @@
     "order": 161,
     "internal_id": 9161,
     "quest_name": "Enough for a Lifetime",
+    "min_level": 30,
+    "plot_id": 99996,
     "text_box": "There's been such a strong wind lately. Gosh, there sure seem to be a lot of storms around here! We'd better check on our neighbors to see if they are okay!",
     "description": "How are your neighbors? Tap your Mailbox! Also, to cook a Deluxe dish, use a Deluxifier on the base recipe.",
-    "prerequisite_order": 160,
-    "prerequisite_id": 9160,
+    "prerequisites_ids": [
+      9160
+    ],
     "objectives": [
       {
         "text": "Have a Relationship Level of 3 Hearts with Chester",
@@ -3493,10 +4034,13 @@
     "order": 162,
     "internal_id": 9162,
     "quest_name": "Scary Uncle Hal",
+    "min_level": 30,
+    "plot_id": 2998,
     "text_box": "I'm worried! Today, I tried to feed the Animals, but they all ran away. Do you think it's because I'm a ghost?",
     "description": "For some reason, Uncle Hal scared all the Animals away today! Take care of the Animals for him.",
-    "prerequisite_order": 160,
-    "prerequisite_id": 9160,
+    "prerequisites_ids": [
+      9160
+    ],
     "objectives": [
       {
         "text": "Feed Chicken",
@@ -3514,10 +4058,13 @@
     "order": 163,
     "internal_id": 9163,
     "quest_name": "Autumn Salad",
+    "min_level": 30,
+    "plot_id": 3010,
     "text_box": "For today, I fancy a good autumn salad, and that means... Mushrooms!",
     "description": "Harvest the required resources.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9162
+    ],
     "objectives": [
       {
         "text": "Harvest Mushroom",
@@ -3535,10 +4082,13 @@
     "order": 164,
     "internal_id": 9164,
     "quest_name": "Chattering in the Wind",
+    "min_level": 30,
+    "plot_id": 25028,
     "text_box": "Surely you remember the storm the other night? Well, it's embarrassing, but I have to tell you: The wind took away all of my teeth!",
     "description": "Uncle Hal has lost all his teeth! Help him retrieve them by tapping the crates on your farm!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Retrieve all of Uncle Hal's Golden Teeth!",
@@ -3552,10 +4102,13 @@
     "order": 165,
     "internal_id": 9165,
     "quest_name": "Should've Seen It Coming",
+    "min_level": 30,
+    "plot_id": 25029,
     "text_box": "Oh, there was such a strong wind last night, my caravan was all shaken, and I've lost some valuable objects!",
     "description": "The storm has scattered some of Isabella's valuables! Tap the crates on your farm to collect them!",
-    "prerequisite_order": 164,
-    "prerequisite_id": 9164,
+    "prerequisites_ids": [
+      9164
+    ],
     "objectives": [
       {
         "text": "Retrieve Isabella's Invisible Ink Flask",
@@ -3577,10 +4130,13 @@
     "order": 166,
     "internal_id": 9166,
     "quest_name": "No Favorites!",
+    "min_level": 31,
+    "plot_id": 2997,
     "text_box": "Our Animal population is growing, and it's a good thing, but we must be careful to take equal care of each one!",
     "description": "Take care of your Animals!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Have Cow",
@@ -3598,10 +4154,13 @@
     "order": 167,
     "internal_id": 9167,
     "quest_name": "The Origami Event",
+    "min_level": 31,
+    "plot_id": 4054,
     "text_box": "Have you heard of the origami club in the neighborhood? There's an origami event tonight! We have to help!",
     "description": "There's an origami event tonight! Can you help with the snacks?",
-    "prerequisite_order": 166,
-    "prerequisite_id": 9166,
+    "prerequisites_ids": [
+      9166
+    ],
     "objectives": [
       {
         "text": "Send Corn Cereal to a neighbor",
@@ -3619,10 +4178,14 @@
     "order": 168,
     "internal_id": 9168,
     "quest_name": "Share-a-Mushroom Day",
+    "min_level": 31,
+    "plot_id": 4088,
     "text_box": "Today is Share-a-Mushroom Day! And guess what we're going to do? That's right: We're going to share some Mushrooms!",
     "description": "Today is Share-a-Mushroom Day! Time to share some Mushrooms! To cook a Deluxe dish, use a Deluxifier on the base recipe.",
-    "prerequisite_order": 167,
-    "prerequisite_id": 9167,
+    "prerequisites_ids": [
+      9052,
+      9167
+    ],
     "objectives": [
       {
         "text": "Send Deluxe Stuffed Mushroom to a neighbor",
@@ -3640,10 +4203,13 @@
     "order": 169,
     "internal_id": 9169,
     "quest_name": "Good Advice",
+    "min_level": 31,
+    "plot_id": 4087,
     "text_box": "Hello! I've heard that you have a restaurant now! Do you still want to work with me? Yes? Oh, good! I was worried there for a second.",
     "description": "Using the Sales Desk, deliver Leon's order for his hotel!",
-    "prerequisite_order": 160,
-    "prerequisite_id": 9160,
+    "prerequisites_ids": [
+      9160
+    ],
     "objectives": [
       {
         "text": "Sell Stuffed Mushroom",
@@ -3665,10 +4231,14 @@
     "order": 170,
     "internal_id": 9170,
     "quest_name": "Hal's Disc Collection",
+    "min_level": 31,
+    "plot_id": 25032,
     "text_box": "When I was younger, I was a big fan of The Beagles. They were a dog band, and a good one! I would listen to their barks on my gramophone.",
     "description": "Uncle Hal's collection of discs by his favorite band, \"The Beagles,\" has been scattered around. Find the discs and return them to him!",
-    "prerequisite_order": 245,
-    "prerequisite_id": 9245,
+    "prerequisites_ids": [
+      9049,
+      9245
+    ],
     "objectives": [
       {
         "text": "Retrieve Uncle Hal's Gramophone Discs",
@@ -3682,10 +4252,13 @@
     "order": 171,
     "internal_id": 9171,
     "quest_name": "Humphrey's Guest Star",
+    "min_level": 32,
+    "plot_id": 6028,
     "text_box": "Leon's idea about capitalizing on the fact that the restaurant is haunted is brilliant. Let's get these orders done, then talk about it!",
     "description": "Humphrey needs to think about Leon's idea: making the ghost the restaurant's selling point. Meanwhile, there's food on the grill!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Lemon Meringue",
@@ -3703,10 +4276,13 @@
     "order": 172,
     "internal_id": 9172,
     "quest_name": "Healthy Snacks",
+    "min_level": 32,
+    "plot_id": 3007,
     "text_box": "Today is the village school's festival and we're going to help with the snacks. But ours will be 100% healthy and natural!",
     "description": "Harvest the required resources.",
-    "prerequisite_order": 171,
-    "prerequisite_id": 9171,
+    "prerequisites_ids": [
+      9171
+    ],
     "objectives": [
       {
         "text": "Harvest Strawberry",
@@ -3724,10 +4300,13 @@
     "order": 173,
     "internal_id": 9173,
     "quest_name": "Healthy Snacks",
+    "min_level": 32,
+    "plot_id": 4011,
     "text_box": "Hey there! Uncle Hal asked me to help him find something he's lost. To do so, I need Corn! And Tomatoes! Oh, and some Wheat for good measure.",
     "description": "Deliver the ingredients Isabella needs.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9172
+    ],
     "objectives": [
       {
         "text": "Sell Corn",
@@ -3749,10 +4328,13 @@
     "order": 174,
     "internal_id": 9174,
     "quest_name": "Heartwarming Jam",
+    "min_level": 32,
+    "plot_id": 4074,
     "text_box": "Humphrey's jam recipes really warm the heart, don't you think? We should share them!",
     "description": "Cindy likes your jam preparations very much and thinks you should share them with your neighbors! Tap your Mailbox!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9173
+    ],
     "objectives": [
       {
         "text": "Send Strawberry Jam to a neighbor",
@@ -3770,10 +4352,13 @@
     "order": 175,
     "internal_id": 9175,
     "quest_name": "Dangerous Experiments",
+    "min_level": 32,
+    "plot_id": 99994,
     "text_box": "Wilbur said he had an important experiment today, and you know how he is: He's got his head in the clouds! You should pay him a visit.",
     "description": "Wilbur the scientist has an important experiment today! Tap your Mailbox to visit him.",
-    "prerequisite_order": 174,
-    "prerequisite_id": 9174,
+    "prerequisites_ids": [
+      9174
+    ],
     "objectives": [
       {
         "text": "Visit Wilbur on his farm",
@@ -3791,10 +4376,14 @@
     "order": 176,
     "internal_id": 9176,
     "quest_name": "Surprise Stuffing",
+    "min_level": 33,
+    "plot_id": 6075,
     "text_box": "Mushrooms are a wonderful ingredient... when you want to surprise your guests! Let me introduce you to... Stuffed Mushrooms!",
     "description": "Cook food in the Manor's Kitchen. To cook a Deluxe dish, use a Deluxifier on the base recipe!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9052
+    ],
     "objectives": [
       {
         "text": "Make Deluxe Stuffed Mushroom",
@@ -3812,10 +4401,13 @@
     "order": 177,
     "internal_id": 9177,
     "quest_name": "Refilling the Stocks",
+    "min_level": 33,
+    "plot_id": 6035,
     "text_box": "Hey! We're out of Bread. A good haunted restaurant should never be out of Bread! Let's get to work!",
     "description": "The Manor's Kitchen restaurant is out of Bread! This is unacceptable. Time to refill the supplies!",
-    "prerequisite_order": 154,
-    "prerequisite_id": 9154,
+    "prerequisites_ids": [
+      9154
+    ],
     "objectives": [
       {
         "text": "Make Bread",
@@ -3833,10 +4425,13 @@
     "order": 178,
     "internal_id": 9178,
     "quest_name": "Charlotte's Poetry",
+    "min_level": 33,
+    "plot_id": 99993,
     "text_box": "Charlotte invited us for tea. I think she wants to read us some poetry!",
     "description": "Your neighbor Charlotte wants to read you some poetry! Tap your Mailbox to visit her!",
-    "prerequisite_order": 176,
-    "prerequisite_id": 9176,
+    "prerequisites_ids": [
+      9176
+    ],
     "objectives": [
       {
         "text": "Visit Charlotte on her farm",
@@ -3858,10 +4453,14 @@
     "order": 179,
     "internal_id": 9179,
     "quest_name": "A Ghostly Piece of Advice",
+    "min_level": 33,
+    "plot_id": 2999,
     "text_box": "You know, child, things are going well, but if you want to assemble the greatest flock in the state like I once did, you need more Animals!",
     "description": "Do you want to assemble the greatest flock in the state like Uncle Hal did? Take care of your Animals!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049,
+      9052
+    ],
     "objectives": [
       {
         "text": "Feed Animal",
@@ -3879,10 +4478,13 @@
     "order": 180,
     "internal_id": 9180,
     "quest_name": "The Wrong Button",
+    "min_level": 33,
+    "plot_id": 25033,
     "text_box": "Hello! Someone pulled a prank on me and hid all of my vest buttons! That's not very nice. Please, help me find them!",
     "description": "Someone pulled a prank on Leon and hid all of his vest buttons! Help him find them! Tap the crates to collect them.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9179
+    ],
     "objectives": [
       {
         "text": "Retrieve all Buttons from Leon's vest",
@@ -3896,10 +4498,13 @@
     "order": 181,
     "internal_id": 9181,
     "quest_name": "Ghost Tricks",
+    "min_level": 33,
+    "plot_id": 25034,
     "text_box": "Remember when Leon lost his buttons? Now he's lost his writing equipment! I suspect Uncle Hal is playing ghost tricks on him...",
     "description": "Someone pulled a prank on Leon and hid his writing equipment! Help him find it! Tap the crates to collect them.",
-    "prerequisite_order": 180,
-    "prerequisite_id": 9180,
+    "prerequisites_ids": [
+      9180
+    ],
     "objectives": [
       {
         "text": "Retrieve Leon's Pen",
@@ -3921,10 +4526,13 @@
     "order": 182,
     "internal_id": 9182,
     "quest_name": "Telling Off Uncle Hal",
+    "min_level": 33,
+    "plot_id": 3001,
     "text_box": "Look, I need to find Uncle Hal and talk about Leon. Can you take care of things for me while I'm away?",
     "description": "Take care of the farm for Cindy while she's busy telling off Uncle Hal.",
-    "prerequisite_order": 181,
-    "prerequisite_id": 9181,
+    "prerequisites_ids": [
+      9181
+    ],
     "objectives": [
       {
         "text": "Harvest Tomato",
@@ -3946,10 +4554,13 @@
     "order": 183,
     "internal_id": 9183,
     "quest_name": "The Sunny Acre",
+    "min_level": 5,
+    "plot_id": 7,
     "text_box": "It's time to expand once more! Are you ready to reclaim the Sunny Acre?",
     "description": "Claim the land that once belonged to your family! Tap the Sunny Acre to add it to your domain!",
-    "prerequisite_order": 153,
-    "prerequisite_id": 9153,
+    "prerequisites_ids": [
+      9153
+    ],
     "objectives": [
       {
         "text": "Expand your domain to the Sunny Acre",
@@ -3963,10 +4574,15 @@
     "order": 184,
     "internal_id": 9184,
     "quest_name": "Fame and Fortune",
+    "min_level": 34,
+    "plot_id": 6063,
     "text_box": "People come from all over the country to have dinner in our haunted restaurant! Isn't that wonderful? Speaking of which, here's the order for table 5!",
     "description": "People are coming from all over the country to enjoy your haunted restaurant! Use Deluxifiers on recipes to cook Deluxe dishes!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9169,
+      9052
+    ],
     "objectives": [
       {
         "text": "Make Deluxe Potato Wedges",
@@ -3988,10 +4604,13 @@
     "order": 185,
     "internal_id": 9185,
     "quest_name": "Harriet Is a Nice Person",
+    "min_level": 34,
+    "plot_id": 99997,
     "text_box": "You know, even though she's a little weird, Harriet is a lovely person. You should get to know her!",
     "description": "Visit Harriet on her farm! Tap your Mailbox!",
-    "prerequisite_order": 184,
-    "prerequisite_id": 9184,
+    "prerequisites_ids": [
+      9184
+    ],
     "objectives": [
       {
         "text": "Help Harriet on her farm",
@@ -4009,10 +4628,13 @@
     "order": 186,
     "internal_id": 9186,
     "quest_name": "Radioactive Dessert",
+    "min_level": 34,
+    "plot_id": 3018,
     "text_box": "With the new direction of the Manor's restaurant, we're going to need new ingredients. I say... let's go bananas! Literally!",
     "description": "Bananas are now available for planting! Ta-da!",
-    "prerequisite_order": 184,
-    "prerequisite_id": 9184,
+    "prerequisites_ids": [
+      9184
+    ],
     "objectives": [
       {
         "text": "Plant Banana Tree",
@@ -4030,10 +4652,14 @@
     "order": 187,
     "internal_id": 9187,
     "quest_name": "Ghost Hunters",
+    "min_level": 34,
+    "plot_id": 7003,
     "text_box": "Some weird tourists came earlier today, wanting to take photos with the ghost. I don't want them to trample over Cindy's crops, so we need some more walls!",
     "description": "Get some decorations from the Market.",
-    "prerequisite_order": 186,
-    "prerequisite_id": 9186,
+    "prerequisites_ids": [
+      9169,
+      9186
+    ],
     "objectives": [
       {
         "text": "Place Stone Wall A",
@@ -4051,10 +4677,13 @@
     "order": 188,
     "internal_id": 9188,
     "quest_name": "Great Friends!",
+    "min_level": 34,
+    "plot_id": 99997,
     "text_box": "I think that it's great to have friends! There's a lot to share, especially when you're living on a farm, like us!",
     "description": "Having friends is essential! Improve your Relationships with your neighbors!",
-    "prerequisite_order": 185,
-    "prerequisite_id": 9185,
+    "prerequisites_ids": [
+      9185
+    ],
     "objectives": [
       {
         "text": "Have a Relationship Level of 3 Hearts with Harriet",
@@ -4076,10 +4705,13 @@
     "order": 189,
     "internal_id": 9189,
     "quest_name": "A Smart Move",
+    "min_level": 34,
+    "plot_id": 4035,
     "text_box": "Hello! Advertising your restaurant as a haunted mansion was a brilliant move! I'm sure you'll have many customers! Anyway, here's today's order.",
     "description": "Deliver Leon's order for his hotel. You can do it using the Sales Desk.",
-    "prerequisite_order": 169,
-    "prerequisite_id": 9169,
+    "prerequisites_ids": [
+      9169
+    ],
     "objectives": [
       {
         "text": "Sell Pancakes",
@@ -4097,10 +4729,14 @@
     "order": 190,
     "internal_id": 9190,
     "quest_name": "Memory Porridge, Part 1",
+    "min_level": 35,
+    "plot_id": 3004,
     "text_box": "I've got a brilliant idea. To get my memory back, I need to eat food from my childhood! Like Banana Porridge! Yeah, Banana Porridge. I probably ate that.",
     "description": "Harvest the required ingredients so Humphrey can make Banana Porridge to restore Uncle Hal's memories!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049,
+      9173
+    ],
     "objectives": [
       {
         "text": "Harvest Wheat",
@@ -4122,10 +4758,14 @@
     "order": 191,
     "internal_id": 9191,
     "quest_name": "Memory Porridge, Part 2",
+    "min_level": 35,
+    "plot_id": 6056,
     "text_box": "So Uncle Hal needs Banana Porridge to get his memory back? How did he remember he liked Banana Porridge in the first place?",
     "description": "Make Banana Porridge for Uncle Hal and see if it jogs his memory!",
-    "prerequisite_order": 190,
-    "prerequisite_id": 9190,
+    "prerequisites_ids": [
+      9000,
+      9190
+    ],
     "objectives": [
       {
         "text": "Make Banana Porridge",
@@ -4143,10 +4783,14 @@
     "order": 192,
     "internal_id": 9192,
     "quest_name": "Memory Porridge, Part 3",
+    "min_level": 35,
+    "plot_id": 6044,
     "text_box": "Ah, dang! I'm sorry, but the Banana Porridge didn't work. I think we should try with some Fruit Salad instead. Can you help me with that?",
     "description": "The Banana Porridge failed to jog Uncle Hal's memory. He thinks Fruit Salad may work.",
-    "prerequisite_order": 191,
-    "prerequisite_id": 9191,
+    "prerequisites_ids": [
+      9049,
+      9191
+    ],
     "objectives": [
       {
         "text": "Make Delicious Fruit Salad",
@@ -4164,10 +4808,13 @@
     "order": 193,
     "internal_id": 9193,
     "quest_name": "This Guy Chester",
+    "min_level": 35,
+    "plot_id": 99996,
     "text_box": "Some people seem harsh on the outside, but inside, they've got a big heart! Take Chester, for instance. I'm sure he's a great guy!",
     "description": "Cindy is convinced that Chester is a great guy. Request something from him to find out!",
-    "prerequisite_order": 192,
-    "prerequisite_id": 9192,
+    "prerequisites_ids": [
+      9192
+    ],
     "objectives": [
       {
         "text": "Request and receive something from Chester",
@@ -4185,10 +4832,13 @@
     "order": 194,
     "internal_id": 9194,
     "quest_name": "Reward the Chickens",
+    "min_level": 35,
+    "plot_id": 6501,
     "text_box": "You know, like us, our Chickens have been hard at work lately! Don't you think we should reward them somehow? Maybe a little extra food?",
     "description": "Your Chickens have been hard at work. Cindy thinks you should reward them!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9193
+    ],
     "objectives": [
       {
         "text": "Make Chicken Feed",
@@ -4206,10 +4856,14 @@
     "order": 195,
     "internal_id": 9195,
     "quest_name": "Uncle Hal's Birthday",
+    "min_level": 35,
+    "plot_id": 2998,
     "text_box": "Cindy said that today was my birthday! I must be at least one century old. We'll celebrate this with more food for everyone. Especially the Animals!",
     "description": "For his birthday, Uncle Hal only requires that you take special care of the Animals!",
-    "prerequisite_order": 194,
-    "prerequisite_id": 9194,
+    "prerequisites_ids": [
+      9049,
+      9194
+    ],
     "objectives": [
       {
         "text": "Feed Chicken",
@@ -4231,10 +4885,13 @@
     "order": 196,
     "internal_id": 9196,
     "quest_name": "This Explains That",
+    "min_level": 35,
+    "plot_id": 4034,
     "text_box": "Hello! I am going to read your past. For this, I need some Sugar... some Lemons... and a little Milk!",
     "description": "Deliver the ingredients Isabella needs.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9195
+    ],
     "objectives": [
       {
         "text": "Sell White Sugar",
@@ -4256,10 +4913,13 @@
     "order": 197,
     "internal_id": 9197,
     "quest_name": "The Negotiator",
+    "min_level": 36,
+    "plot_id": 0,
     "text_box": "Ah, great news! The Fertile Acre is for sale. It's time for us to make our move, but we're going to need Coins -- a lot of them!",
     "description": "Sell goods at the Sales Desk to save up 1,700 Coins.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9196
+    ],
     "objectives": [
       {
         "text": "Earn Coins\nwith the Sales Desk",
@@ -4273,10 +4933,13 @@
     "order": 198,
     "internal_id": 9198,
     "quest_name": "Orange Dawn",
+    "min_level": 36,
+    "plot_id": 3020,
     "text_box": "We now have Oranges, which opens a world of possibilities... starting with fresh, healthy Orange Juice at breakfast!",
     "description": "Orange Trees are now available for planting!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9197
+    ],
     "objectives": [
       {
         "text": "Harvest Orange",
@@ -4294,10 +4957,13 @@
     "order": 199,
     "internal_id": 9199,
     "quest_name": "A Little Variety",
+    "min_level": 36,
+    "plot_id": 2996,
     "text_box": "You know, my greatest source of pride as a breeder was the variety of my flock. It was wonderful to see all these guys get along!",
     "description": "According to Uncle Hal, variety is crucial to a breeder's flock! For instance, how many varieties of Pigs do you have?",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Have Pig",
@@ -4315,10 +4981,14 @@
     "order": 200,
     "internal_id": 9200,
     "quest_name": "Humphrey Is Offended",
+    "min_level": 36,
+    "plot_id": 6044,
     "text_box": "You know, to be honest, I'm a bit offended that Uncle Hal's memory didn't come back with our Fruit Salad. Have I lost my touch? Let's see!",
     "description": "Apparently, Humphrey is offended that his Fruit Salad doesn't cure amnesia. Help him make sure his recipe is still great!",
-    "prerequisite_order": 192,
-    "prerequisite_id": 9192,
+    "prerequisites_ids": [
+      9192,
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Delicious Fruit Salad",
@@ -4336,10 +5006,14 @@
     "order": 201,
     "internal_id": 9201,
     "quest_name": "Ghost Stories",
+    "min_level": 36,
+    "plot_id": 6038,
     "text_box": "Today, we have a famous guest at the restaurant: Edward A. Pie, the famous writer of so many ghost stories! Let's not disappoint!",
     "description": "The famous horror writer, Edward A. Pie, is visiting the Manor's Kitchen! Serve him a very chilling meal!",
-    "prerequisite_order": 200,
-    "prerequisite_id": 9200,
+    "prerequisites_ids": [
+      9200,
+      9052
+    ],
     "objectives": [
       {
         "text": "Make Orange Muffin",
@@ -4361,10 +5035,13 @@
     "order": 202,
     "internal_id": 9202,
     "quest_name": "Weird Harriet",
+    "min_level": 36,
+    "plot_id": 99997,
     "text_box": "So Harriet sent us a gift, but... it's weird. She sent us four kilos of toothpaste! Anyway, let's be nice and say thanks...",
     "description": "Harriet is just getting weirder and weirder. This time, she's sent you 4 kilos of toothpaste! Weird, but you need to say thanks.",
-    "prerequisite_order": 201,
-    "prerequisite_id": 9201,
+    "prerequisites_ids": [
+      9201
+    ],
     "objectives": [
       {
         "text": "Visit Harriet on her farm",
@@ -4382,10 +5059,13 @@
     "order": 203,
     "internal_id": 9203,
     "quest_name": "Donut Holes",
+    "min_level": 36,
+    "plot_id": 99997,
     "text_box": "Today the postman delivered an empty box with a label that read \"DONUT HOLES.\" Well, I suppose she's trying.",
     "description": "Send presents to Harriet to say thank you for... the box of donut holes.",
-    "prerequisite_order": 202,
-    "prerequisite_id": 9202,
+    "prerequisites_ids": [
+      9202
+    ],
     "objectives": [
       {
         "text": "Send present to Harriet",
@@ -4399,10 +5079,13 @@
     "order": 204,
     "internal_id": 9204,
     "quest_name": "Hidden Treasure?",
+    "min_level": 37,
+    "plot_id": 4044,
     "text_box": "To read the past today, I'm going to need Goat Cheese, Milk, and Oranges! The sweeter the Orange, the clearer the images, you know.",
     "description": "Deliver the ingredients Isabella needs.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9203
+    ],
     "objectives": [
       {
         "text": "Sell Goat Cheese",
@@ -4424,10 +5107,14 @@
     "order": 205,
     "internal_id": 9205,
     "quest_name": "Hal's Plush Pillow",
+    "min_level": 37,
+    "plot_id": 25037,
     "text_box": "Oh, the old Henhouse! I've spent countless nights here. It's much more comfy than the Manor! Wait. Where's my plush pillow?",
     "description": "Uncle Hal spent many nights sleeping with the Chickens in the Henhouse, but his pillow is gone! Can you find it?",
-    "prerequisite_order": 210,
-    "prerequisite_id": 9210,
+    "prerequisites_ids": [
+      9049,
+      9210
+    ],
     "objectives": [
       {
         "text": "Retrieve Uncle Hal's Pillow",
@@ -4449,10 +5136,13 @@
     "order": 206,
     "internal_id": 9206,
     "quest_name": "The Crepe Festival",
+    "min_level": 37,
+    "plot_id": 4002,
     "text_box": "Ah, it's the village crepe festival! We could ask Humphrey to help, but he doesn't like crepes at all. Weird, huh? He likes almost everything else.",
     "description": "Harvest the required resources.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9205
+    ],
     "objectives": [
       {
         "text": "Collect Milk",
@@ -4470,10 +5160,14 @@
     "order": 207,
     "internal_id": 9207,
     "quest_name": "The Essential Things",
+    "min_level": 37,
+    "plot_id": 6505,
     "text_box": "With all the crazy things that have been happening lately, it would be easy to forget about the essential: taking care of our little friends!",
     "description": "Make Feed for your Animals.",
-    "prerequisite_order": 206,
-    "prerequisite_id": 9206,
+    "prerequisites_ids": [
+      9049,
+      9206
+    ],
     "objectives": [
       {
         "text": "Make Super Feed",
@@ -4491,10 +5185,13 @@
     "order": 208,
     "internal_id": 9208,
     "quest_name": "Worrying Worries",
+    "min_level": 37,
+    "plot_id": 99995,
     "text_box": "I'm worried about Carrie Ann, and do you know why? Because she's so worried all the time! Her being worried worries me! Gah!",
     "description": "Visit Carrie Ann on her farm! Tap your Mailbox!",
-    "prerequisite_order": 206,
-    "prerequisite_id": 9206,
+    "prerequisites_ids": [
+      9206
+    ],
     "objectives": [
       {
         "text": "Visit Carrie Ann on her farm",
@@ -4512,10 +5209,13 @@
     "order": 209,
     "internal_id": 9209,
     "quest_name": "It's Bad for the Skin...",
+    "min_level": 37,
+    "plot_id": 99995,
     "text_box": "Your kindness to Carrie Ann was a good thing last time. Let's give her a little something so she knows we're thinking of her!",
     "description": "Send presents to Carrie Ann so she knows that someone's thinking of her!",
-    "prerequisite_order": 208,
-    "prerequisite_id": 9208,
+    "prerequisites_ids": [
+      9208
+    ],
     "objectives": [
       {
         "text": "Send present to Carrie Ann",
@@ -4529,10 +5229,14 @@
     "order": 210,
     "internal_id": 9210,
     "quest_name": "The Fertile Acre",
+    "min_level": 5,
+    "plot_id": 8,
     "text_box": "It is time to expand to the Fertile Acre! It's been a long road, but now we're there. And once we're done, we'll take a moment to celebrate!",
     "description": "Claim the land that once belonged to your family! Tap the Fertile Acre to add it to your domain!",
-    "prerequisite_order": 183,
-    "prerequisite_id": 9183,
+    "prerequisites_ids": [
+      9197,
+      9183
+    ],
     "objectives": [
       {
         "text": "Expand your domain to the Fertile Acre",
@@ -4546,10 +5250,13 @@
     "order": 211,
     "internal_id": 9211,
     "quest_name": "Alien Currency",
+    "min_level": 38,
+    "plot_id": 4065,
     "text_box": "Tonight is UFO observation night, and we're going to be there! If aliens exist, ours will be the first food they buy. I hope aliens pay in Coins, though.",
     "description": "Sell food at the Sales Desk.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9210
+    ],
     "objectives": [
       {
         "text": "Sell Cake",
@@ -4567,10 +5274,13 @@
     "order": 212,
     "internal_id": 9212,
     "quest_name": "A Tremendous Success",
+    "min_level": 38,
+    "plot_id": 3004,
     "text_box": "Thanks to Leon's idea, Humphrey's restaurant is a tremendous success! That also means we need more supplies...",
     "description": "People come from all horizons to dine at the Manor's Kitchen. You need to resupply or you won't be able to face the demand!",
-    "prerequisite_order": 189,
-    "prerequisite_id": 9189,
+    "prerequisites_ids": [
+      9189
+    ],
     "objectives": [
       {
         "text": "Harvest Wheat",
@@ -4592,10 +5302,15 @@
     "order": 213,
     "internal_id": 9213,
     "quest_name": "A Happy Farm",
+    "min_level": 38,
+    "plot_id": 4002,
     "text_box": "Let me tell you a secret, child. Super Animals are not Super because they're stronger. They're Super because they make other Animals happy!",
     "description": "Take care of your Super Animals.",
-    "prerequisite_order": 212,
-    "prerequisite_id": 9212,
+    "prerequisites_ids": [
+      9049,
+      9212,
+      9052
+    ],
     "objectives": [
       {
         "text": "Collect Milk",
@@ -4613,10 +5328,14 @@
     "order": 214,
     "internal_id": 9214,
     "quest_name": "An Expert Chef",
+    "min_level": 38,
+    "plot_id": 6026,
     "text_box": "I'd like to take this opportunity to thank you for all your hard work. Without you, none of this would have been possible. Now, let's cook!",
     "description": "Cook food in the Manor's Kitchen. To cook a Deluxe dish, use a Deluxifier on the base recipe!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9052
+    ],
     "objectives": [
       {
         "text": "Make Cake",
@@ -4634,10 +5353,14 @@
     "order": 215,
     "internal_id": 9215,
     "quest_name": "Walt's Metal Detector",
+    "min_level": 38,
+    "plot_id": 6038,
     "text_box": "I've heard that Walt was going to town to get a metal detector! What can he be looking for? Anyway, let's make a couple of snacks for him.",
     "description": "Cook food in the Manor's Kitchen!",
-    "prerequisite_order": 214,
-    "prerequisite_id": 9214,
+    "prerequisites_ids": [
+      9204,
+      9214
+    ],
     "objectives": [
       {
         "text": "Make Orange Muffin",
@@ -4655,10 +5378,13 @@
     "order": 216,
     "internal_id": 9216,
     "quest_name": "Take Over the World",
+    "min_level": 38,
+    "plot_id": 4065,
     "text_box": "Don't you think Rufus is a little weird, saying he wants to take over the world like he does? Anyway, I'm sure he's a nice guy! Probably.",
     "description": "Send presents to your neighbors! Tap your Mailbox!",
-    "prerequisite_order": 214,
-    "prerequisite_id": 9214,
+    "prerequisites_ids": [
+      9214
+    ],
     "objectives": [
       {
         "text": "Send Cake to a neighbor",
@@ -4676,10 +5402,13 @@
     "order": 217,
     "internal_id": 9217,
     "quest_name": "All Part of the Plan",
+    "min_level": 38,
+    "plot_id": 99998,
     "text_box": "Rufus called. He said you were a smart person and he wanted to talk to you about his plan to take over the world. Go, but be careful, okay?",
     "description": "Rufus wants to share his plans to take over the world with you. Maybe you can be Number Two?",
-    "prerequisite_order": 216,
-    "prerequisite_id": 9216,
+    "prerequisites_ids": [
+      9216
+    ],
     "objectives": [
       {
         "text": "Visit Rufus on his farm",
@@ -4701,10 +5430,13 @@
     "order": 218,
     "internal_id": 9218,
     "quest_name": "The Ghost Hunter",
+    "min_level": 39,
+    "plot_id": 6027,
     "text_box": "Today, we've got a famous ghost hunter visiting our restaurant! He loves Lemon Tarts, I'm told. I hope there won't be any trouble!",
     "description": "A famous ghost hunter is coming to have dinner at the Manor's Kitchen! Cook your scariest preparations!",
-    "prerequisite_order": 184,
-    "prerequisite_id": 9184,
+    "prerequisites_ids": [
+      9184
+    ],
     "objectives": [
       {
         "text": "Make Lemon Tart",
@@ -4722,10 +5454,13 @@
     "order": 219,
     "internal_id": 9219,
     "quest_name": "The FHS Visits",
+    "min_level": 39,
+    "plot_id": 6026,
     "text_box": "Tonight, the Farmer High Society is coming to visit the Manor's Kitchen! It is time to deliver our finest cuisine!",
     "description": "The Farmer High Society is visiting the Manor's Kitchen for dinner! Deliver your finest cuisine!",
-    "prerequisite_order": 218,
-    "prerequisite_id": 9218,
+    "prerequisites_ids": [
+      9218
+    ],
     "objectives": [
       {
         "text": "Make Cake",
@@ -4743,10 +5478,13 @@
     "order": 220,
     "internal_id": 9220,
     "quest_name": "A Box of Nail Clippers",
+    "min_level": 39,
+    "plot_id": 99997,
     "text_box": "Well, Harriet has sent us another box of nail clippers. I suppose we are going to have to say thanks. Let's send a little something!",
     "description": "Harriet has sent you weird presents again. You should say thanks!",
-    "prerequisite_order": 218,
-    "prerequisite_id": 9218,
+    "prerequisites_ids": [
+      9218
+    ],
     "objectives": [
       {
         "text": "Send present to Harriet",
@@ -4764,10 +5502,13 @@
     "order": 221,
     "internal_id": 9221,
     "quest_name": "The Goat Soccer Team",
+    "min_level": 39,
+    "plot_id": 2995,
     "text_box": "I can tell you one thing: The Goats are not happy. They say that there aren't enough of them for a Goat soccer team! Have you ever played Goat Soccer?",
     "description": "The Goats told Uncle Hal they need more players to play Goat Soccer. You can buy Goats in the Market.",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Have Goat",
@@ -4785,10 +5526,13 @@
     "order": 222,
     "internal_id": 9222,
     "quest_name": "The Great-Uncle's Plane",
+    "min_level": 39,
+    "plot_id": 4017,
     "text_box": "Hello! Today, to read Uncle Hal's past, I'm going to need Lemons... and Peaches!",
     "description": "Deliver the ingredients Isabella needs to read Uncle Hal's past.",
-    "prerequisite_order": 204,
-    "prerequisite_id": 9204,
+    "prerequisites_ids": [
+      9204
+    ],
     "objectives": [
       {
         "text": "Sell Lemon",
@@ -4806,10 +5550,13 @@
     "order": 223,
     "internal_id": 9223,
     "quest_name": "Walt's Wise Advice",
+    "min_level": 39,
+    "plot_id": 0,
     "text_box": "The time to restore a new room is almost upon us! Are you ready? We're going to need quite a few Coins!",
     "description": "The time to restore another one of the Manor's rooms draws near! Gather some Coins to prepare!",
-    "prerequisite_order": 222,
-    "prerequisite_id": 9222,
+    "prerequisites_ids": [
+      9222
+    ],
     "objectives": [
       {
         "text": "Earn Coins\nwith the Sales Desk",
@@ -4823,10 +5570,14 @@
     "order": 224,
     "internal_id": 9224,
     "quest_name": "Walt's Quest",
+    "min_level": 39,
+    "plot_id": 3013,
     "text_box": "Since Isabella told us that there was something in the Manor, Walt has spent his time searching it. Let's prepare some fruit in case he's tired!",
     "description": "Walt is looking for something in the Manor. Cindy thinks you should prepare some fruit for him, in case he's tired.",
-    "prerequisite_order": 222,
-    "prerequisite_id": 9222,
+    "prerequisites_ids": [
+      9222,
+      9215
+    ],
     "objectives": [
       {
         "text": "Harvest Lemon",
@@ -4848,10 +5599,13 @@
     "order": 225,
     "internal_id": 9225,
     "quest_name": "Citrus Power",
+    "min_level": 40,
+    "plot_id": 3013,
     "text_box": "Wilbur has invented a carburetor that uses citrus fruit juice as fuel. I think Walt wants to try it in the plane... I hope he doesn't crash!",
     "description": "Wilbur has invented a carburetor that turns fruit into fuel. Walt wants to test it in his plane. Will you help?",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9224
+    ],
     "objectives": [
       {
         "text": "Harvest Lemon",
@@ -4873,10 +5627,13 @@
     "order": 226,
     "internal_id": 9226,
     "quest_name": "Acid Mornings",
+    "min_level": 40,
+    "plot_id": 6040,
     "text_box": "There's a lot of work and we've got very, very early mornings. I know: We need Citrus Juice! That's like a second alarm clock!",
     "description": "What wakes you up better than coffee in the early morning? Citrus Juice!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Citrus Juice",
@@ -4894,10 +5651,14 @@
     "order": 227,
     "internal_id": 9227,
     "quest_name": "The Most Awesome Flock",
+    "min_level": 40,
+    "plot_id": 2999,
     "text_box": "We have an inspector visiting us today! They want to see if our farm is eligible for the Most Awesome Flock in the State award!",
     "description": "Tend to your Animals so the inspector sees that you mean business!",
-    "prerequisite_order": 226,
-    "prerequisite_id": 9226,
+    "prerequisites_ids": [
+      9049,
+      9226
+    ],
     "objectives": [
       {
         "text": "Collect from Animals",
@@ -4915,10 +5676,13 @@
     "order": 228,
     "internal_id": 9228,
     "quest_name": "Poetic Thanks",
+    "min_level": 40,
+    "plot_id": 4084,
     "text_box": "Ah, Charlotte has sent us poetry again! It's so nice of her! We should send a little something to say thanks.",
     "description": "Charlotte has sent Cindy poetry again! You should say thanks with a present or two!",
-    "prerequisite_order": 226,
-    "prerequisite_id": 9226,
+    "prerequisites_ids": [
+      9226
+    ],
     "objectives": [
       {
         "text": "Send Citrus Juice to a neighbor",
@@ -4936,10 +5700,13 @@
     "order": 229,
     "internal_id": 9229,
     "quest_name": "Tourist Avalanche",
+    "min_level": 40,
+    "plot_id": 25040,
     "text_box": "Hey, what is that? An old photo album... Ah, the wind is blowing all the photos away! Wait, stop!",
     "description": "Cindy has found an old photo album, but the wind has blown all the photos away!",
-    "prerequisite_order": 222,
-    "prerequisite_id": 9222,
+    "prerequisites_ids": [
+      9222
+    ],
     "objectives": [
       {
         "text": "Retrieve all of the Photos from the album",
@@ -4953,10 +5720,14 @@
     "order": 230,
     "internal_id": 9230,
     "quest_name": "Tourist Avalanche",
+    "min_level": 40,
+    "plot_id": 4020,
     "text_box": "Hello! Did you know you're making the village famous? We have many, many tourists, thanks to the Manor's Kitchen! Thank you!",
     "description": "Deliver Leon's order for his hotel!",
-    "prerequisite_order": 229,
-    "prerequisite_id": 9229,
+    "prerequisites_ids": [
+      9229,
+      9189
+    ],
     "objectives": [
       {
         "text": "Sell Mango",
@@ -4978,10 +5749,13 @@
     "order": 231,
     "internal_id": 9231,
     "quest_name": "Take the Initiative",
+    "min_level": 41,
+    "plot_id": 99992,
     "text_box": "You know, Rosco is a tough guy. If he needed help, he would never admit it. That's why we have to take the initiative!",
     "description": "Cindy thinks that Rosco would never ask for help if he needed it. That's why you have to help first!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9230
+    ],
     "objectives": [
       {
         "text": "Send present to Rosco",
@@ -5003,10 +5777,13 @@
     "order": 232,
     "internal_id": 9232,
     "quest_name": "Farmers Are Tough",
+    "min_level": 41,
+    "plot_id": 99992,
     "text_box": "Rosco is really tough. I wonder if he expresses his feelings at all? They're probably buried under 90 kilos of raw farming awesomeness!",
     "description": "Are farmers really that tough? Do they have feelings at all? Go ahead and find out!",
-    "prerequisite_order": 231,
-    "prerequisite_id": 9231,
+    "prerequisites_ids": [
+      9231
+    ],
     "objectives": [
       {
         "text": "Have a Relationship Level of 4 Hearts with Rosco",
@@ -5028,10 +5805,13 @@
     "order": 233,
     "internal_id": 9233,
     "quest_name": "Cindy's Brilliant Plan",
+    "min_level": 41,
+    "plot_id": 25041,
     "text_box": "Argh, I've lost my things again! If Isabella were here, she could read my past and tell me where I put them... WAIT. This gives me an idea!",
     "description": "Cindy has lost her jewelry. Will you help her find it?",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9232
+    ],
     "objectives": [
       {
         "text": "Retrieve Cindy's Barrette",
@@ -5053,10 +5833,13 @@
     "order": 234,
     "internal_id": 9234,
     "quest_name": "Cindybella Recoveries",
+    "min_level": 41,
+    "plot_id": 4002,
     "text_box": "I've spoken to Isabella, and she agreed to my plan! We're going to read people's pasts and we're going to help everyone find their lost things!",
     "description": "Cindy, Isabella and you are joining forces to create your own past-reading company! You're going to need a lot of crops!",
-    "prerequisite_order": 233,
-    "prerequisite_id": 9233,
+    "prerequisites_ids": [
+      9233
+    ],
     "objectives": [
       {
         "text": "Collect Milk",
@@ -5078,10 +5861,14 @@
     "order": 235,
     "internal_id": 9235,
     "quest_name": "Walt Needs Fresh Air",
+    "min_level": 41,
+    "plot_id": 6050,
     "text_box": "I think we should go on a picnic together! I've spent too much time in the Manor lately. I need some fresh air!",
     "description": "Prepare what's needed for Walt's picnic!",
-    "prerequisite_order": 234,
-    "prerequisite_id": 9234,
+    "prerequisites_ids": [
+      9000,
+      9234
+    ],
     "objectives": [
       {
         "text": "Make Banana Bread",
@@ -5099,10 +5886,13 @@
     "order": 236,
     "internal_id": 9236,
     "quest_name": "Humphrey, Funambulist",
+    "min_level": 41,
+    "plot_id": 6014,
     "text_box": "I've heard that the circus was visiting the village! Let's provide a welcome package with some Jam and Cheese.",
     "description": "Cook some food to give the circus team a warm welcome!",
-    "prerequisite_order": 235,
-    "prerequisite_id": 9235,
+    "prerequisites_ids": [
+      9235
+    ],
     "objectives": [
       {
         "text": "Make Goat Cheese",
@@ -5124,10 +5914,13 @@
     "order": 237,
     "internal_id": 9237,
     "quest_name": "Getting Tropical!",
+    "min_level": 42,
+    "plot_id": 3016,
     "text_box": "It's starting to get tropical around here, and do you know why? Because we now have access to... Mango Trees!",
     "description": "Mangoes are now available for planting!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9236
+    ],
     "objectives": [
       {
         "text": "Plant Mango Tree",
@@ -5145,10 +5938,14 @@
     "order": 238,
     "internal_id": 9238,
     "quest_name": "Where Is My Piano?",
+    "min_level": 42,
+    "plot_id": 4019,
     "text_box": "Hello! Working with you and Cindy is so exciting! Today, Cindybella Recoveries has a client who's lost their... piano!",
     "description": "You are now part of Cindybella Recoveries! Provide the resources so Isabella can locate the piano!",
-    "prerequisite_order": 237,
-    "prerequisite_id": 9237,
+    "prerequisites_ids": [
+      9234,
+      9237
+    ],
     "objectives": [
       {
         "text": "Sell Peach",
@@ -5170,10 +5967,13 @@
     "order": 239,
     "internal_id": 9239,
     "quest_name": "Walt, Treasure Hunter",
+    "min_level": 42,
+    "plot_id": 25044,
     "text_box": "Ah, hey there! Look, I lost my treasure-hunting equipment. Can you help me?",
     "description": "Help Walt find his treasure-hunting equipment! It should be around here somewhere...",
-    "prerequisite_order": 238,
-    "prerequisite_id": 9238,
+    "prerequisites_ids": [
+      9238
+    ],
     "objectives": [
       {
         "text": "Retrieve Walt's Lock Pick",
@@ -5195,10 +5995,13 @@
     "order": 240,
     "internal_id": 9240,
     "quest_name": "Food for a Ghost",
+    "min_level": 42,
+    "plot_id": 6045,
     "text_box": "Uncle Hal is a ghost. He floats around. Shouldn't he avoid eating heavy food? Shouldn't he eat lighter things, like Fruit Salads? Hmm.",
     "description": "Humphrey thinks that Hal, being a ghost, shouldn't eat anything heavy. Make some Fruit Salads for him!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Wonderful Fruit Salad",
@@ -5216,10 +6019,15 @@
     "order": 241,
     "internal_id": 9241,
     "quest_name": "Another Inspection",
+    "min_level": 42,
+    "plot_id": 2998,
     "text_box": "Today, inspectors are going to come over to determine whether our aviary has enough variety to be eligible for the Best Aviary in the State award.",
     "description": "Is your aviary eligible for the Best Aviary in the State? Make sure it is! You can find different varieties of Chickens in the Market.",
-    "prerequisite_order": 240,
-    "prerequisite_id": 9240,
+    "prerequisites_ids": [
+      9240,
+      9049,
+      9227
+    ],
     "objectives": [
       {
         "text": "Have Chicken",
@@ -5237,10 +6045,13 @@
     "order": 242,
     "internal_id": 9242,
     "quest_name": "Indifferent Grace",
+    "min_level": 42,
+    "plot_id": 99999,
     "text_box": "We have a new neighbor! Her name is Grace, but she seems a bit distant. Maybe we could send her a gift to warm her up!",
     "description": "Send presents to your neighbors! Especially Grace, who's a bit distant.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9241
+    ],
     "objectives": [
       {
         "text": "Send present to Grace",
@@ -5258,10 +6069,13 @@
     "order": 243,
     "internal_id": 9243,
     "quest_name": "The Merry Acre",
+    "min_level": 5,
+    "plot_id": 9,
     "text_box": "Today, we're going to expand your domain even farther! Are you ready?",
     "description": "Claim the land that once belonged to your family! Tap the Merry Acre to add it to your domain!",
-    "prerequisite_order": 210,
-    "prerequisite_id": 9210,
+    "prerequisites_ids": [
+      9210
+    ],
     "objectives": [
       {
         "text": "Expand your domain to the Merry Acre",
@@ -5275,10 +6089,13 @@
     "order": 244,
     "internal_id": 9244,
     "quest_name": "Runaway Elephants",
+    "min_level": 43,
+    "plot_id": 3006,
     "text_box": "A new mission for Cindybella Recoveries: Isabella must read our client's past to see where their elephant has run off to. Let's do this!",
     "description": "One of Cindybella Recoveries' clients has lost an elephant! Provide Isabella with what she needs in crops to read its location!",
-    "prerequisite_order": 238,
-    "prerequisite_id": 9238,
+    "prerequisites_ids": [
+      9238
+    ],
     "objectives": [
       {
         "text": "Harvest Sugar Cane",
@@ -5300,10 +6117,13 @@
     "order": 245,
     "internal_id": 9245,
     "quest_name": "A New Order",
+    "min_level": 43,
+    "plot_id": 4084,
     "text_box": "Hello everyone! Here's the hotel's order for today! Thank you very much!",
     "description": "Deliver Leon's order for his hotel.",
-    "prerequisite_order": 244,
-    "prerequisite_id": 9244,
+    "prerequisites_ids": [
+      9244
+    ],
     "objectives": [
       {
         "text": "Sell Citrus Juice",
@@ -5325,10 +6145,13 @@
     "order": 246,
     "internal_id": 9246,
     "quest_name": "Rock, Paper, Scissors!",
+    "min_level": 43,
+    "plot_id": 6010,
     "text_box": "Have you heard about the rock-paper-scissors club? There's an event today, so they're going to need snacks! It's the occasion to test my new recipe!",
     "description": "Make Rainbow Lollipops for the rock-paper-scissors club! Humphrey wants to know if they're any good.",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Rainbow Lollipop",
@@ -5346,10 +6169,15 @@
     "order": 247,
     "internal_id": 9247,
     "quest_name": "The Cow Marathon",
+    "min_level": 43,
+    "plot_id": 2998,
     "text_box": "If we want to be eligible for the best flock in the state, our Animals must be healthy as can be!",
     "description": "Take care of your Animals to make sure they remain healthy!",
-    "prerequisite_order": 246,
-    "prerequisite_id": 9246,
+    "prerequisites_ids": [
+      9049,
+      9241,
+      9246
+    ],
     "objectives": [
       {
         "text": "Feed Chicken",
@@ -5367,10 +6195,14 @@
     "order": 248,
     "internal_id": 9248,
     "quest_name": "A Special Treat",
+    "min_level": 43,
+    "plot_id": 6054,
     "text_box": "I have relatives from out of town visiting me tonight, and I would like to treat them to something special. Can you help me?",
     "description": "Help Humphrey make some Cream Spaghetti for his visiting relatives! Use Deluxifiers on base recipes to cook Deluxe dishes.",
-    "prerequisite_order": 246,
-    "prerequisite_id": 9246,
+    "prerequisites_ids": [
+      9052,
+      9246
+    ],
     "objectives": [
       {
         "text": "Make Cream Spaghetti",
@@ -5388,10 +6220,13 @@
     "order": 249,
     "internal_id": 9249,
     "quest_name": "The Farm Inspection",
+    "min_level": 43,
+    "plot_id": 9999,
     "text_box": "Well, guess what? We've got another inspector on the way. But this time, they're going to visit everyone's farm! We've got to help each other!",
     "description": "Visit your neighbors' farms and help get them in shape for the farm inspector's visit!",
-    "prerequisite_order": 247,
-    "prerequisite_id": 9247,
+    "prerequisites_ids": [
+      9247
+    ],
     "objectives": [
       {
         "text": "Visit a neighbor's farm",
@@ -5409,10 +6244,13 @@
     "order": 250,
     "internal_id": 9250,
     "quest_name": "Happy Birthday, Grace!",
+    "min_level": 43,
+    "plot_id": 99999,
     "text_box": "Hey, today is Grace's birthday! Surely she'll be in a happier mood! Let's send her a couple of presents.",
     "description": "Today is Grace's birthday! Cindy wants to send her a couple of presents to cheer her up.",
-    "prerequisite_order": 249,
-    "prerequisite_id": 9249,
+    "prerequisites_ids": [
+      9249
+    ],
     "objectives": [
       {
         "text": "Send present to Grace",
@@ -5426,10 +6264,13 @@
     "order": 251,
     "internal_id": 9251,
     "quest_name": "The Bright Acre",
+    "min_level": 5,
+    "plot_id": 10,
     "text_box": "We're about to secure another acre of terrain! What will you grow there once we've expanded?",
     "description": "Claim the land that once belonged to your family! Tap the Bright Acre to add it to your domain!",
-    "prerequisite_order": 243,
-    "prerequisite_id": 9243,
+    "prerequisites_ids": [
+      9243
+    ],
     "objectives": [
       {
         "text": "Expand your domain to the Bright Acre",
@@ -5443,10 +6284,13 @@
     "order": 252,
     "internal_id": 9252,
     "quest_name": "The Battlefield Acre",
+    "min_level": 44,
+    "plot_id": 25000,
     "text_box": "Ah, we have expanded to a new acre... but look at this place! Rocks and bushes everywhere. It's a battlefield!",
     "description": "Clean up your newly acquired Merry Acre so you can actually grow something on it!",
-    "prerequisite_order": 251,
-    "prerequisite_id": 9251,
+    "prerequisites_ids": [
+      9251
+    ],
     "objectives": [
       {
         "text": "Clear Mid-sized Rock from your land",
@@ -5464,10 +6308,14 @@
     "order": 253,
     "internal_id": 9253,
     "quest_name": "The Old Stables",
+    "min_level": 44,
+    "plot_id": 1004,
     "text_box": "Ah, my old Stables! There should be no need for repairs here, as I used to keep them clean and in good shape. Come in, let me show you!",
     "description": "The Stables give you the chance to obtain additional Milk. The more dairy Animals you have, the more Milk you can get!",
-    "prerequisite_order": 252,
-    "prerequisite_id": 9252,
+    "prerequisites_ids": [
+      9049,
+      9252
+    ],
     "objectives": [
       {
         "text": "Collect Milk from the Stables",
@@ -5481,10 +6329,14 @@
     "order": 254,
     "internal_id": 9254,
     "quest_name": "The Cooking Duel, Part 1",
+    "min_level": 44,
+    "plot_id": 4110,
     "text_box": "Tonight, a famous food critic by the name of Hayden is visiting us. Time for us to throw in our famous Caramel Muffins!",
     "description": "Make some delicious Caramel Muffins for the food critic, Hayden!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9052
+    ],
     "objectives": [
       {
         "text": "Find Deluxifier",
@@ -5506,10 +6358,14 @@
     "order": 255,
     "internal_id": 9255,
     "quest_name": "Sensitive Sheep",
+    "min_level": 44,
+    "plot_id": 2994,
     "text_box": "Sheep get lonely rather quickly, you know. They are very sensitive animals. We've got to make sure they're always happy!",
     "description": "Take care of your Sheep so they don't get lonely!",
-    "prerequisite_order": 254,
-    "prerequisite_id": 9254,
+    "prerequisites_ids": [
+      9049,
+      9254
+    ],
     "objectives": [
       {
         "text": "Have Sheep",
@@ -5527,10 +6383,13 @@
     "order": 256,
     "internal_id": 9256,
     "quest_name": "The Lost Whaling Ship",
+    "min_level": 44,
+    "plot_id": 3006,
     "text_box": "Okay, Cindybella Recoveries has a client who's lost a whaling ship. No, I don't know how. Here's what Isabella needs!",
     "description": "One of Cindybella Recoveries' clients has lost a whaling ship! Provide Isabella with what she needs in crops to read its location!",
-    "prerequisite_order": 244,
-    "prerequisite_id": 9244,
+    "prerequisites_ids": [
+      9244
+    ],
     "objectives": [
       {
         "text": "Harvest Sugar Cane",
@@ -5548,10 +6407,13 @@
     "order": 257,
     "internal_id": 9257,
     "quest_name": "Trailer Park Stories",
+    "min_level": 45,
+    "plot_id": 3016,
     "text_box": "Hello! Today, Cindybella Recoveries has a client who's lost a trailer park. To read their past and find it, I need the items on this list!",
     "description": "One of Cindybella Recoveries' clients has lost a trailer park! Provide Isabella with what she needs to read its location!",
-    "prerequisite_order": 238,
-    "prerequisite_id": 9238,
+    "prerequisites_ids": [
+      9238
+    ],
     "objectives": [
       {
         "text": "Harvest Mango",
@@ -5573,10 +6435,14 @@
     "order": 258,
     "internal_id": 9258,
     "quest_name": "Cindy's Birthday!",
+    "min_level": 45,
+    "plot_id": 6010,
     "text_box": "Today is Cindy's birthday, and I know for a fact that she's absolutely in love with our Rainbow Lollipops! Let's get to work!",
     "description": "Today is Cindy's birthday! Prepare some happy snacks for her!",
-    "prerequisite_order": 257,
-    "prerequisite_id": 9257,
+    "prerequisites_ids": [
+      9000,
+      9257
+    ],
     "objectives": [
       {
         "text": "Make Rainbow Lollipop",
@@ -5594,10 +6460,13 @@
     "order": 259,
     "internal_id": 9259,
     "quest_name": "Insufferable Absences",
+    "min_level": 45,
+    "plot_id": 99993,
     "text_box": "I miss Charlotte's poetry. She hasn't sent any in a while. Maybe she's on vacation. Or she's out of ink. Want to check?",
     "description": "Charlotte has not sent Cindy poetry for a while now. Check on her, and send her a little something while you're at it!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9258
+    ],
     "objectives": [
       {
         "text": "Send present to Charlotte",
@@ -5619,10 +6488,13 @@
     "order": 260,
     "internal_id": 9260,
     "quest_name": "Of Goats and Fish",
+    "min_level": 45,
+    "plot_id": 2998,
     "text_box": "Well, the Goats jumped in the pond again. I don't understand why they do that. Maybe they're trying to eat the seaweed? Wait. Why would they do that?",
     "description": "The Goats have jumped in the pond again! Maybe they're trying to eat the seaweed that's on the bottom. Go feed them, quick!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Feed Chicken",
@@ -5640,10 +6512,15 @@
     "order": 261,
     "internal_id": 9261,
     "quest_name": "Happy and Healthy",
+    "min_level": 45,
+    "plot_id": 4110,
     "text_box": "Having happy and healthy Super Animals may be the key to the prize for the Most Awesome Flock in the State!",
     "description": "Take care of your Super Animals.",
-    "prerequisite_order": 247,
-    "prerequisite_id": 9247,
+    "prerequisites_ids": [
+      9049,
+      9052,
+      9247
+    ],
     "objectives": [
       {
         "text": "Collect Deluxifier from Super Animal",
@@ -5661,10 +6538,14 @@
     "order": 262,
     "internal_id": 9262,
     "quest_name": "Memory Fertilizer",
+    "min_level": 45,
+    "plot_id": 0,
     "text_box": "When Isabella told me she had seen in Uncle Hal's past that he was scared of planes, I thought, hey, THAT'S the way to restore his memory!",
     "description": "Call Walt's Fertilizer Plane to restore Hal's memory! Also, use Deluxifiers on base recipes to cook Deluxe dishes.",
-    "prerequisite_order": 229,
-    "prerequisite_id": 9229,
+    "prerequisites_ids": [
+      9052,
+      9229
+    ],
     "objectives": [
       {
         "text": "Call Walt's plane to fertilize the fields",
@@ -5682,10 +6563,14 @@
     "order": 263,
     "internal_id": 9263,
     "quest_name": "Farmer Heaven",
+    "min_level": 45,
+    "plot_id": 5004,
     "text_box": "My memory is back! After the chandelier fell on my head, a voice told me I'd come back to help restore the Manor... Let's start with some tidying up.",
     "description": "Your ancestors brought Uncle Hal back to help you restore the Manor! Hal's asking you to help him tidy up the place...",
-    "prerequisite_order": 262,
-    "prerequisite_id": 9262,
+    "prerequisites_ids": [
+      9049,
+      9262
+    ],
     "objectives": [
       {
         "text": "Complete the Fossils Collection",
@@ -5703,10 +6588,13 @@
     "order": 264,
     "internal_id": 9264,
     "quest_name": "My Friends, the Squirrels",
+    "min_level": 46,
+    "plot_id": 3017,
     "text_box": "At this time of the year, all the forest squirrels should be asleep, but they keep foraging for food. Maybe there's a problem.",
     "description": "Harvest Nuts and Wheat to give to the squirrels in the forest!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9263
+    ],
     "objectives": [
       {
         "text": "Harvest Nut",
@@ -5724,10 +6612,13 @@
     "order": 265,
     "internal_id": 9265,
     "quest_name": "A Green Supermarket",
+    "min_level": 46,
+    "plot_id": 3020,
     "text_box": "The village supermarket is suffering from a shortage of Oranges. They just called, asking if they can buy some from us. Opportunity knocks!",
     "description": "Deliver Oranges to the village supermarket!",
-    "prerequisite_order": 264,
-    "prerequisite_id": 9264,
+    "prerequisites_ids": [
+      9264
+    ],
     "objectives": [
       {
         "text": "Harvest Orange",
@@ -5741,10 +6632,15 @@
     "order": 266,
     "internal_id": 9266,
     "quest_name": "Leon Is a Genius",
+    "min_level": 46,
+    "plot_id": 4106,
     "text_box": "Hello, it's me, Leon! How are you today? Good! Anyway, I would like to place an order for my hotel. Thank you very much!",
     "description": "Deliver Leon's order for his hotel! Use Deluxifiers on base recipes to cook Deluxe dishes.",
-    "prerequisite_order": 264,
-    "prerequisite_id": 9264,
+    "prerequisites_ids": [
+      9264,
+      9052,
+      9239
+    ],
     "objectives": [
       {
         "text": "Sell Deluxe Cream Spaghetti",
@@ -5762,10 +6658,13 @@
     "order": 267,
     "internal_id": 9267,
     "quest_name": "Fireworks Everywhere!",
+    "min_level": 46,
+    "plot_id": 25047,
     "text_box": "You know these fireworks we have once in a while? Well, there was a storm last night, and now the fireworks are scattered everywhere!",
     "description": "A storm has scattered your fireworks everywhere! It is vital that you retrieve them!",
-    "prerequisite_order": 266,
-    "prerequisite_id": 9266,
+    "prerequisites_ids": [
+      9266
+    ],
     "objectives": [
       {
         "text": "Find the Firework Rockets",
@@ -5779,10 +6678,13 @@
     "order": 268,
     "internal_id": 9268,
     "quest_name": "Overeating Nightmare",
+    "min_level": 46,
+    "plot_id": 6054,
     "text_box": "I think it's time we invite all our neighbors for a great dinner together! What do you say?",
     "description": "Humphrey wants to invite all your neighbors to have a great dinner together! Care to help?",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000
+    ],
     "objectives": [
       {
         "text": "Make Cream Spaghetti",
@@ -5804,10 +6706,13 @@
     "order": 269,
     "internal_id": 9269,
     "quest_name": "Socially Awkward Grace",
+    "min_level": 46,
+    "plot_id": 99999,
     "text_box": "You know, I don't think Grace is a bad person. I think she's shy. Let's do a little test and ask for something from her!",
     "description": "Cindy doesn't think that Grace is a bad person; she may only be a bit awkward. Try to ask for something from her... See how it goes!",
-    "prerequisite_order": 268,
-    "prerequisite_id": 9268,
+    "prerequisites_ids": [
+      9268
+    ],
     "objectives": [
       {
         "text": "Request and receive something from Grace",
@@ -5825,10 +6730,13 @@
     "order": 270,
     "internal_id": 9270,
     "quest_name": "To the Enchanted Acre!",
+    "min_level": 47,
+    "plot_id": 25048,
     "text_box": "Ah! There was a draft in the room and all my hats went flying through the window! I'm sure they've flown all the way to the Fabled Acre.",
     "description": "There was a gust in Cindy's room and all the hats in her collection have escaped through the window! Help her find them.",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9269
+    ],
     "objectives": [
       {
         "text": "Retrieve all of Cindy's hats!",
@@ -5842,10 +6750,13 @@
     "order": 271,
     "internal_id": 9271,
     "quest_name": "To the Enchanted Acre!",
+    "min_level": 47,
+    "plot_id": 0,
     "text_box": "We have nearly recovered the entirety of your family's land! We're almost there! Don't give up now.",
     "description": "It would be wise to save some money before expanding to the Enchanted Acre!",
-    "prerequisite_order": 270,
-    "prerequisite_id": 9270,
+    "prerequisites_ids": [
+      9270
+    ],
     "objectives": [
       {
         "text": "Earn Coins\nwith the Sales Desk",
@@ -5859,10 +6770,13 @@
     "order": 272,
     "internal_id": 9272,
     "quest_name": "Crazy Grandmas, Part 1",
+    "min_level": 47,
+    "plot_id": 3017,
     "text_box": "Today, we've got a delivery to make to the village jam club! They are a bunch of funny grandmas making jam. Let's help them!",
     "description": "Help the jam club's grandmas with their jam-making by providing the required resources!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9271
+    ],
     "objectives": [
       {
         "text": "Harvest Nut",
@@ -5880,10 +6794,13 @@
     "order": 273,
     "internal_id": 9273,
     "quest_name": "The Union, Part 1",
+    "min_level": 47,
+    "plot_id": 2999,
     "text_box": "Our Animals' demands are relayed to us by the Union of Farm Animals. Today, the Union asks that we feed their babies. Yes. A union. Of Animals. I know.",
     "description": "The Union of Farm Animals demands that you feed their babies! Be careful; better not mess with the UFA!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049
+    ],
     "objectives": [
       {
         "text": "Feed Animal",
@@ -5901,10 +6818,15 @@
     "order": 274,
     "internal_id": 9274,
     "quest_name": "The Union, Part 2",
+    "min_level": 47,
+    "plot_id": 4110,
     "text_box": "I have lots of experience dealing with the Union. I can foresee that they will ask you to take care of your Super Animals next.",
     "description": "The Union of Farm Animals demands that you check on your Super Animals! Better not mess with the UFA!",
-    "prerequisite_order": 273,
-    "prerequisite_id": 9273,
+    "prerequisites_ids": [
+      9273,
+      9052,
+      9049
+    ],
     "objectives": [
       {
         "text": "Collect Deluxifier from Super Animal",
@@ -5922,10 +6844,15 @@
     "order": 275,
     "internal_id": 9275,
     "quest_name": "Cindy's Out of Town",
+    "min_level": 47,
+    "plot_id": 6052,
     "text_box": "Cindy is leaving the farm to meet her family in some faraway village. We need to provide her with food so she doesn't get hungry!",
     "description": "Cook food for Cindy so she doesn't get hungry while on the way to visit her family! To cook Deluxe dishes, use Deluxifiers on base recipes.",
-    "prerequisite_order": 273,
-    "prerequisite_id": 9273,
+    "prerequisites_ids": [
+      9000,
+      9273,
+      9052
+    ],
     "objectives": [
       {
         "text": "Make Tomato Spaghetti",
@@ -5947,10 +6874,13 @@
     "order": 276,
     "internal_id": 9276,
     "quest_name": "The Greediest Farmer",
+    "min_level": 47,
+    "plot_id": 99996,
     "text_box": "Chester is so greedy! I've never met anybody as greedy as him. Maybe we can make him change by helping him for free?",
     "description": "Cindy thinks that helping Chester for free will make him less greedy. Care to try?",
-    "prerequisite_order": 275,
-    "prerequisite_id": 9275,
+    "prerequisites_ids": [
+      9275
+    ],
     "objectives": [
       {
         "text": "Visit Chester on his farm",
@@ -5968,10 +6898,13 @@
     "order": 277,
     "internal_id": 9277,
     "quest_name": "Crazy Grandmas, Part 2",
+    "min_level": 48,
+    "plot_id": 3013,
     "text_box": "Looks like the jam club's grandmas are back! This time, they want to try something with Lemons and Tomatoes. Let's help them!",
     "description": "Help the jam club's grandmas with their jam-making by providing the required resources!",
-    "prerequisite_order": 272,
-    "prerequisite_id": 9272,
+    "prerequisites_ids": [
+      9272
+    ],
     "objectives": [
       {
         "text": "Harvest Lemon",
@@ -5989,10 +6922,13 @@
     "order": 278,
     "internal_id": 9278,
     "quest_name": "Crazy Grandmas, Part 3",
+    "min_level": 48,
+    "plot_id": 3004,
     "text_box": "And they're back! This time, the jam club's grandmas want to try something really different. I'm not so sure, but I'm not here to judge...",
     "description": "Help the jam club's grandmas with their jam-making by providing the required resources!",
-    "prerequisite_order": 277,
-    "prerequisite_id": 9277,
+    "prerequisites_ids": [
+      9277
+    ],
     "objectives": [
       {
         "text": "Harvest Wheat",
@@ -6014,10 +6950,14 @@
     "order": 279,
     "internal_id": 9279,
     "quest_name": "The Truth About Hal",
+    "min_level": 48,
+    "plot_id": 4012,
     "text_box": "Now that Uncle Hal has recovered his memory, Cindybella Recoveries can help him find what he's lost! I will read the past in crops for you.",
     "description": "Help Isabella read into Uncle Hal's past to help him find what he's lost!",
-    "prerequisite_order": 277,
-    "prerequisite_id": 9277,
+    "prerequisites_ids": [
+      9277,
+      9263
+    ],
     "objectives": [
       {
         "text": "Sell Strawberry",
@@ -6035,10 +6975,14 @@
     "order": 280,
     "internal_id": 9280,
     "quest_name": "The Union, Part 3",
+    "min_level": 48,
+    "plot_id": 2998,
     "text_box": "The Union of Farm Animals thinks that Chickens are underrepresented on our farm. Better solve this problem; the UFA is quick to go on strike!",
     "description": "The Union of Farm Animals thinks that Chickens are underrepresented! Better not mess with the UFA!",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049,
+      9274
+    ],
     "objectives": [
       {
         "text": "Have Chicken",
@@ -6056,10 +7000,14 @@
     "order": 281,
     "internal_id": 9281,
     "quest_name": "The Union, Part 4",
+    "min_level": 48,
+    "plot_id": 2999,
     "text_box": "The Union of Farm Animals thinks you're a great farmer, and they want to say thank you by offering you the product of their work!",
     "description": "The Union of Farm Animals thinks you're a great person and wants to be nice to you! Better not mess with the UFA!",
-    "prerequisite_order": 280,
-    "prerequisite_id": 9280,
+    "prerequisites_ids": [
+      9280,
+      9049
+    ],
     "objectives": [
       {
         "text": "Collect from Adult Animal",
@@ -6077,10 +7025,14 @@
     "order": 282,
     "internal_id": 9282,
     "quest_name": "The Cooking Duel, Part 2",
+    "min_level": 48,
+    "plot_id": 6054,
     "text_box": "Hayden the food critic is back! Let's amaze him with our country cuisine. And this time... I swear he will LOVE what we offer him!",
     "description": "Hayden the food critic is back! It is time to unleash all the power of your amazing country cuisine. Use Deluxifiers on base recipes to cook Deluxe dishes!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9254
+    ],
     "objectives": [
       {
         "text": "Make Cream Spaghetti",
@@ -6102,10 +7054,15 @@
     "order": 283,
     "internal_id": 9283,
     "quest_name": "The Enchanted Acre",
+    "min_level": 5,
+    "plot_id": 11,
     "text_box": "The Enchanted Acre! This is the last of our family's land. We never expanded our domain beyond this point. Recover it, and the heirloom will be restored!",
     "description": "Claim the land that once belonged to your family! Tap the Enchanted Acre to add it to your domain.",
-    "prerequisite_order": 251,
-    "prerequisite_id": 9251,
+    "prerequisites_ids": [
+      9049,
+      9251,
+      9271
+    ],
     "objectives": [
       {
         "text": "Expand your domain to the Enchanted Acre!",
@@ -6119,10 +7076,13 @@
     "order": 284,
     "internal_id": 9284,
     "quest_name": "Thank Me Next Time!",
+    "min_level": 49,
+    "plot_id": 4038,
     "text_box": "Hello, it's me, Leon! How are you? I would like to place an order for my hotel, if that's okay.",
     "description": "Deliver Leon's order for his hotel. Use Deluxifiers on base recipes to cook Deluxe dishes!",
-    "prerequisite_order": 52,
-    "prerequisite_id": 9052,
+    "prerequisites_ids": [
+      9052
+    ],
     "objectives": [
       {
         "text": "Sell Rainbow Lollipop",
@@ -6140,10 +7100,13 @@
     "order": 285,
     "internal_id": 9285,
     "quest_name": "The Biggest Thing Ever",
+    "min_level": 49,
+    "plot_id": 0,
     "text_box": "We're almost there, kiddo. Just a little more, and our Manor will be the biggest thing to happen to this land since... since... ever!",
     "description": "Sell goods at the Sales Desk to save up 5,000 Coins. It may take a while, but it'll be worth it! Be patient!",
-    "prerequisite_order": 284,
-    "prerequisite_id": 9284,
+    "prerequisites_ids": [
+      9284
+    ],
     "objectives": [
       {
         "text": "Earn Coins\nwith the Sales Desk",
@@ -6157,10 +7120,13 @@
     "order": 286,
     "internal_id": 9286,
     "quest_name": "Crazy Grandmas, Part 4",
+    "min_level": 49,
+    "plot_id": 3020,
     "text_box": "The crazy grandmas are back again! This time, they say they want to try something crazy! Wasn't that the case last time, also?",
     "description": "Help the jam club's grandmas with their jam-making by providing the required resources!",
-    "prerequisite_order": 278,
-    "prerequisite_id": 9278,
+    "prerequisites_ids": [
+      9278
+    ],
     "objectives": [
       {
         "text": "Harvest Orange",
@@ -6178,10 +7144,13 @@
     "order": 287,
     "internal_id": 9287,
     "quest_name": "The Lost Spaceship",
+    "min_level": 49,
+    "plot_id": 3001,
     "text_box": "Some science agency called earlier. They want Cindybella Recoveries to find... a spaceship! I'm sure Isabella can do it.",
     "description": "Cindybella Recoveries' client has lost a spaceship! Provide Isabella with what she needs in crops to read its location!",
-    "prerequisite_order": 257,
-    "prerequisite_id": 9257,
+    "prerequisites_ids": [
+      9257
+    ],
     "objectives": [
       {
         "text": "Harvest Tomato",
@@ -6203,10 +7172,15 @@
     "order": 288,
     "internal_id": 9288,
     "quest_name": "The Cooking Duel, Part 3",
+    "min_level": 49,
+    "plot_id": 6069,
     "text_box": "Today is the day of the cooking duel between Hayden and me. I stand unafraid! I shall prevail!",
     "description": "Humphrey and Hayden are having a cooking duel! Help Humphrey achieve victory. Use Deluxifiers on base recipes to cook Deluxe dishes!",
-    "prerequisite_order": 0,
-    "prerequisite_id": 9000,
+    "prerequisites_ids": [
+      9000,
+      9282,
+      9052
+    ],
     "objectives": [
       {
         "text": "Make Deluxe Lemon Meringue",
@@ -6228,10 +7202,13 @@
     "order": 289,
     "internal_id": 9289,
     "quest_name": "Wilbur Saves the World",
+    "min_level": 49,
+    "plot_id": 99994,
     "text_box": "Wilbur, our scientist friend, isn't making bombs! All of his work is aimed at protecting the environment. Let's show a little support!",
     "description": "Wilbur is not making bombs! He's inventing technology to protect the environment. You should support him!",
-    "prerequisite_order": 288,
-    "prerequisite_id": 9288,
+    "prerequisites_ids": [
+      9288
+    ],
     "objectives": [
       {
         "text": "Send present to Wilbur",
@@ -6253,10 +7230,14 @@
     "order": 290,
     "internal_id": 9290,
     "quest_name": "The Fabled Acre",
+    "min_level": 5,
+    "plot_id": 12,
     "text_box": "The Fabled Acre never belonged to your family. Not only have you recovered all of their original domain, but you are about to expand it!",
     "description": "This is the final acre. It was never in your family's possession. Once it is yours, you will be the master of all the land!",
-    "prerequisite_order": 283,
-    "prerequisite_id": 9283,
+    "prerequisites_ids": [
+      9283,
+      9279
+    ],
     "objectives": [
       {
         "text": "Expand to the Fabled Acre",
@@ -6270,10 +7251,13 @@
     "order": 291,
     "internal_id": 9291,
     "quest_name": "The Cooking Duel, Part 4",
+    "min_level": 50,
+    "plot_id": 25049,
     "text_box": "Somebody pulled an evil trick on Hayden and he's lost his cutlery! That means he cannot compete. As honorable gentlemen, we shall help.",
     "description": "Hayden has lost all his cutlery and he cannot compete! Preserve his honor by helping him retrieve his lost equipment.",
-    "prerequisite_order": 288,
-    "prerequisite_id": 9288,
+    "prerequisites_ids": [
+      9288
+    ],
     "objectives": [
       {
         "text": "Retrieve all of Hayden's Pieces of Cutlery",
@@ -6287,10 +7271,13 @@
     "order": 292,
     "internal_id": 9292,
     "quest_name": "A Needle in a Haystack",
+    "min_level": 50,
+    "plot_id": 25050,
     "text_box": "Last time Chester visited us, he lost a needle. It's not a joke. He's saying that this needle is worth a lot of money and we MUST retrieve it!",
     "description": "Chester, the greediest farmer on Earth, has lost a needle on your farm. This is not a joke. Find Chester's needle!",
-    "prerequisite_order": 291,
-    "prerequisite_id": 9291,
+    "prerequisites_ids": [
+      9291
+    ],
     "objectives": [
       {
         "text": "Retrieve Chester's Needle",
@@ -6304,10 +7291,13 @@
     "order": 293,
     "internal_id": 9293,
     "quest_name": "The Cooking Duel, Part 5",
+    "min_level": 50,
+    "plot_id": 3016,
     "text_box": "Today is the day where Humphrey and Hayden are going to compete to see who the best chef is! Let's help Humphrey by providing the supplies.",
     "description": "Help Humphrey prepare for his cooking duel by providing the supplies!",
-    "prerequisite_order": 291,
-    "prerequisite_id": 9291,
+    "prerequisites_ids": [
+      9291
+    ],
     "objectives": [
       {
         "text": "Harvest Mango",
@@ -6325,10 +7315,15 @@
     "order": 294,
     "internal_id": 9294,
     "quest_name": "The Cooking Duel, Finale",
+    "min_level": 50,
+    "plot_id": 6045,
     "text_box": "Well, my friend, here we are, it seems. Today, the world will know who is the greater chef: Hayden or me! Let us start!",
     "description": "Today is the big day! Help Humphrey win the cooking duel against Hayden by preparing the required dishes... and may the best chef win!",
-    "prerequisite_order": 293,
-    "prerequisite_id": 9293,
+    "prerequisites_ids": [
+      9205,
+      9052,
+      9293
+    ],
     "objectives": [
       {
         "text": "Make Wonderful Fruit Salad",
@@ -6350,10 +7345,13 @@
     "order": 295,
     "internal_id": 9295,
     "quest_name": "Long Time No See, Harold!",
+    "min_level": 50,
+    "plot_id": 99990,
     "text_box": "Hey, with all this, I was thinking, how's Harold? It's been so long since we've seen him around! I remember when he brought us the Feed Mill!",
     "description": "Send a little something to Harold and check on him to see how he's been doing!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9294
+    ],
     "objectives": [
       {
         "text": "Send present to Harold",
@@ -6375,10 +7373,14 @@
     "order": 296,
     "internal_id": 9296,
     "quest_name": "The Final Countdown",
+    "min_level": 50,
+    "plot_id": 2999,
     "text_box": "This is it, child! The inspector is coming today. It's the final countdown, the ultimate test! Are you ready?",
     "description": "The final inspection of your Animals is today. Are you ready? Is your flock the Most Awesome Flock in the State?",
-    "prerequisite_order": 49,
-    "prerequisite_id": 9049,
+    "prerequisites_ids": [
+      9049,
+      9249
+    ],
     "objectives": [
       {
         "text": "Have Adult Animal",
@@ -6396,10 +7398,13 @@
     "order": 297,
     "internal_id": 9297,
     "quest_name": "The Fox and the Hound",
+    "min_level": 10,
+    "plot_id": 2992,
     "text_box": "There've been rumors going around about predators in the area. We shouldn't let it disrupt our normal duties too much, but it might be time to think about getting a dog.",
     "description": "If what's being said about foxes or wolves is true, it might be time to add a member to our family... one with four legs!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9296
+    ],
     "objectives": [
       {
         "text": "This is an important moment! You now have a new friend for the rest of your life -- make sure to take care of it!",
@@ -6421,10 +7426,13 @@
     "order": 298,
     "internal_id": 9299,
     "quest_name": "Play Time!",
+    "min_level": 10,
+    "plot_id": 1014,
     "text_box": "What a wonderful, sunny day! Let's take our dog outside and play!",
     "description": "Buy a doghouse and a dog toy",
-    "prerequisite_order": 297,
-    "prerequisite_id": 9297,
+    "prerequisites_ids": [
+      9297
+    ],
     "objectives": [
       {
         "text": "Playing and being active will make your dog strong and able to scare away predators.",
@@ -6446,10 +7454,13 @@
     "order": 299,
     "internal_id": 9301,
     "quest_name": "Predator Problems",
+    "min_level": 10,
+    "plot_id": 2073,
     "text_box": "Foxes and wolves are everybody's problem. Visit a neighbor and lend them a hand!",
     "description": "A predator is in your neighbor's farm. Help them out!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9299
+    ],
     "objectives": [
       {
         "text": "Help your neighbor by scaring away the fox.",
@@ -6467,10 +7478,13 @@
     "order": 300,
     "internal_id": 9302,
     "quest_name": "Beekeeper to Bee",
+    "min_level": 15,
+    "plot_id": 2989,
     "text_box": "You can become an accomplished farmer by learning how to manage new resources. Why don't you try to produce Honey by breeding some cute little bees? Once your Honey is ready, there are plenty of delicious recipes for you to try.",
     "description": "Start your Beekeeping career by building your first Beehive!",
-    "prerequisite_order": -1,
-    "prerequisite_id": null,
+    "prerequisites_ids": [
+      9301
+    ],
     "objectives": [
       {
         "text": "Build a Beehive",
@@ -6484,10 +7498,13 @@
     "order": 301,
     "internal_id": 9303,
     "quest_name": "Time to Extract",
+    "min_level": 15,
+    "plot_id": 1018,
     "text_box": "Honey doesn't grow on trees! You'll need a Honey Factory to fill up those Honey Pots. Build a Honey Extractor to get started now!",
     "description": "Get a Honey Extractor so you can fill up some Honey Pots.",
-    "prerequisite_order": 300,
-    "prerequisite_id": 9302,
+    "prerequisites_ids": [
+      9302
+    ],
     "objectives": [
       {
         "text": "Build a Honey Extractor",
@@ -6501,10 +7518,13 @@
     "order": 302,
     "internal_id": 9304,
     "quest_name": "Honeycombs Calling",
+    "min_level": 15,
+    "plot_id": 3022,
     "text_box": "The time to produce Honey has come! Use your Beehive and the Honey Extractor to get some delicious Honey Pots. Let's give it a try!",
     "description": "Now that we have the bees, it's time to harvest that Honey!",
-    "prerequisite_order": 301,
-    "prerequisite_id": 9303,
+    "prerequisites_ids": [
+      9303
+    ],
     "objectives": [
       {
         "text": "Collect Honeycombs",
@@ -6522,10 +7542,13 @@
     "order": 303,
     "internal_id": 9305,
     "quest_name": "Honey Inc.",
+    "min_level": 15,
+    "plot_id": 6083,
     "text_box": "The pure Honey in the Honey Pots can be used to make delicious treats. Craft 1 Honey Candy from the pots and sell it!",
     "description": "Honey can be used in a bunch of recipes. Let's start with Honey Candy!",
-    "prerequisite_order": 302,
-    "prerequisite_id": 9304,
+    "prerequisites_ids": [
+      9304
+    ],
     "objectives": [
       {
         "text": "Make Honey Candy",

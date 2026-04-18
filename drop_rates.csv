@@ -1,0 +1,14 @@
+Action Type,Action ID,Explanation,Base Success Chance (%),Max Coin Reward,Complexity Note
+Special Interactions,99,Triggered during limited-time neighbor events or high-value social interactions. Offers the highest base drop rate for elite collectibles.,2.00%,300,
+Neighbor Help: Animals,100,"Triggered when feeding, brushing, or helping a neighbor's animal. This action pulls rewards from the 'Animal Collection' pool (ID 6xxx), which includes Super Animal baby items.",1.30%,800,
+Neighbor Help: Crops & Trees,97,"Triggered when watering or harvesting a neighbor's crops or trees. This action pulls from the 'Crop Collection' pool, where items like Pumpkins and rare harvest collectibles are found.",1.26%,800,
+Own Farm: Animal Care,101,"Standard interactions on your own farm. While it has a defined drop rate, neighbor help is much more likely to yield rare collection items.",1.25%,0,
+Daily Login Bonus,81,Base probability for receiving a bonus item upon first login of the day.,1.20%,0,
+Task Achievement (Tiers),155,"Cumulative milestone rewards for completing a set number of tasks. The multiple entries represent different 'Tier' thresholds (e.g. Bronze, Silver, Gold milestones).",0.14%,0,Multiple Tiers: 0.14%
+Level Up Reward,156,Probability weight for receiving a bonus collectible upon character level advancement.,0.12%,0,
+Progress Milestone,153,One-time rewards for hitting specific game progression markers (e.g. restoring a manor room or reaching a build limit).,0.12%,0,Multiple Tiers: 0.12%
+Other (ID 154),154,General game action or system trigger.,0.12%,0,Multiple Tiers: 0.12%
+Global Sales,9,Small probability of a 'tip' or rare item when selling goods through the shop or order board.,0.12%,0,Multiple Tiers: 0.12%
+Social Currency Gathering,139,Bonus chance for a collection item when collecting hearts or coins left behind by visitors.,0.12%,0,Multiple Tiers: 0.12%
+Other (ID 152),152,General game action or system trigger.,0.07%,0,Multiple Tiers: 0.07%
+Other (ID 184),184,General game action or system trigger.,0.07%,0,
