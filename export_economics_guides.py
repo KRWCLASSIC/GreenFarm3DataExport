@@ -139,10 +139,12 @@ def export_all():
                 # Table 5: Col 0 = Level Index, Col 1 = XP, Col 2 = Coins, Col 3 = Cash
                 if len(row) >= 4:
                     level = row[0]
-                    xp = row[1]
+                    # Hardcoded fallback from C0660cg.java:61400: 
+                    # for level index >= 50 (In-game Level 51+), XP is constant 260,000
+                    xp = row[1] if level < 50 else 260000
                     coins = row[2]
                     cash = row[3]
-                    writer.writerow([level, xp, coins, cash])
+                    writer.writerow([level + 1, xp, coins, cash]) # Adding 1 to index to match player level
 
     print("All extraction scripts completed. Check root for .csv files.")
 
