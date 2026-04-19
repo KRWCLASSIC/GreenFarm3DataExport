@@ -128,23 +128,21 @@ def export_all():
                 xp = row[6]
                 writer.writerow([i, name, *c_items, coins, xp, 0])
 
-    # --- LEVEL UP REWARDS (Table 27) ---
+    # --- LEVEL UP REWARDS (Table 5) ---
     print("Exporting Level Rewards...")
-    levels = parse_tabular_data(asset_13, 27)
+    levels = parse_tabular_data(asset_13, 5)
     if levels:
         with open('level_up_mining_guide.csv', 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
-            writer.writerow(['Level', 'XP Required', 'Coin Reward', 'Energy Reward', 'CASH REWARD'])
+            writer.writerow(['Level', 'XP Required', 'Coin Reward', 'CASH REWARD'])
             for row in levels:
-                # Table 27: Col 1 = Level, Col 3 = Energy? Col 4 = XP? Col 5 = Cash?
-                # Based on m3434gM(int i) logic:
-                # i4 = agO[level-1], s = agP[level-1]
-                # agO = Table 27 Col 4, agP = Table 27 Col 5
-                level = row[1]
-                energy = row[3]
-                coins = row[4] # agO
-                cash = row[5]  # agP
-                writer.writerow([level, row[2], coins, energy, cash])
+                # Table 5: Col 0 = Level Index, Col 1 = XP, Col 2 = Coins, Col 3 = Cash
+                if len(row) >= 4:
+                    level = row[0]
+                    xp = row[1]
+                    coins = row[2]
+                    cash = row[3]
+                    writer.writerow([level, xp, coins, cash])
 
     print("All extraction scripts completed. Check root for .csv files.")
 
